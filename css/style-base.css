@@ -272,3 +272,40 @@ strong {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+/* ===== 滾動淡入動畫 ===== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 步驟編號 pulse 動畫 */
+@keyframes stepPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(200, 149, 108, 0.4); }
+    50% { transform: scale(1.15); box-shadow: 0 0 0 12px rgba(200, 149, 108, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(200, 149, 108, 0); }
+}
+
+.step-number.pulse {
+    animation: stepPulse 0.8s ease-out;
+}
+
+/* 話術展開切換小箭頭 */
+.script-box__toggle {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 4px;
+    font-size: var(--text-xs);
+    transition: transform var(--transition-fast);
+}
+
+.script-box.is-open .script-box__toggle {
+    transform: rotate(180deg);
+}
