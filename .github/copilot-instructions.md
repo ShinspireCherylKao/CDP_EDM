@@ -11,8 +11,56 @@
 
 ## 命名慣例
 
-- JavaScript 檔案使用小寫並以 dash 分隔，例如：`main-script.js`。
-- CSS 檔案使用小寫並以 dash 分隔，例如：`style-base.css`。
+- JavaScript 檔案：小寫 dash 分隔（`main-script.js`）
+- CSS 檔案：小寫 dash 分隔（`style-base.css`）
+- CSS 類別：BEM 命名（`.block__element--modifier`）
+- CSS 變數：`--color-*`、`--space-*`、`--text-*` 等語意化前綴
+
+## CSS 設計系統
+
+本專案使用 CSS 變數集中管理主題，定義於 `css/style-base.css`：
+- 色系：暖咖啡調（`--color-primary: #5C3D2E`）
+- 字型：Noto Sans TC + Playfair Display
+- 間距：xs / sm / md / lg / xl / 2xl / 3xl / section
+- 陰影：sm / md / lg / xl 四級
+- 修改色彩或主題時，優先調整 `:root` 變數
+
+---
+
+## Git 工作流程
+
+**每次修改完成後，主動執行 git commit：**
+
+1. 完成檔案修改並驗證無錯誤後
+2. 執行 `git add -A` 暫存所有變更
+3. 執行 `git commit -m "<type>: <簡短中文描述>"` 提交
+4. Commit message 格式：
+   - `feat: 新增某功能`
+   - `fix: 修正某問題`
+   - `style: 調整樣式`
+   - `refactor: 重構某模組`
+   - `docs: 更新文件`
+
+**重要：不要等使用者要求才 commit，修改完成即主動提交。**
+
+---
+
+## 自動化測試（Playwright MCP）
+
+**每次修改 HTML/CSS/JS 後，主動使用 Playwright MCP 進行視覺驗證：**
+
+1. 使用 `mcp_microsoft_pla_browser_navigate` 開啟修改後的頁面
+2. 使用 `mcp_microsoft_pla_browser_snapshot` 檢查頁面結構是否正確
+3. 使用 `mcp_microsoft_pla_browser_take_screenshot` 截圖確認視覺呈現
+4. 若頁面有互動元素，使用 `mcp_microsoft_pla_browser_click` 測試互動功能
+5. 使用 `mcp_microsoft_pla_browser_console_messages` 確認無 JS 錯誤
+6. 針對響應式設計，使用 `mcp_microsoft_pla_browser_resize` 測試不同螢幕尺寸（手機 375×667、平板 768×1024、桌面 1440×900）
+
+**測試優先順序：**
+- 頁面能正常載入無 console 錯誤
+- 視覺排版與預期一致
+- 互動功能正常運作
+- 響應式斷點正確
 
 ---
 
@@ -57,6 +105,8 @@
 5. 將 HTML、CSS、JS 組合為一個完整的頁面架構。
 6. 為各部分代碼加上詳細中文註解，提升可讀性與可維護性。
 7. 提供功能邏輯與檔案結構的簡要說明以協助理解與擴充。
+8. **修改完成後，使用 Playwright MCP 開啟頁面驗證呈現效果。**
+9. **驗證無誤後，主動執行 git add + commit 提交變更。**
 
 ---
 

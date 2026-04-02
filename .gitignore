@@ -1,0 +1,18 @@
+# 系統檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / 編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node（若未來引入）
+node_modules/
+package-lock.json
+
+# 暫存
+*.tmp
+*.log
