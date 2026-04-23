@@ -526,6 +526,100 @@
             line-height: 1.7;
         }
 
+        /* ===== 廣告 + 解決方案並排佈局 ===== */
+        .ad-row {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: stretch;
+            margin: var(--space-xl) calc(-1 * var(--space-xl));
+            padding: 0 var(--space-xl);
+        }
+        .ad-row .ad-card {
+            flex: 1;
+            min-width: 0;
+            margin: 0;
+        }
+        .solution-note {
+            flex: 0 0 260px;
+            position: relative;
+            background: var(--color-bg-soft);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            font-size: var(--text-xs);
+            line-height: 1.8;
+            color: var(--color-muted);
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+        }
+        /* 左側指向箭頭 */
+        .solution-note::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 40px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--color-border);
+        }
+        .solution-note::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 40px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--color-bg-soft);
+        }
+        .solution-note__title {
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .solution-note__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .solution-note__list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px dashed var(--color-border);
+            font-size: var(--text-xs);
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+        .solution-note__list li:last-child {
+            border-bottom: none;
+        }
+        .solution-note__list li strong {
+            color: var(--color-accent);
+            display: block;
+            font-size: var(--text-xs);
+        }
+        @media (max-width: 900px) {
+            .ad-row {
+                flex-direction: column;
+                margin: var(--space-xl) 0;
+                padding: 0;
+            }
+            .solution-note {
+                flex: none;
+            }
+            .solution-note::before,
+            .solution-note::after {
+                display: none;
+            }
+        }
+
         /* ===== CTA 按鈕模擬 ===== */
         .cta-btn {
             display: inline-block;
@@ -677,71 +771,129 @@
             <h2 class="section-title">FB 廣告文 A/B 版本</h2>
             <p class="section-subtitle">針對不同受眾痛點設計兩個版本，用於 A/B 測試找出最佳轉化路徑</p>
 
-            <!-- ===== 廣告 A 版 ===== -->
-            <div class="ad-card">
-                <div class="ad-card__header ad-card__header--a">
-                    <i class="fa-solid fa-fire"></i>
-                    廣告 A 版：痛點與金錢損失切入（主打：震撼與反思）
+            <!-- ===== 廣告 A 版 + 解決方案 ===== -->
+            <div class="ad-row">
+                <div class="ad-card">
+                    <div class="ad-card__header ad-card__header--a">
+                        <i class="fa-solid fa-fire"></i>
+                        廣告 A 版：痛點與金錢損失切入（主打：震撼與反思）
+                    </div>
+                    <div class="ad-card__target">
+                        <strong>適合受眾：</strong>建商老闆、代銷負責人（對成本極度敏感者）
+                    </div>
+                    <div class="ad-card__body">
+                        <p><strong>你花了多少錢，買到一個進接待中心的客人？</strong></p>
+                        <p>
+                            數位廣告 + 活動造勢 + 人員成本——每一筆實體來人，保守估計落在 <strong>3,000 到 8,000 元</strong>。
+                        </p>
+                        <p>
+                            那個週末進來、問了格局、說「回去跟家人討論」的林太太，你花了 5,000 元讓她走進來。但三個月後，這筆名單還躺在系統裡。沒有人追她，也沒有人知道她其實還在等一個開價。
+                        </p>
+                        <p><strong>這不是業務的問題。這是你沒有一套系統幫業務記住她。</strong></p>
+
+                        <hr class="divider">
+
+                        <p><strong>【房地產專屬 AI CDP 業績引擎】</strong><br>讓沉睡名單，變成下一個新案業績！</p>
+
+                        <ul class="ad-card__features">
+                            <li>✅ <strong>生成式 AI 賦能</strong>：自動生成破冰話術，精準喚醒舊客。</li>
+                            <li>✅ <strong>專屬「即刻通」APP</strong>：防呆稽核，確保每一筆花錢買來的名單都被追到底。</li>
+                            <li>✅ <strong>2 週極速導入</strong>：無痛接軌現有銷控流程。</li>
+                        </ul>
+
+                        <p>別讓行銷預算變成死水。</p>
+                        <span class="cta-btn">👉 點擊連結，了解如何喚醒你的沉睡金礦</span>
+                    </div>
                 </div>
-                <div class="ad-card__target">
-                    <strong>適合受眾：</strong>建商老闆、代銷負責人（對成本極度敏感者）
-                </div>
-                <div class="ad-card__body">
-                    <p><strong>你花了多少錢，買到一個進接待中心的客人？</strong></p>
-                    <p>
-                        數位廣告 + 活動造勢 + 人員成本——每一筆實體來人，保守估計落在 <strong>3,000 到 8,000 元</strong>。
-                    </p>
-                    <p>
-                        那個週末進來、問了格局、說「回去跟家人討論」的林太太，你花了 5,000 元讓她走進來。但三個月後，這筆名單還躺在系統裡。沒有人追她，也沒有人知道她其實還在等一個開價。
-                    </p>
-                    <p><strong>這不是業務的問題。這是你沒有一套系統幫業務記住她。</strong></p>
 
-                    <hr class="divider">
-
-                    <p><strong>【房地產專屬 AI CDP 業績引擎】</strong><br>讓沉睡名單，變成下一個新案業績！</p>
-
-                    <ul class="ad-card__features">
-                        <li>✅ <strong>生成式 AI 賦能</strong>：自動生成破冰話術，精準喚醒舊客。</li>
-                        <li>✅ <strong>專屬「即刻通」APP</strong>：防呆稽核，確保每一筆花錢買來的名單都被追到底。</li>
-                        <li>✅ <strong>2 週極速導入</strong>：無痛接軌現有銷控流程。</li>
+                <!-- 解決方案說明（內部討論用） -->
+                <div class="solution-note">
+                    <div class="solution-note__title">
+                        <i class="fa-solid fa-lightbulb"></i> 解決方案
+                    </div>
+                    <ul class="solution-note__list">
+                        <li>
+                            <strong>策略核心</strong>
+                            以「金錢沉沒成本」製造危機感，讓老闆意識到名單閒置 = 燒錢。
+                        </li>
+                        <li>
+                            <strong>情境錨點</strong>
+                            林太太故事讓抽象成本變成具體畫面，提高代入感。
+                        </li>
+                        <li>
+                            <strong>產品對應</strong>
+                            GenAI 破冰話術 → 解決「不知道怎麼追」<br>
+                            即刻通 APP → 解決「追了沒人管」<br>
+                            2 週導入 → 降低決策門檻
+                        </li>
+                        <li>
+                            <strong>預期轉化</strong>
+                            適合搭配影片素材或對比圖，CPC 預估較低。
+                        </li>
                     </ul>
-
-                    <p>別讓行銷預算變成死水。</p>
-                    <span class="cta-btn">👉 點擊連結，了解如何喚醒你的沉睡金礦</span>
                 </div>
             </div>
 
-            <!-- ===== 廣告 B 版 ===== -->
-            <div class="ad-card">
-                <div class="ad-card__header ad-card__header--b">
-                    <i class="fa-solid fa-fire"></i>
-                    廣告 B 版：主管痛點切入（主打：管理控制力）
+            <!-- ===== 廣告 B 版 + 解決方案 ===== -->
+            <div class="ad-row">
+                <div class="ad-card">
+                    <div class="ad-card__header ad-card__header--b">
+                        <i class="fa-solid fa-fire"></i>
+                        廣告 B 版：主管痛點切入（主打：管理控制力）
+                    </div>
+                    <div class="ad-card__target">
+                        <strong>適合受眾：</strong>專案經理、銷售主管、總監（需要管理團隊與進度者）
+                    </div>
+                    <div class="ad-card__body">
+                        <p><strong>主管，你最大的管理漏洞，不在業務不努力——</strong><br>在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。</p>
+                        <p>
+                            以前你管業務靠開會、靠問、靠感覺。<br>
+                            結果就是盲目派單，業務打到心累，客戶接到煩躁。
+                        </p>
+
+                        <hr class="divider">
+
+                        <p><strong>【房地產專屬 AI CDP 業績引擎】讓你從「被動管理」變成「主動掌握」：</strong></p>
+
+                        <ul class="ad-card__features">
+                            <li>1️⃣ <strong>你不在場時</strong>，系統幫你記住每個客人說過什麼。</li>
+                            <li>2️⃣ <strong>你決定誰先打</strong>，AI 幫你把客戶分級，執行不出錯。</li>
+                            <li>3️⃣ <strong>一週後系統自動警報</strong>，專屬 APP 告訴你誰沒動作，不需要你自己盯！</li>
+                        </ul>
+
+                        <p>
+                            你的時間，應該花在決策，而不是追進度。<br>
+                            導入 AI 幕僚，最快 2 週即可上線，趕上下一波強銷期！
+                        </p>
+                        <span class="cta-btn">👉 點擊連結，看 AI 如何幫你管好千萬名單</span>
+                    </div>
                 </div>
-                <div class="ad-card__target">
-                    <strong>適合受眾：</strong>專案經理、銷售主管、總監（需要管理團隊與進度者）
-                </div>
-                <div class="ad-card__body">
-                    <p><strong>主管，你最大的管理漏洞，不在業務不努力——</strong><br>在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。</p>
-                    <p>
-                        以前你管業務靠開會、靠問、靠感覺。<br>
-                        結果就是盲目派單，業務打到心累，客戶接到煩躁。
-                    </p>
 
-                    <hr class="divider">
-
-                    <p><strong>【房地產專屬 AI CDP 業績引擎】讓你從「被動管理」變成「主動掌握」：</strong></p>
-
-                    <ul class="ad-card__features">
-                        <li>1️⃣ <strong>你不在場時</strong>，系統幫你記住每個客人說過什麼。</li>
-                        <li>2️⃣ <strong>你決定誰先打</strong>，AI 幫你把客戶分級，執行不出錯。</li>
-                        <li>3️⃣ <strong>一週後系統自動警報</strong>，專屬 APP 告訴你誰沒動作，不需要你自己盯！</li>
+                <!-- 解決方案說明（內部討論用） -->
+                <div class="solution-note">
+                    <div class="solution-note__title">
+                        <i class="fa-solid fa-lightbulb"></i> 解決方案
+                    </div>
+                    <ul class="solution-note__list">
+                        <li>
+                            <strong>策略核心</strong>
+                            以「管理失控焦慮」切入，讓主管意識到問題不在人，而在系統缺口。
+                        </li>
+                        <li>
+                            <strong>情境錨點</strong>
+                            「靠開會、靠問、靠感覺」三連擊製造共鳴，直接對應日常管理痛點。
+                        </li>
+                        <li>
+                            <strong>產品對應</strong>
+                            數據縫合 → 解決「不知道追蹤狀態」<br>
+                            AI 分級派單 → 解決「盲目指派」<br>
+                            自動警報 → 解決「需要自己盯進度」
+                        </li>
+                        <li>
+                            <strong>預期轉化</strong>
+                            適合搭配系統操作截圖或動態 Demo，CTR 預估較高。
+                        </li>
                     </ul>
-
-                    <p>
-                        你的時間，應該花在決策，而不是追進度。<br>
-                        導入 AI 幕僚，最快 2 週即可上線，趕上下一波強銷期！
-                    </p>
-                    <span class="cta-btn">👉 點擊連結，看 AI 如何幫你管好千萬名單</span>
                 </div>
             </div>
         </section>
