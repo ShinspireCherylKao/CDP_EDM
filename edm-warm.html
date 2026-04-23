@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 業績引擎 — 你的名單，還在幫你賺錢嗎？</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== 基礎重置 ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --coffee: #5C3D2E;
+            --coffee-dark: #3E2723;
+            --coffee-light: #8D6E63;
+            --gold: #C8956C;
+            --gold-light: #E8C8A0;
+            --warm: #FDF8F3;
+            --cream: #FFFAF5;
+            --text: #3E2723;
+            --muted: #6D5D53;
+            --border: #E0D5CC;
+            --white: #FFFFFF;
+        }
+        html { font-size: 16px; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: var(--text);
+            background: #E8E0D8;
+            line-height: 1.8;
+        }
+
+        /* ===== 簡報版型：5 頁 Slide ===== */
+        .slide {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(62,39,35,0.12);
+            overflow: hidden;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- 頁碼 --- */
+        .slide__page {
+            padding: 12px 28px;
+            font-size: 0.7rem;
+            color: var(--muted);
+            letter-spacing: 0.12em;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* --- Slide 內容 --- */
+        .slide__body { padding: 48px 52px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .slide__body--center { align-items: center; text-align: center; }
+
+        /* ===== 封面 (Slide 1) ===== */
+        .cover {
+            background: linear-gradient(135deg, var(--coffee-dark) 0%, var(--coffee) 50%, var(--coffee-light) 100%);
+            color: var(--white);
+            min-height: 560px;
+        }
+        .cover .slide__page { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); }
+        .cover__badge {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 20px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            margin-bottom: 32px;
+            color: var(--gold-light);
+        }
+        .cover__title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .cover__subtitle {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 32px;
+        }
+        .cover__line {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin-bottom: 20px;
+        }
+        .cover__footer {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: auto;
+            padding-top: 24px;
+        }
+
+        /* ===== 內容頁通用 ===== */
+        .slide-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--coffee-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .slide-subtitle {
+            font-size: 0.875rem;
+            color: var(--muted);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        /* --- 痛點數據卡 (Slide 2) --- */
+        .pain-hero {
+            background: var(--warm);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .pain-hero__number {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--coffee);
+            line-height: 1.2;
+        }
+        .pain-hero__label {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+        .pain-list {
+            list-style: none;
+        }
+        .pain-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .pain-list li:last-child { border-bottom: none; }
+        .pain-list__icon {
+            width: 28px; height: 28px;
+            background: #FFF3E0;
+            color: #E65100;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- 四步驟卡 (Slide 3) --- */
+        .step-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .step-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            background: var(--white);
+            transition: box-shadow 0.3s;
+        }
+        .step-card:hover { box-shadow: 0 4px 16px rgba(92,61,46,0.1); }
+        .step-card__num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--coffee);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .step-card__title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--coffee-dark);
+            margin-bottom: 8px;
+        }
+        .step-card__desc {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* --- 社會證明 (Slide 4) --- */
+        .proof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--coffee);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+        .proof-list { list-style: none; }
+        .proof-list li {
+            background: var(--warm);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .proof-list__quote {
+            font-size: 0.9rem;
+            line-height: 1.9;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .proof-list__quote::before {
+            content: '「';
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .proof-list__quote::after {
+            content: '」';
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .proof-list__source {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .proof-note {
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* --- CTA 頁 (Slide 5) --- */
+        .cta-slide {
+            background: linear-gradient(135deg, var(--coffee-dark) 0%, var(--coffee) 100%);
+            color: var(--white);
+        }
+        .cta-slide .slide__page { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); }
+        .cta-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .cta-sub {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 16px;
+            transition: background 0.3s;
+        }
+        .cta-btn:hover { background: var(--gold-light); color: var(--coffee-dark); }
+        .cta-alt {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .version-tag {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            background: var(--coffee);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            z-index: 100;
+        }
+
+        @media (max-width: 640px) {
+            .slide { margin: 20px 12px; min-height: auto; }
+            .slide__body { padding: 28px 24px; }
+            .cover__title { font-size: 1.6rem; }
+            .step-grid { grid-template-columns: 1fr; }
+            .pain-hero__number { font-size: 2rem; }
+        }
+
+        @media print {
+            body { background: white; }
+            .slide { box-shadow: none; margin: 0; page-break-after: always; border-radius: 0; }
+            .version-tag { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="version-tag">EDM — 暖客版</div>
+
+    <!-- ===== Slide 1：封面 ===== -->
+    <div class="slide cover">
+        <div class="slide__page">
+            <span>AI 業績引擎</span>
+            <span>1 / 5</span>
+        </div>
+        <div class="slide__body slide__body--center">
+            <span class="cover__badge">房產專屬 CDP 客戶數據平台</span>
+            <div class="cover__line"></div>
+            <h1 class="cover__title">
+                你的名單，<br>
+                還在幫你賺錢嗎？
+            </h1>
+            <p class="cover__subtitle">
+                每一筆花錢買來的來人、每一組走進接待中心的客人——<br>
+                推下一個案的時候，他們還在嗎？
+            </p>
+            <div class="cover__footer">
+                AI 業績引擎 ｜ 客戶自動貼標 × 意願分級 × 智慧派單 × 進度追蹤
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Slide 2：痛點 ===== -->
+    <div class="slide">
+        <div class="slide__page">
+            <span>你的名單正在貶值</span>
+            <span>2 / 5</span>
+        </div>
+        <div class="slide__body">
+            <h2 class="slide-title">每一筆名單，都有保鮮期</h2>
+            <p class="slide-subtitle">不處理，它就在系統裡安靜地過期。</p>
+
+            <div class="pain-hero">
+                <div class="pain-hero__number">3,000 ~ 8,000 元</div>
+                <div class="pain-hero__label">每一組實體來人的平均取得成本</div>
+            </div>
+
+            <ul class="pain-list">
+                <li>
+                    <span class="pain-list__icon"><i class="fa-solid fa-clock"></i></span>
+                    <div>
+                        <strong>名單躺著沒人追</strong><br>
+                        推新案時，去年累積的名單大多數沒有被二次聯繫，花過的廣告費等於沉沒成本。
+                    </div>
+                </li>
+                <li>
+                    <span class="pain-list__icon"><i class="fa-solid fa-eye-slash"></i></span>
+                    <div>
+                        <strong>派出去就看不見</strong><br>
+                        名單交給業務之後，打了沒、怎麼打的、結果如何——主管只能靠問的。
+                    </div>
+                </li>
+                <li>
+                    <span class="pain-list__icon"><i class="fa-solid fa-shuffle"></i></span>
+                    <div>
+                        <strong>人走了，資料也跟著走</strong><br>
+                        業務離職、調組，客戶的偏好、需求、歷史紀錄散落在各處，下一個人接不上。
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===== Slide 3：解決方案 ===== -->
+    <div class="slide">
+        <div class="slide__page">
+            <span>AI 業績引擎做什麼</span>
+            <span>3 / 5</span>
+        </div>
+        <div class="slide__body">
+            <h2 class="slide-title">一套系統，做好四件事</h2>
+            <p class="slide-subtitle">不需要業務學新工具、不需要額外養 IT，系統在背後自動運作。</p>
+
+            <div class="step-grid">
+                <div class="step-card">
+                    <span class="step-card__num">1</span>
+                    <div class="step-card__title">客人互動，系統自動記</div>
+                    <div class="step-card__desc">
+                        LINE 點擊、選單操作、現場跑單——系統自動建立每個客人的偏好檔案。喜歡哪個區、要幾坪、在意什麼，不靠人工整理。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-card__num">2</span>
+                    <div class="step-card__title">推新案前，先看誰最可能買</div>
+                    <div class="step-card__desc">
+                        輸入新案條件，系統自動從歷史名單撈出符合的客戶。不用全撒、不用猜，直接鎖定最有可能成交的那群人。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-card__num">3</span>
+                    <div class="step-card__title">名單分三路，不再整包丟</div>
+                    <div class="step-card__desc">
+                        VIP 舊客→出單給原業務。線上高意願→指派值班業務出擊。淺層互動→行銷推播暖身。三種人、三套打法。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-card__num">4</span>
+                    <div class="step-card__title">派出去的，有人幫你追</div>
+                    <div class="step-card__desc">
+                        業務接單後有沒有聯繫、有沒有留紀錄，系統自動追蹤。超期未處理，主管 APP 直接收到提醒。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Slide 4：社會證明 ===== -->
+    <div class="slide">
+        <div class="slide__page">
+            <span>誰在用</span>
+            <span>4 / 5</span>
+        </div>
+        <div class="slide__body">
+            <h2 class="slide-title">已經有人把舊名單變成了新業績</h2>
+
+            <span class="proof-badge">
+                <i class="fa-solid fa-trophy"></i>
+                全台前十大代銷之一已正式導入 ・ 北中南案場運行中
+            </span>
+
+            <ul class="proof-list">
+                <li>
+                    <div class="proof-list__quote">以前推新案，光整理名單就要兩週。現在系統第一天就分好三路，直接開打。</div>
+                    <div class="proof-list__source">—— 某中部代銷 ・ 專案主管</div>
+                </li>
+                <li>
+                    <div class="proof-list__quote">最有感的是追蹤機制。以前名單丟出去就看業務良心，現在一週沒動作，我手機直接收到通知。</div>
+                    <div class="proof-list__source">—— 某北部建設 ・ 銷售副總</div>
+                </li>
+                <li>
+                    <div class="proof-list__quote">以前最頭痛業務離職交接。現在客人的資料全在系統裡，換人接也不會斷。</div>
+                    <div class="proof-list__source">—— 某南部代銷 ・ 營運經理</div>
+                </li>
+            </ul>
+            <p class="proof-note">因客戶簽署保密協議，以上引述以匿名呈現</p>
+        </div>
+    </div>
+
+    <!-- ===== Slide 5：CTA ===== -->
+    <div class="slide cta-slide">
+        <div class="slide__page">
+            <span>下一步</span>
+            <span>5 / 5</span>
+        </div>
+        <div class="slide__body slide__body--center">
+            <h2 class="cta-title">
+                預約 30 分鐘線上 Demo<br>
+                讓我們用您的案場情境，實際展示
+            </h2>
+            <p class="cta-sub">
+                不用準備任何資料，我們會根據您目前的案場規模與銷售階段，<br>
+                展示系統能為您做到什麼。
+            </p>
+            <a href="#" class="cta-btn">前往了解更多 →</a>
+            <p class="cta-alt">或直接聯繫您的專屬顧問</p>
+        </div>
+    </div>
+
+</body>
+</html>

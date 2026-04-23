@@ -1,0 +1,130 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: EDM — 陌生開發版
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: AI 業績引擎
+      - generic [ref=e6]: 1 / 5
+    - generic [ref=e7]:
+      - heading "你花了 5,000 元 讓一個客人走進接待中心。 三個月後—— 還有人記得追她嗎？" [level=1] [ref=e8]:
+        - text: 你花了
+        - emphasis [ref=e9]: 5,000 元
+        - text: 讓一個客人走進接待中心。
+        - text: 三個月後——
+        - text: 還有人記得追她嗎？
+      - paragraph [ref=e10]:
+        - text: 每一筆走進來的客人，都是你花真金白銀換來的。
+        - text: 但推新案的時候，這些名單還在替你工作嗎？
+      - generic [ref=e12]:
+        - generic [ref=e13]: AI 業績引擎
+        - generic [ref=e14]: 房產專屬 CDP 客戶數據平台
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]: 一個真實的場景
+      - generic [ref=e18]: 2 / 5
+    - generic [ref=e19]:
+      - heading "這個場景，你一定不陌生" [level=2] [ref=e20]
+      - paragraph [ref=e21]: 每個接待中心，都有好幾個「林太太」。
+      - generic [ref=e22]:
+        - text: "\""
+        - generic [ref=e23]:
+          - text: 週末下午，林太太帶女兒走進接待中心。
+          - text: 她看了 49 坪的戶型、問了格局、問了開價。
+          - text: 跑單紀錄寫著：
+          - strong [ref=e24]: 「與女兒同來，需求大坪數，等最終開價再跟家人討論。」
+          - text: 三個月過去。
+          - text: 名單還在系統裡。
+          - strong [ref=e25]: 沒人追她
+          - text: ，也沒人知道——
+          - text: 她其實一直在等一通電話。
+      - generic [ref=e26]:
+        - text: 問題不在業務不認真。
+        - text: 問題在
+        - emphasis [ref=e27]: 沒有一套系統幫業務記住她
+        - text: 。
+  - generic [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]: 如果系統記得住呢？
+      - generic [ref=e31]: 3 / 5
+    - generic [ref=e32]:
+      - heading "如果系統記得住，會發生什麼事？" [level=2] [ref=e33]
+      - paragraph [ref=e34]: 用林太太的例子，走一遍 AI 業績引擎的運作流程。
+      - list [ref=e35]:
+        - listitem [ref=e36]:
+          - generic [ref=e38]: 
+          - generic [ref=e39]:
+            - text: 林太太加 LINE 那天，系統
+            - strong [ref=e40]: 自動記下
+            - text: 她對「南屯、大坪數、知名建商」有興趣。
+            - generic [ref=e41]: 自動貼標
+        - listitem [ref=e42]:
+          - generic [ref=e44]: 
+          - generic [ref=e45]:
+            - text: 現場跑單紀錄同步進系統。
+            - strong [ref=e46]: 「等最終開價 ＋ 家人決策型」
+            - text: 成為可篩選的標籤。
+            - generic [ref=e47]: 情報建檔
+        - listitem [ref=e48]:
+          - generic [ref=e50]: 
+          - generic [ref=e51]:
+            - text: 三個月後，新案【天晴萃】開賣。系統
+            - strong [ref=e52]: 自動把林太太撈出來
+            - text: ，列入 A 級名單。
+            - generic [ref=e53]: 智慧撈客
+        - listitem [ref=e54]:
+          - generic [ref=e56]: 
+          - generic [ref=e57]:
+            - text: 自動通知原業務：
+            - strong [ref=e58]: 「林太太可以打了，她等的開價已經出來。」
+            - generic [ref=e59]: 即時派單
+        - listitem [ref=e60]:
+          - generic [ref=e62]: 
+          - generic [ref=e63]:
+            - text: 業務七天沒打、沒留紀錄——
+            - strong [ref=e64]: 主管 APP 自動收到提醒
+            - text: 。
+            - generic [ref=e65]: 進度追蹤
+      - generic [ref=e66]:
+        - strong [ref=e67]: 她不是流失客。她一直在等。
+        - text: 只是以前沒有系統替你看住她。
+  - generic [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]: 已經有人在用了
+      - generic [ref=e71]: 4 / 5
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e75]: 
+        - generic [ref=e76]:
+          - text: 全台前十大代銷之一
+          - text: 已正式導入 AI 業績引擎
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - generic [ref=e80]: 
+          - generic [ref=e81]: 北中南
+          - generic [ref=e82]: 涵蓋案場範圍
+        - generic [ref=e83]:
+          - generic [ref=e85]: 
+          - generic [ref=e86]: 數萬筆
+          - generic [ref=e87]: 歷史名單管理中
+        - generic [ref=e88]:
+          - generic [ref=e90]: 
+          - generic [ref=e91]: 實際運行
+          - generic [ref=e92]: 非概念驗證階段
+      - generic [ref=e93]:
+        - text: 「推新案不是從零開始，
+        - text: 是從上千筆已經知道他們要什麼的名單，精準出手。」
+  - generic [ref=e94]:
+    - generic [ref=e95]:
+      - generic [ref=e96]: 下一步
+      - generic [ref=e97]: 5 / 5
+    - generic [ref=e98]:
+      - generic [ref=e99]: 📊
+      - heading "你的名單裡， 藏著多少個「林太太」？" [level=2] [ref=e100]:
+        - text: 你的名單裡，
+        - text: 藏著多少個「林太太」？
+      - paragraph [ref=e101]:
+        - text: 不需要準備任何資料。
+        - text: 花 30 分鐘，讓我們用您的案場情境走一遍系統，
+        - text: 您自己判斷值不值得。
+      - link "免費了解 AI 業績引擎 →" [ref=e102] [cursor=pointer]:
+        - /url: "#"
+      - paragraph [ref=e103]: 點擊前往了解更多

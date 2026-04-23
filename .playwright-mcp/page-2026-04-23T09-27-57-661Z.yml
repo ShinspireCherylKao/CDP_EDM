@@ -1,0 +1,253 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link " AI 業績引擎" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e6]: 
+        - generic [ref=e7]: AI 業績引擎
+      - generic [ref=e8]:
+        - link "痛點" [ref=e9] [cursor=pointer]:
+          - /url: "#pain"
+        - link "解決方案" [ref=e10] [cursor=pointer]:
+          - /url: "#solution"
+        - link "前後對比" [ref=e11] [cursor=pointer]:
+          - /url: "#compare"
+        - link "誰在用" [ref=e12] [cursor=pointer]:
+          - /url: "#proof"
+        - link "FAQ" [ref=e13] [cursor=pointer]:
+          - /url: "#faq"
+        - link " 預約 Demo" [ref=e14] [cursor=pointer]:
+          - /url: "#cta"
+          - generic [ref=e15]: 
+          - text: 預約 Demo
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: 
+      - text: 房產專屬 CDP 客戶數據平台
+    - heading "推新案不必從零開始 讓去年花錢買來的名單 今年替你成交" [level=1] [ref=e20]:
+      - text: 推新案不必從零開始
+      - text: 讓去年花錢買來的名單
+      - emphasis [ref=e21]: 今年替你成交
+    - paragraph [ref=e22]:
+      - text: 把客戶貼標、意願分級、智慧派單、進度追蹤
+      - text: 整合成一套建商／代銷專用的名單管理引擎
+    - generic [ref=e23]:
+      - link " 預約免費 Demo" [ref=e24] [cursor=pointer]:
+        - /url: "#cta"
+        - generic [ref=e25]: 
+        - text: 預約免費 Demo
+      - link "了解功能 " [ref=e26] [cursor=pointer]:
+        - /url: "#solution"
+        - text: 了解功能
+        - generic [ref=e27]: 
+    - generic [ref=e28]:
+      - generic [ref=e29]: 
+      - generic [ref=e30]: 全台前十大代銷之一已導入 ・ 北中南案場實際運行中
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]: 你一定遇過
+      - heading "推新案時，這些場景熟悉嗎？" [level=2] [ref=e35]
+      - paragraph [ref=e36]: 每組來人成本 3,000 ~ 8,000 元——但推下一個案的時候，這些人彷彿從不存在。
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e40]: 
+        - heading "「去年那批名單呢？」" [level=3] [ref=e41]
+        - paragraph [ref=e42]: 推新案第一週，主管問了這句。業務翻遍 Excel、LINE 對話紀錄，拼拼湊湊花了兩週，才整理出一份「可能有用」的名單。
+      - generic [ref=e43]:
+        - generic [ref=e45]: 
+        - heading "「我打了啊」" [level=3] [ref=e46]
+        - paragraph [ref=e47]: 名單發下去，業務說他聯繫了。但系統裡沒紀錄、客戶也沒回訪。到底打了沒？結果如何？沒人知道。
+      - generic [ref=e48]:
+        - generic [ref=e50]: 
+        - heading "「那個客人是誰接的？」" [level=3] [ref=e51]
+        - paragraph [ref=e52]: 客人回來了，但當初接他的業務離職了。跑單紀錄不知道在誰的手機裡、LINE 裡、筆記本裡。
+      - generic [ref=e53]:
+        - generic [ref=e55]: 
+        - heading "「廣告費花下去了，然後呢？」" [level=3] [ref=e56]
+        - paragraph [ref=e57]: 一個案場接了上千組來人。推下一個案的時候，這些人的偏好、意願、溫度——全部歸零重來。
+  - generic [ref=e59]:
+    - generic [ref=e60]:
+      - generic [ref=e61]: AI 業績引擎
+      - heading "一套系統，做好四件事" [level=2] [ref=e62]
+      - paragraph [ref=e63]:
+        - text: 不需要業務學新工具、不需要額外養 IT
+        - text: 系統在背後自動運作，名單從此不再沉睡
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]: "1"
+          - heading "客人互動，系統自動記" [level=3] [ref=e68]
+          - paragraph [ref=e69]: 不管是 LINE 點擊、選單操作、還是現場跑單紀錄——系統自動幫每個客人建立「偏好檔案」。喜歡哪個區、要幾坪、在意什麼，不用業務手動整理，也不會因為換人就斷掉。
+          - generic [ref=e70]:
+            - strong [ref=e71]: 白話說：
+            - text: 客人加 LINE 那天起，他看過什麼、問過什麼，系統全部自己記。
+        - generic [ref=e72]:
+          - generic [ref=e74]: 
+          - generic [ref=e75]:
+            - generic [ref=e76]: 台中南屯區
+            - generic [ref=e77]: 37-46 坪
+            - generic [ref=e78]: 換屋族
+            - generic [ref=e79]: 知名建商偏好
+            - generic [ref=e80]: 高意願
+            - generic [ref=e81]: 等開價
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - generic [ref=e84]: "2"
+          - heading "推新案前，先知道誰最可能買" [level=3] [ref=e85]
+          - paragraph [ref=e86]: 輸入新案條件——區域、坪數、價位帶——系統自動從歷史名單裡撈出符合的客戶。不是全部一起撒，是精準找出「上次就差臨門一腳」的那群人。
+          - generic [ref=e87]:
+            - strong [ref=e88]: 白話說：
+            - text: 不用再花兩週翻名單，系統自己幫你挑好最有機會的人。
+        - generic [ref=e89]:
+          - generic [ref=e91]: 
+          - generic [ref=e92]:
+            - generic [ref=e93]: 南屯 × 大坪數
+            - generic [ref=e94]: 觀望開價
+            - generic [ref=e95]: 曾來人
+            - generic [ref=e96]: 970 筆精準名單
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e99]: "3"
+          - heading "名單分三路，不再整包丟" [level=3] [ref=e100]
+          - paragraph [ref=e101]: VIP 舊客有來過現場的→出單給原業務。線上一直在看但沒來過的→指派值班業務主動出擊。只加過 LINE 的→行銷團隊推播暖身。三種人、三套打法，資源放在對的地方。
+          - generic [ref=e102]:
+            - strong [ref=e103]: 白話說：
+            - text: 好打的先打、能打的指定打、還要養的先推播，主管一筆一筆審核放行。
+        - generic [ref=e104]:
+          - generic [ref=e106]: 
+          - generic [ref=e107]:
+            - generic [ref=e108]: 🥇 VIP 舊客 → 原業務
+            - generic [ref=e109]: 🥈 線上熱客 → 值班業務
+            - generic [ref=e110]: 🥉 淺層互動 → 行銷推播
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]: "4"
+          - heading "名單給出去，進度看得見" [level=3] [ref=e114]
+          - paragraph [ref=e115]: 業務接單後有沒有聯繫、有沒有留紀錄，系統自動追蹤。超過期限沒動作，主管 APP 直接收到提醒。不是懲罰業務，是保護你花錢買來的每一筆機會。
+          - generic [ref=e116]:
+            - strong [ref=e117]: 白話說：
+            - text: 業務說「我打了」，系統會幫你確認。七天沒動作，手機直接跳通知。
+        - generic [ref=e118]:
+          - generic [ref=e120]: 
+          - generic [ref=e121]:
+            - generic [ref=e122]: 自動掃描紀事欄位
+            - generic [ref=e123]: ⚠️ 逾期未聯繫警報
+            - generic [ref=e124]: 主管 APP 即時通知
+  - generic [ref=e126]:
+    - generic [ref=e127]:
+      - generic [ref=e128]: 一目了然
+      - heading "導入前 vs 導入後" [level=2] [ref=e129]
+      - paragraph [ref=e130]: 同樣的名單、同樣的業務——差別只在有沒有系統幫你管。
+    - table [ref=e132]:
+      - rowgroup [ref=e133]:
+        - row "場景  以前  導入 AI 業績引擎後" [ref=e134]:
+          - columnheader "場景" [ref=e135]
+          - columnheader " 以前" [ref=e136]:
+            - generic [ref=e137]: 
+            - text: 以前
+          - columnheader " 導入 AI 業績引擎後" [ref=e138]:
+            - generic [ref=e139]: 
+            - text: 導入 AI 業績引擎後
+      - rowgroup [ref=e140]:
+        - row "推新案起步 重新砸廣告、花兩週翻舊名單 系統一鍵撈出精準名單，第一天就能開打" [ref=e141]:
+          - cell "推新案起步" [ref=e142]
+          - cell "重新砸廣告、花兩週翻舊名單" [ref=e143]
+          - cell "系統一鍵撈出精準名單，第一天就能開打" [ref=e144]
+        - row "客戶資料 散在 Excel、LINE、業務的筆記本裡 統一建檔在系統裡，誰來都查得到" [ref=e145]:
+          - cell "客戶資料" [ref=e146]
+          - cell "散在 Excel、LINE、業務的筆記本裡" [ref=e147]
+          - cell "統一建檔在系統裡，誰來都查得到" [ref=e148]
+        - row "名單分配 主管開會口頭交辦，整包丟 按溫度自動分級、主管分筆審核放行" [ref=e149]:
+          - cell "名單分配" [ref=e150]
+          - cell "主管開會口頭交辦，整包丟" [ref=e151]
+          - cell "按溫度自動分級、主管分筆審核放行" [ref=e152]
+        - row "進度追蹤 問業務：「你打了沒？」 系統自動掃描，逾期未聯繫主管收到警報" [ref=e153]:
+          - cell "進度追蹤" [ref=e154]
+          - cell "問業務：「你打了沒？」" [ref=e155]
+          - cell "系統自動掃描，逾期未聯繫主管收到警報" [ref=e156]
+        - row "業務離職 客戶資料跟著人走 資料留在系統裡，下一位無縫接手" [ref=e157]:
+          - cell "業務離職" [ref=e158]
+          - cell "客戶資料跟著人走" [ref=e159]
+          - cell "資料留在系統裡，下一位無縫接手" [ref=e160]
+        - row "廣告費效益 花過就花了，名單用完即丟 歷史名單持續活化，反覆產生價值" [ref=e161]:
+          - cell "廣告費效益" [ref=e162]
+          - cell "花過就花了，名單用完即丟" [ref=e163]
+          - cell "歷史名單持續活化，反覆產生價值" [ref=e164]
+  - generic [ref=e166]:
+    - generic [ref=e167]:
+      - generic [ref=e168]: 實際案例
+      - heading "已經有人把舊名單變成了新業績" [level=2] [ref=e169]
+    - generic [ref=e171]:
+      - generic [ref=e172]: 
+      - text: 全台前十大代銷之一已正式導入 ・ 北中南案場運行中
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - generic [ref=e175]: "\" 以前推新案，光整理名單就要兩週。現在系統第一天就分好三路，直接開打。最有感的是不用再一筆一筆翻 Excel，時間省下來讓業務去做真正該做的事。"
+        - generic [ref=e176]:
+          - generic [ref=e178]: 
+          - generic [ref=e179]:
+            - text: 某中部代銷
+            - text: 專案主管
+      - generic [ref=e180]:
+        - generic [ref=e181]: "\" 最有感的是追蹤機制。以前名單丟出去就看業務良心，現在一週沒動作，我手機直接收到通知。不是要抓人，是終於有辦法管了。"
+        - generic [ref=e182]:
+          - generic [ref=e184]: 
+          - generic [ref=e185]:
+            - text: 某北部建設
+            - text: 銷售副總
+      - generic [ref=e186]:
+        - generic [ref=e187]: "\" 以前最頭痛業務離職交接。客人的資料跟著人走，新人完全接不上。現在全在系統裡，換人也不怕斷。"
+        - generic [ref=e188]:
+          - generic [ref=e190]: 
+          - generic [ref=e191]:
+            - text: 某南部代銷
+            - text: 營運經理
+    - paragraph [ref=e192]: 因客戶簽署保密協議，以上引述以匿名呈現
+  - generic [ref=e194]:
+    - generic [ref=e195]:
+      - generic [ref=e196]: 常見問題
+      - heading "你可能想問的" [level=2] [ref=e197]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - button "我們案場已經有 CRM 了，還需要這個嗎？ " [ref=e200] [cursor=pointer]:
+          - text: 我們案場已經有 CRM 了，還需要這個嗎？
+          - generic [ref=e201]: 
+        - generic [ref=e202]: CRM 管的是「客人來了之後怎麼記」，AI 業績引擎管的是「下一個案推的時候，怎麼把這些人找回來並且追到底」。兩者互補，而且我們可以串接您現有的系統，不需要重新建置。
+      - generic [ref=e203]:
+        - button "導入需要多久？我們沒有 IT 部門。 " [ref=e204] [cursor=pointer]:
+          - text: 導入需要多久？我們沒有 IT 部門。
+          - generic [ref=e205]: 
+        - generic [ref=e206]: 基礎建置約 4 到 6 週，含數據整合與系統串接。我們有專屬顧問全程協助導入，不需要您額外養 IT 人力。過去的經驗是，代銷的專案助理就能配合完成。
+      - generic [ref=e207]:
+        - button "我的客戶名單安全嗎？ " [ref=e208] [cursor=pointer]:
+          - text: 我的客戶名單安全嗎？
+          - generic [ref=e209]: 
+        - generic [ref=e210]: 系統符合資安規範，資料加密儲存、權限分級管控。您的名單只有您授權的人看得到，不會跟其他客戶混用，也不會被第三方取得。
+      - generic [ref=e211]:
+        - button "業務端好操作嗎？他們不太會用新系統。 " [ref=e212] [cursor=pointer]:
+          - text: 業務端好操作嗎？他們不太會用新系統。
+          - generic [ref=e213]: 
+        - generic [ref=e214]: 業務不需要學新系統。通知透過 APP 推送，點開就能看到指派名單和客戶情報，操作門檻跟看 LINE 訊息差不多。主管端也是，審核放行只需要按一個按鈕。
+      - generic [ref=e215]:
+        - button "可以先試一個案場看看嗎？ " [ref=e216] [cursor=pointer]:
+          - text: 可以先試一個案場看看嗎？
+          - generic [ref=e217]: 
+        - generic [ref=e218]: 可以。大部分客戶都是從單一案場開始導入，驗證效果之後再擴展到其他案場。我們建議選一個即將推新案的案場，效果最明顯。
+      - generic [ref=e219]:
+        - button "跟一般行銷自動化工具有什麼不同？ " [ref=e220] [cursor=pointer]:
+          - text: 跟一般行銷自動化工具有什麼不同？
+          - generic [ref=e221]: 
+        - generic [ref=e222]: 一般行銷工具解決的是「怎麼發訊息」，AI 業績引擎解決的是「發給誰、誰來打、打了沒」的完整鏈路。從名單篩選到業務執行到主管稽核，是一條完整的管理閉環——這是房產銷售特有的需求，一般工具做不到。
+  - generic [ref=e224]:
+    - heading "你的名單裡 藏著多少張還沒簽的訂單？" [level=2] [ref=e225]:
+      - text: 你的名單裡
+      - text: 藏著多少張還沒簽的訂單？
+    - paragraph [ref=e226]:
+      - text: 花 30 分鐘，讓我們用您的案場情境走一遍系統。
+      - text: 不用準備任何資料，您自己判斷值不值得。
+    - link " 預約免費 Demo" [ref=e228] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=e229]: 
+      - text: 預約免費 Demo
+  - contentinfo [ref=e230]:
+    - paragraph [ref=e231]: AI 業績引擎 — 房產專屬 CDP 客戶數據平台 ｜ © 2026

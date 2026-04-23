@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 業績引擎 — 房產專屬 CDP 客戶數據平台</title>
+    <meta name="description" content="把沉睡的舊名單變成新案業績。客戶自動貼標、意願分級、智慧派單、進度追蹤——房產專屬的 CDP 客戶數據平台。">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 自訂 CSS -->
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-landing.css">
+    <style>
+        /* 入場動畫 */
+        .lp-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .lp-fade-up.lp-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="lp-body">
+
+    <!-- ===== 導航列 ===== -->
+    <nav class="lp-nav">
+        <div class="lp-nav__inner">
+            <a href="#" class="lp-nav__brand">
+                <span class="lp-nav__logo"><i class="fa-solid fa-bolt"></i></span>
+                <span class="lp-nav__name">AI 業績引擎</span>
+            </a>
+            <div class="lp-nav__links">
+                <a href="#pain" class="lp-nav__link">痛點</a>
+                <a href="#solution" class="lp-nav__link">解決方案</a>
+                <a href="#compare" class="lp-nav__link">前後對比</a>
+                <a href="#proof" class="lp-nav__link">誰在用</a>
+                <a href="#faq" class="lp-nav__link">FAQ</a>
+                <a href="#cta" class="lp-nav__cta"><i class="fa-solid fa-calendar-check"></i> 預約 Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <section class="lp-hero">
+        <div class="lp-container">
+            <span class="lp-hero__badge">
+                <i class="fa-solid fa-bolt"></i>
+                房產專屬 CDP 客戶數據平台
+            </span>
+            <h1 class="lp-hero__title">
+                推新案不必從零開始<br>
+                讓去年花錢買來的名單<br>
+                <em>今年替你成交</em>
+            </h1>
+            <p class="lp-hero__desc">
+                把客戶貼標、意願分級、智慧派單、進度追蹤<br>
+                整合成一套建商／代銷專用的名單管理引擎
+            </p>
+            <div class="lp-hero__actions">
+                <a href="#cta" class="lp-btn lp-btn--primary">
+                    <i class="fa-solid fa-calendar-check"></i> 預約免費 Demo
+                </a>
+                <a href="#solution" class="lp-btn lp-btn--outline">
+                    了解功能 <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+            <div class="lp-hero__proof">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>全台前十大代銷之一已導入 ・ 北中南案場實際運行中</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 痛點區 ===== -->
+    <section class="lp-section lp-section--alt" id="pain">
+        <div class="lp-container">
+            <div class="lp-section__header lp-fade-up">
+                <span class="lp-section__tag">你一定遇過</span>
+                <h2 class="lp-section__title">推新案時，這些場景熟悉嗎？</h2>
+                <p class="lp-section__desc">
+                    每組來人成本 3,000 ~ 8,000 元——但推下一個案的時候，這些人彷彿從不存在。
+                </p>
+            </div>
+
+            <div class="pain-grid lp-fade-up">
+                <!-- 痛點 1 -->
+                <div class="pain-card">
+                    <div class="pain-card__icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="pain-card__title">「去年那批名單呢？」</h3>
+                    <p class="pain-card__text">
+                        推新案第一週，主管問了這句。業務翻遍 Excel、LINE 對話紀錄，拼拼湊湊花了兩週，才整理出一份「可能有用」的名單。
+                    </p>
+                </div>
+                <!-- 痛點 2 -->
+                <div class="pain-card">
+                    <div class="pain-card__icon">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h3 class="pain-card__title">「我打了啊」</h3>
+                    <p class="pain-card__text">
+                        名單發下去，業務說他聯繫了。但系統裡沒紀錄、客戶也沒回訪。到底打了沒？結果如何？沒人知道。
+                    </p>
+                </div>
+                <!-- 痛點 3 -->
+                <div class="pain-card">
+                    <div class="pain-card__icon">
+                        <i class="fa-solid fa-person-walking-arrow-right"></i>
+                    </div>
+                    <h3 class="pain-card__title">「那個客人是誰接的？」</h3>
+                    <p class="pain-card__text">
+                        客人回來了，但當初接他的業務離職了。跑單紀錄不知道在誰的手機裡、LINE 裡、筆記本裡。
+                    </p>
+                </div>
+                <!-- 痛點 4 -->
+                <div class="pain-card">
+                    <div class="pain-card__icon">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="pain-card__title">「廣告費花下去了，然後呢？」</h3>
+                    <p class="pain-card__text">
+                        一個案場接了上千組來人。推下一個案的時候，這些人的偏好、意願、溫度——全部歸零重來。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 解決方案：四步驟 ===== -->
+    <section class="lp-section" id="solution">
+        <div class="lp-container">
+            <div class="lp-section__header lp-fade-up">
+                <span class="lp-section__tag">AI 業績引擎</span>
+                <h2 class="lp-section__title">一套系統，做好四件事</h2>
+                <p class="lp-section__desc">
+                    不需要業務學新工具、不需要額外養 IT<br>
+                    系統在背後自動運作，名單從此不再沉睡
+                </p>
+            </div>
+
+            <div class="step-list">
+                <!-- Step 1 -->
+                <div class="step-item lp-fade-up">
+                    <div class="step-item__content">
+                        <span class="step-item__num">1</span>
+                        <h3 class="step-item__title">客人互動，系統自動記</h3>
+                        <p class="step-item__desc">
+                            不管是 LINE 點擊、選單操作、還是現場跑單紀錄——系統自動幫每個客人建立「偏好檔案」。喜歡哪個區、要幾坪、在意什麼，不用業務手動整理，也不會因為換人就斷掉。
+                        </p>
+                        <div class="step-item__highlight">
+                            <strong>白話說：</strong>客人加 LINE 那天起，他看過什麼、問過什麼，系統全部自己記。
+                        </div>
+                    </div>
+                    <div class="step-item__visual">
+                        <div class="step-visual__icon">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <div class="step-visual__tags">
+                            <span class="step-visual__tag step-visual__tag--active">台中南屯區</span>
+                            <span class="step-visual__tag step-visual__tag--active">37-46 坪</span>
+                            <span class="step-visual__tag">換屋族</span>
+                            <span class="step-visual__tag">知名建商偏好</span>
+                            <span class="step-visual__tag step-visual__tag--active">高意願</span>
+                            <span class="step-visual__tag">等開價</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-item lp-fade-up">
+                    <div class="step-item__content">
+                        <span class="step-item__num">2</span>
+                        <h3 class="step-item__title">推新案前，先知道誰最可能買</h3>
+                        <p class="step-item__desc">
+                            輸入新案條件——區域、坪數、價位帶——系統自動從歷史名單裡撈出符合的客戶。不是全部一起撒，是精準找出「上次就差臨門一腳」的那群人。
+                        </p>
+                        <div class="step-item__highlight">
+                            <strong>白話說：</strong>不用再花兩週翻名單，系統自己幫你挑好最有機會的人。
+                        </div>
+                    </div>
+                    <div class="step-item__visual">
+                        <div class="step-visual__icon">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <div class="step-visual__tags">
+                            <span class="step-visual__tag step-visual__tag--active">南屯 × 大坪數</span>
+                            <span class="step-visual__tag step-visual__tag--active">觀望開價</span>
+                            <span class="step-visual__tag step-visual__tag--active">曾來人</span>
+                            <span class="step-visual__tag">970 筆精準名單</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-item lp-fade-up">
+                    <div class="step-item__content">
+                        <span class="step-item__num">3</span>
+                        <h3 class="step-item__title">名單分三路，不再整包丟</h3>
+                        <p class="step-item__desc">
+                            VIP 舊客有來過現場的→出單給原業務。線上一直在看但沒來過的→指派值班業務主動出擊。只加過 LINE 的→行銷團隊推播暖身。三種人、三套打法，資源放在對的地方。
+                        </p>
+                        <div class="step-item__highlight">
+                            <strong>白話說：</strong>好打的先打、能打的指定打、還要養的先推播，主管一筆一筆審核放行。
+                        </div>
+                    </div>
+                    <div class="step-item__visual">
+                        <div class="step-visual__icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div class="step-visual__tags">
+                            <span class="step-visual__tag" style="background:#FFF8E1;color:#F57F17;border-color:#FFE082;">🥇 VIP 舊客 → 原業務</span>
+                            <span class="step-visual__tag" style="background:#F3E5F5;color:#7B1FA2;border-color:#CE93D8;">🥈 線上熱客 → 值班業務</span>
+                            <span class="step-visual__tag" style="background:#E8F5E9;color:#2E7D32;border-color:#A5D6A7;">🥉 淺層互動 → 行銷推播</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-item lp-fade-up">
+                    <div class="step-item__content">
+                        <span class="step-item__num">4</span>
+                        <h3 class="step-item__title">名單給出去，進度看得見</h3>
+                        <p class="step-item__desc">
+                            業務接單後有沒有聯繫、有沒有留紀錄，系統自動追蹤。超過期限沒動作，主管 APP 直接收到提醒。不是懲罰業務，是保護你花錢買來的每一筆機會。
+                        </p>
+                        <div class="step-item__highlight">
+                            <strong>白話說：</strong>業務說「我打了」，系統會幫你確認。七天沒動作，手機直接跳通知。
+                        </div>
+                    </div>
+                    <div class="step-item__visual">
+                        <div class="step-visual__icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="step-visual__tags">
+                            <span class="step-visual__tag step-visual__tag--active">自動掃描紀事欄位</span>
+                            <span class="step-visual__tag" style="background:#FFEBEE;color:#C62828;border-color:#EF9A9A;">⚠️ 逾期未聯繫警報</span>
+                            <span class="step-visual__tag">主管 APP 即時通知</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 前後對比 ===== -->
+    <section class="lp-section lp-section--warm" id="compare">
+        <div class="lp-container">
+            <div class="lp-section__header lp-fade-up">
+                <span class="lp-section__tag">一目了然</span>
+                <h2 class="lp-section__title">導入前 vs 導入後</h2>
+                <p class="lp-section__desc">同樣的名單、同樣的業務——差別只在有沒有系統幫你管。</p>
+            </div>
+
+            <div class="lp-fade-up">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>場景</th>
+                            <th><i class="fa-solid fa-xmark"></i> 以前</th>
+                            <th><i class="fa-solid fa-check"></i> 導入 AI 業績引擎後</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>推新案起步</td>
+                            <td>重新砸廣告、花兩週翻舊名單</td>
+                            <td>系統一鍵撈出精準名單，第一天就能開打</td>
+                        </tr>
+                        <tr>
+                            <td>客戶資料</td>
+                            <td>散在 Excel、LINE、業務的筆記本裡</td>
+                            <td>統一建檔在系統裡，誰來都查得到</td>
+                        </tr>
+                        <tr>
+                            <td>名單分配</td>
+                            <td>主管開會口頭交辦，整包丟</td>
+                            <td>按溫度自動分級、主管分筆審核放行</td>
+                        </tr>
+                        <tr>
+                            <td>進度追蹤</td>
+                            <td>問業務：「你打了沒？」</td>
+                            <td>系統自動掃描，逾期未聯繫主管收到警報</td>
+                        </tr>
+                        <tr>
+                            <td>業務離職</td>
+                            <td>客戶資料跟著人走</td>
+                            <td>資料留在系統裡，下一位無縫接手</td>
+                        </tr>
+                        <tr>
+                            <td>廣告費效益</td>
+                            <td>花過就花了，名單用完即丟</td>
+                            <td>歷史名單持續活化，反覆產生價值</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 社會證明 ===== -->
+    <section class="lp-section" id="proof">
+        <div class="lp-container proof-section">
+            <div class="lp-section__header lp-fade-up">
+                <span class="lp-section__tag">實際案例</span>
+                <h2 class="lp-section__title">已經有人把舊名單變成了新業績</h2>
+            </div>
+
+            <div class="lp-fade-up">
+                <span class="proof-banner">
+                    <i class="fa-solid fa-trophy"></i>
+                    全台前十大代銷之一已正式導入 ・ 北中南案場運行中
+                </span>
+            </div>
+
+            <div class="proof-cards lp-fade-up">
+                <div class="proof-card">
+                    <div class="proof-card__quote">
+                        以前推新案，光整理名單就要兩週。現在系統第一天就分好三路，直接開打。最有感的是不用再一筆一筆翻 Excel，時間省下來讓業務去做真正該做的事。
+                    </div>
+                    <div class="proof-card__source">
+                        <div class="proof-card__avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="proof-card__info">
+                            某中部代銷<br>專案主管
+                        </div>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card__quote">
+                        最有感的是追蹤機制。以前名單丟出去就看業務良心，現在一週沒動作，我手機直接收到通知。不是要抓人，是終於有辦法管了。
+                    </div>
+                    <div class="proof-card__source">
+                        <div class="proof-card__avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="proof-card__info">
+                            某北部建設<br>銷售副總
+                        </div>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card__quote">
+                        以前最頭痛業務離職交接。客人的資料跟著人走，新人完全接不上。現在全在系統裡，換人也不怕斷。
+                    </div>
+                    <div class="proof-card__source">
+                        <div class="proof-card__avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="proof-card__info">
+                            某南部代銷<br>營運經理
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="proof-note">因客戶簽署保密協議，以上引述以匿名呈現</p>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="lp-section lp-section--alt" id="faq">
+        <div class="lp-container">
+            <div class="lp-section__header lp-fade-up">
+                <span class="lp-section__tag">常見問題</span>
+                <h2 class="lp-section__title">你可能想問的</h2>
+            </div>
+
+            <div class="faq-list lp-fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        我們案場已經有 CRM 了，還需要這個嗎？
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer__inner">
+                            CRM 管的是「客人來了之後怎麼記」，AI 業績引擎管的是「下一個案推的時候，怎麼把這些人找回來並且追到底」。兩者互補，而且我們可以串接您現有的系統，不需要重新建置。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        導入需要多久？我們沒有 IT 部門。
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer__inner">
+                            基礎建置約 4 到 6 週，含數據整合與系統串接。我們有專屬顧問全程協助導入，不需要您額外養 IT 人力。過去的經驗是，代銷的專案助理就能配合完成。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        我的客戶名單安全嗎？
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer__inner">
+                            系統符合資安規範，資料加密儲存、權限分級管控。您的名單只有您授權的人看得到，不會跟其他客戶混用，也不會被第三方取得。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        業務端好操作嗎？他們不太會用新系統。
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer__inner">
+                            業務不需要學新系統。通知透過 APP 推送，點開就能看到指派名單和客戶情報，操作門檻跟看 LINE 訊息差不多。主管端也是，審核放行只需要按一個按鈕。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        可以先試一個案場看看嗎？
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer__inner">
+                            可以。大部分客戶都是從單一案場開始導入，驗證效果之後再擴展到其他案場。我們建議選一個即將推新案的案場，效果最明顯。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        跟一般行銷自動化工具有什麼不同？
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer__inner">
+                            一般行銷工具解決的是「怎麼發訊息」，AI 業績引擎解決的是「發給誰、誰來打、打了沒」的完整鏈路。從名單篩選到業務執行到主管稽核，是一條完整的管理閉環——這是房產銷售特有的需求，一般工具做不到。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Final CTA ===== -->
+    <section class="lp-final-cta" id="cta">
+        <div class="lp-container">
+            <h2 class="lp-final-cta__title lp-fade-up">
+                你的名單裡<br>
+                藏著多少張還沒簽的訂單？
+            </h2>
+            <p class="lp-final-cta__desc lp-fade-up">
+                花 30 分鐘，讓我們用您的案場情境走一遍系統。<br>
+                不用準備任何資料，您自己判斷值不值得。
+            </p>
+            <div class="lp-fade-up">
+                <a href="#" class="lp-btn lp-btn--gold">
+                    <i class="fa-solid fa-calendar-check"></i> 預約免費 Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="lp-footer">
+        <p>AI 業績引擎 — 房產專屬 CDP 客戶數據平台 ｜ © 2026</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/landing-script.js"></script>
+</body>
+</html>

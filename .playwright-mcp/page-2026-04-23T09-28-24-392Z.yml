@@ -1,0 +1,65 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: FB AD COPY
+    - heading "Facebook 廣告文 A/B Test" [level=1] [ref=e4]
+    - paragraph [ref=e5]: AI 業績引擎 — 房產專屬 CDP ｜ 點擊後導流至 Landing Page
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: A
+        - generic [ref=e10]:
+          - generic [ref=e11]: 版本 A — 痛點驅動型
+          - generic [ref=e12]: 策略：從「正在虧的錢」切入，製造不行動的痛感
+      - generic [ref=e13]: 恐懼 × 急迫感
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - text: 你花了 5,000 元讓一個客人走進接待中心。
+        - text: 三個月後，名單還躺在系統裡——沒人追。
+      - generic [ref=e16]:
+        - text: 推新案的時候，去年累積的上千筆名單—— 有多少被聯繫過第二次？ 業務說他打了，但系統裡什麼紀錄都沒有。 客人回來了，但當初接的那個業務離職了。 名單躺著、資料散著、機會一天一天在過期。
+        - strong [ref=e17]: 不是業務不認真，是沒有一套系統幫他記住每一個客人。
+      - list [ref=e18]:
+        - listitem [ref=e19]: ✅ 客人加 LINE，系統自動記住他看過什麼、想要什麼
+        - listitem [ref=e20]: ✅ 推新案前，一鍵撈出「最可能成交」的那群人
+        - listitem [ref=e21]: ✅ 名單分三級：該回訪的、該破冰的、該推播的
+        - listitem [ref=e22]: ✅ 每筆名單派出去之後，進度主管看得見
+      - generic [ref=e23]:
+        - generic [ref=e24]: 
+        - text: 全台前十大代銷之一，北中南案場已實際導入運行。
+      - generic [ref=e25]: 👉 你的舊名單裡，藏著多少張還沒簽的訂單？
+    - generic [ref=e26]:
+      - generic [ref=e27]: AI 業績引擎 — 房產專屬 CDP
+      - link "免費了解 →" [ref=e28] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e29]:
+    - strong [ref=e30]: 投放建議：
+    - text: 受眾鎖定建設公司、代銷公司決策層（總監、副總、專案主管）。圖片建議使用「接待中心空景＋名單數字疊加」的視覺，搭配痛點文字覆蓋。建議投放時段：週一至週五上午 9-11 點（主管瀏覽時段）。
+  - generic [ref=e31]: VS — A/B TEST
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: B
+        - generic [ref=e36]:
+          - generic [ref=e37]: 版本 B — 場景帶入型
+          - generic [ref=e38]: 策略：用具體故事帶入，讓讀者自己對號入座
+      - generic [ref=e39]: 故事 × 願景感
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - text: 推新案那天，你是從零開始找人？
+        - text: 還是從 970 筆「已經知道他要什麼」的名單出手？
+      - generic [ref=e42]:
+        - text: 去年的林太太——看了 49 坪、說要跟女兒討論、等最終開價。 你花了 5,000 元讓她走進接待中心。 如果系統記得住她， 在新案開價那天，
+        - strong [ref=e43]: 自動通知業務：「林太太可以打了。」
+        - text: 這不是想像，是已經在跑的機制。
+      - generic [ref=e44]: 🔹 歷史舊客 → 原業務直接帶回來 🔹 線上高意願 → 新業務主動出擊 🔹 只加過 LINE 的 → 行銷推播先暖身
+      - generic [ref=e45]:
+        - generic [ref=e46]: 
+        - text: 北中南指標代銷已採用，名單不再沉睡。
+      - generic [ref=e47]: 👉 你的名單值多少？讓 AI 幫你算。
+    - generic [ref=e48]:
+      - generic [ref=e49]: AI 業績引擎 — 房產專屬 CDP
+      - link "了解更多 →" [ref=e50] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e51]:
+    - strong [ref=e52]: 投放建議：
+    - text: 受眾同版本 A，但可額外納入房產行銷社群觸及。圖片建議使用「業務手機收到系統通知」的畫面模擬，更有代入感。建議搭配再行銷：對看過版本 A 未點擊的受眾投放版本 B。

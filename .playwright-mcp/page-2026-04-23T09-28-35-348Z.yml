@@ -1,0 +1,99 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: EDM — 暖客版
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: AI 業績引擎
+      - generic [ref=e6]: 1 / 5
+    - generic [ref=e7]:
+      - generic [ref=e8]: 房產專屬 CDP 客戶數據平台
+      - heading "你的名單， 還在幫你賺錢嗎？" [level=1] [ref=e10]:
+        - text: 你的名單，
+        - text: 還在幫你賺錢嗎？
+      - paragraph [ref=e11]:
+        - text: 每一筆花錢買來的來人、每一組走進接待中心的客人——
+        - text: 推下一個案的時候，他們還在嗎？
+      - generic [ref=e12]: AI 業績引擎 ｜ 客戶自動貼標 × 意願分級 × 智慧派單 × 進度追蹤
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: 你的名單正在貶值
+      - generic [ref=e16]: 2 / 5
+    - generic [ref=e17]:
+      - heading "每一筆名單，都有保鮮期" [level=2] [ref=e18]
+      - paragraph [ref=e19]: 不處理，它就在系統裡安靜地過期。
+      - generic [ref=e20]:
+        - generic [ref=e21]: 3,000 ~ 8,000 元
+        - generic [ref=e22]: 每一組實體來人的平均取得成本
+      - list [ref=e23]:
+        - listitem [ref=e24]:
+          - generic [ref=e26]: 
+          - generic [ref=e27]:
+            - strong [ref=e28]: 名單躺著沒人追
+            - text: 推新案時，去年累積的名單大多數沒有被二次聯繫，花過的廣告費等於沉沒成本。
+        - listitem [ref=e29]:
+          - generic [ref=e31]: 
+          - generic [ref=e32]:
+            - strong [ref=e33]: 派出去就看不見
+            - text: 名單交給業務之後，打了沒、怎麼打的、結果如何——主管只能靠問的。
+        - listitem [ref=e34]:
+          - generic [ref=e36]: 
+          - generic [ref=e37]:
+            - strong [ref=e38]: 人走了，資料也跟著走
+            - text: 業務離職、調組，客戶的偏好、需求、歷史紀錄散落在各處，下一個人接不上。
+  - generic [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e41]: AI 業績引擎做什麼
+      - generic [ref=e42]: 3 / 5
+    - generic [ref=e43]:
+      - heading "一套系統，做好四件事" [level=2] [ref=e44]
+      - paragraph [ref=e45]: 不需要業務學新工具、不需要額外養 IT，系統在背後自動運作。
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: "1"
+          - generic [ref=e49]: 客人互動，系統自動記
+          - generic [ref=e50]: LINE 點擊、選單操作、現場跑單——系統自動建立每個客人的偏好檔案。喜歡哪個區、要幾坪、在意什麼，不靠人工整理。
+        - generic [ref=e51]:
+          - generic [ref=e52]: "2"
+          - generic [ref=e53]: 推新案前，先看誰最可能買
+          - generic [ref=e54]: 輸入新案條件，系統自動從歷史名單撈出符合的客戶。不用全撒、不用猜，直接鎖定最有可能成交的那群人。
+        - generic [ref=e55]:
+          - generic [ref=e56]: "3"
+          - generic [ref=e57]: 名單分三路，不再整包丟
+          - generic [ref=e58]: VIP 舊客→出單給原業務。線上高意願→指派值班業務出擊。淺層互動→行銷推播暖身。三種人、三套打法。
+        - generic [ref=e59]:
+          - generic [ref=e60]: "4"
+          - generic [ref=e61]: 派出去的，有人幫你追
+          - generic [ref=e62]: 業務接單後有沒有聯繫、有沒有留紀錄，系統自動追蹤。超期未處理，主管 APP 直接收到提醒。
+  - generic [ref=e63]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: 誰在用
+      - generic [ref=e66]: 4 / 5
+    - generic [ref=e67]:
+      - heading "已經有人把舊名單變成了新業績" [level=2] [ref=e68]
+      - generic [ref=e69]:
+        - generic [ref=e70]: 
+        - text: 全台前十大代銷之一已正式導入 ・ 北中南案場運行中
+      - list [ref=e71]:
+        - listitem [ref=e72]:
+          - generic [ref=e73]: 「以前推新案，光整理名單就要兩週。現在系統第一天就分好三路，直接開打。」
+          - generic [ref=e74]: —— 某中部代銷 ・ 專案主管
+        - listitem [ref=e75]:
+          - generic [ref=e76]: 「最有感的是追蹤機制。以前名單丟出去就看業務良心，現在一週沒動作，我手機直接收到通知。」
+          - generic [ref=e77]: —— 某北部建設 ・ 銷售副總
+        - listitem [ref=e78]:
+          - generic [ref=e79]: 「以前最頭痛業務離職交接。現在客人的資料全在系統裡，換人接也不會斷。」
+          - generic [ref=e80]: —— 某南部代銷 ・ 營運經理
+      - paragraph [ref=e81]: 因客戶簽署保密協議，以上引述以匿名呈現
+  - generic [ref=e82]:
+    - generic [ref=e83]:
+      - generic [ref=e84]: 下一步
+      - generic [ref=e85]: 5 / 5
+    - generic [ref=e86]:
+      - heading "預約 30 分鐘線上 Demo 讓我們用您的案場情境，實際展示" [level=2] [ref=e87]:
+        - text: 預約 30 分鐘線上 Demo
+        - text: 讓我們用您的案場情境，實際展示
+      - paragraph [ref=e88]:
+        - text: 不用準備任何資料，我們會根據您目前的案場規模與銷售階段，
+        - text: 展示系統能為您做到什麼。
+      - link "前往了解更多 →" [ref=e89] [cursor=pointer]:
+        - /url: "#"
+      - paragraph [ref=e90]: 或直接聯繫您的專屬顧問
