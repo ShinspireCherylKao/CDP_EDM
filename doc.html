@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDP EDM 2026 Q2 — 文案討論稿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-black: #111111;
+            --color-ink: #1a1a1a;
+            --color-text: #2d2d2d;
+            --color-muted: #666666;
+            --color-border: #e0e0e0;
+            --color-bg-soft: #f8f8f6;
+            --color-accent: #5C3D2E;
+            --color-accent-light: #f5ede8;
+            --color-highlight: #fffbf0;
+            --color-alert: #7a1a1a;
+            --color-alert-bg: #fff5f5;
+
+            --font-sans: 'Noto Sans TC', sans-serif;
+            --font-serif: 'Noto Serif TC', serif;
+
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 2.5rem;
+
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: #ffffff;
+            line-height: 1.8;
+        }
+
+        /* ===== 頁面頂部索引列 ===== */
+        .doc-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) var(--space-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            z-index: 100;
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+        }
+        .doc-nav__brand {
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+            white-space: nowrap;
+        }
+        .doc-nav__links { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+        .doc-nav__links a {
+            color: var(--color-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .doc-nav__links a:hover { color: var(--color-accent); }
+
+        /* ===== 主容器 ===== */
+        .doc-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        /* ===== 文件頁首 ===== */
+        .doc-header {
+            border-bottom: 2px solid var(--color-black);
+            padding-bottom: var(--space-xl);
+            margin-bottom: var(--space-3xl);
+        }
+        .doc-header__label {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+        .doc-header__title {
+            font-family: var(--font-serif);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            color: var(--color-black);
+            line-height: 1.3;
+            margin-bottom: var(--space-lg);
+        }
+        .doc-header__meta {
+            display: flex;
+            gap: var(--space-xl);
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+        }
+
+        /* ===== 章節 ===== */
+        .doc-section {
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-3xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .doc-section:last-child { border-bottom: none; }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        .section-label__step {
+            width: 28px;
+            height: 28px;
+            background: var(--color-black);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .section-label__text {
+            font-size: var(--text-xs);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            color: var(--color-black);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--space-sm);
+        }
+        .section-subtitle {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            margin-bottom: var(--space-xl);
+            line-height: 1.7;
+        }
+
+        /* ===== 文字元素 ===== */
+        p { margin-bottom: var(--space-md); font-size: var(--text-base); }
+
+        h3 {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--color-black);
+            margin: var(--space-xl) 0 var(--space-md);
+        }
+        h4 {
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--color-ink);
+            margin: var(--space-lg) 0 var(--space-sm);
+        }
+
+        /* ===== 引言區塊 ===== */
+        .doc-lead {
+            background: var(--color-bg-soft);
+            border-left: 3px solid var(--color-black);
+            padding: var(--space-lg) var(--space-xl);
+            margin: var(--space-xl) 0;
+            font-size: var(--text-lg);
+            line-height: 1.9;
+            color: var(--color-ink);
+        }
+        .doc-lead strong { color: var(--color-black); }
+
+        /* ===== Blockquote 說話框 ===== */
+        blockquote {
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            background: var(--color-highlight);
+            font-size: var(--text-sm);
+            line-height: 1.8;
+            color: var(--color-ink);
+            position: relative;
+        }
+        blockquote::before {
+            content: '"';
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--color-border);
+            line-height: 1;
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-md);
+        }
+        blockquote p { padding-left: var(--space-xl); margin: 0; }
+
+        /* ===== 標籤組 ===== */
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: var(--text-xs);
+            font-weight: 500;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border: 1px solid #ddc8be;
+        }
+        .tag--dark {
+            background: var(--color-black);
+            color: #fff;
+            border-color: var(--color-black);
+        }
+
+        /* ===== 項目條列 ===== */
+        .doc-list {
+            list-style: none;
+            margin: var(--space-md) 0 var(--space-lg);
+        }
+        .doc-list li {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--text-sm);
+            line-height: 1.7;
+        }
+        .doc-list li:last-child { border-bottom: none; }
+        .doc-list__icon {
+            width: 20px;
+            flex-shrink: 0;
+            padding-top: 2px;
+            color: var(--color-accent);
+        }
+
+        /* ===== 話術框 ===== */
+        .script-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin: var(--space-lg) 0;
+            overflow: hidden;
+        }
+        .script-card__label {
+            background: var(--color-bg-soft);
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--color-muted);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .script-card__body {
+            padding: var(--space-lg);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+            color: var(--color-ink);
+        }
+        .script-card__body strong { color: var(--color-black); }
+
+        /* ===== 三級分欄 ===== */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+        .tier-cell {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .tier-cell__header {
+            padding: var(--space-md);
+            text-align: center;
+            font-weight: 700;
+            font-size: var(--text-sm);
+        }
+        .tier-cell--gold .tier-cell__header { background: #fffbf0; border-bottom: 2px solid #C8A000; }
+        .tier-cell--silver .tier-cell__header { background: #f8f8f8; border-bottom: 2px solid #909090; }
+        .tier-cell--bronze .tier-cell__header { background: #fdf5f0; border-bottom: 2px solid #b36a2e; }
+        .tier-cell__body { padding: var(--space-md); font-size: var(--text-xs); line-height: 1.7; }
+        .tier-cell__body p { margin-bottom: var(--space-sm); font-size: var(--text-xs); }
+        .tier-cell__body strong { color: var(--color-black); }
+
+        /* ===== 通知卡 ===== */
+        .notif-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin: var(--space-md) 0;
+            overflow: hidden;
+        }
+        .notif-card__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            background: var(--color-bg-soft);
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-muted);
+        }
+        .notif-card__count {
+            background: var(--color-black);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 100px;
+            font-size: var(--text-xs);
+        }
+        .notif-card__body {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-sm);
+            line-height: 1.8;
+        }
+        .notif-card__note {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--color-accent-light);
+            font-size: var(--text-xs);
+            color: var(--color-accent);
+            border-top: 1px solid #ddc8be;
+            line-height: 1.7;
+        }
+        .notif-card__actions {
+            display: flex;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-lg);
+            border-top: 1px solid var(--color-border);
+        }
+        .action-btn {
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            border: 1px solid;
+        }
+        .action-btn--yes { background: #1a7a3a; color: #fff; border-color: #1a7a3a; }
+        .action-btn--no { background: #fff; color: #666; border-color: #ccc; }
+        .action-btn--adj { background: #fff; color: var(--color-accent); border-color: var(--color-accent); }
+
+        /* ===== 警報框 ===== */
+        .alert-box {
+            background: var(--color-alert-bg);
+            border: 1px solid #f5c0c0;
+            border-left: 4px solid var(--color-alert);
+            border-radius: 6px;
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .alert-box__title {
+            font-weight: 700;
+            color: var(--color-alert);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-sm);
+        }
+        .alert-box p {
+            font-size: var(--text-sm);
+            line-height: 1.8;
+            color: var(--color-ink);
+            margin: 0;
+        }
+        .alert-box strong { color: var(--color-alert); }
+
+        /* ===== 任務通知框 ===== */
+        .task-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .task-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .task-card__label {
+            background: var(--color-bg-soft);
+            padding: var(--space-sm) var(--space-md);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-muted);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .task-card__body {
+            padding: var(--space-md);
+            font-size: var(--text-xs);
+            line-height: 1.8;
+        }
+
+        /* ===== 結語強調 ===== */
+        .doc-closing {
+            text-align: center;
+            padding: var(--space-3xl) var(--space-xl);
+            border: 1px solid var(--color-black);
+            border-radius: 8px;
+            background: var(--color-bg-soft);
+        }
+        .doc-closing__em {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            color: var(--color-black);
+            line-height: 1.5;
+            margin-bottom: var(--space-lg);
+            font-weight: 600;
+        }
+        .doc-closing p {
+            font-size: var(--text-base);
+            color: var(--color-muted);
+            line-height: 1.9;
+        }
+        .doc-closing strong { color: var(--color-black); }
+
+        /* ===== 分隔線 ===== */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: var(--space-xl) 0;
+        }
+
+        /* ===== 說明小字 ===== */
+        .doc-note {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            margin: var(--space-md) 0;
+            line-height: 1.7;
+        }
+
+        /* ===== 響應式 ===== */
+        @media (max-width: 640px) {
+            .doc-wrap { padding: var(--space-xl) var(--space-md); }
+            .tier-grid { grid-template-columns: 1fr; }
+            .task-row { grid-template-columns: 1fr; }
+            .doc-nav__links { display: none; }
+            .doc-header__title { font-size: var(--text-2xl); }
+            .doc-closing__em { font-size: var(--text-xl); }
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .doc-nav { display: none; }
+            .doc-wrap { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部索引列 -->
+    <nav class="doc-nav">
+        <span class="doc-nav__brand">CDP EDM 2026 Q2 — 文案討論稿</span>
+        <div class="doc-nav__links">
+            <a href="#hero">開場</a>
+            <a href="#step1">第一步</a>
+            <a href="#step2">第二步</a>
+            <a href="#step3">第三步</a>
+            <a href="#step4">第四步</a>
+            <a href="#closing">結語</a>
+        </div>
+    </nav>
+
+    <div class="doc-wrap">
+
+        <!-- 文件頁首 -->
+        <header class="doc-header">
+            <div class="doc-header__label">CDP EDM &nbsp;/&nbsp; 2026 Q2 &nbsp;/&nbsp; 文案討論稿</div>
+            <h1 class="doc-header__title">
+                把沉睡的舊名單<br>變成新案業績
+            </h1>
+            <div class="doc-header__meta">
+                <span>版本：討論優化版</span>
+                <span>日期：2026-04-08</span>
+                <span>受眾：建商 / 代銷銷售主管</span>
+            </div>
+        </header>
+
+
+        <!-- ===== 開場 Hero ===== -->
+        <section class="doc-section" id="hero">
+            <div class="section-label">
+                <div class="section-label__step">0</div>
+                <span class="section-label__text">HERO · 開場</span>
+            </div>
+            <h2 class="section-title">你花了多少錢，買到一個進接待中心的客人？</h2>
+            <p class="section-subtitle">副標：客戶自動貼標 × 意願分級 × 智慧派單，讓對的業務精準命中對的客戶</p>
+
+            <div class="doc-lead">
+                數位廣告 + 活動造勢 + 人員成本——<br>
+                每一筆實體來人，保守估計落在 <strong>3,000 到 8,000 元</strong>。<br><br>
+                那個週末進來、問了格局、說「回去跟家人討論」的林太太，<br>
+                你花了 5,000 元讓她走進來。<br><br>
+                三個月後，名單還躺在系統裡。<br>
+                沒有人追她，也沒有人知道她還在等一個開價。<br><br>
+                <strong>這不是業務的問題。這是你沒有一套系統幫業務記住她。</strong>
+            </div>
+        </section>
+
+
+        <!-- ===== 第一步 ===== -->
+        <section class="doc-section" id="step1">
+            <div class="section-label">
+                <div class="section-label__step">1</div>
+                <span class="section-label__text">STEP ONE · 看見客戶的每一個隱形足跡</span>
+            </div>
+            <h2 class="section-title">線上＋線下數據無縫整合，不放過任何互動細節</h2>
+            <p class="section-subtitle">精準捕捉潛在需求，為未來的精準分眾預先埋樁</p>
+
+            <h3>🌐 線上情境 — 自動貼標</h3>
+            <p>當客戶在 LINE 輸入「新日御品」或點擊選單，系統自動貼上四層隱形標籤：</p>
+
+            <ul class="doc-list">
+                <li>
+                    <span class="doc-list__icon"><i class="fa-solid fa-heart"></i></span>
+                    <div>
+                        <strong>建案與品牌偏好</strong><br>
+                        <div class="tag-row" style="margin-top:6px;">
+                            <span class="tag">新日御品</span>
+                            <span class="tag">合達建設</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="doc-list__icon"><i class="fa-solid fa-map-marker-alt"></i></span>
+                    <div>
+                        <strong>地區偏好</strong>　系統依建案位置自動歸納<br>
+                        <div class="tag-row" style="margin-top:6px;">
+                            <span class="tag">台中南屯區</span>
+                            <span class="tag">13期重劃區</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="doc-list__icon"><i class="fa-solid fa-ruler-combined"></i></span>
+                    <div>
+                        <strong>產品規格推測</strong>　依據該案主打，推測出客戶需求<br>
+                        <div class="tag-row" style="margin-top:6px;">
+                            <span class="tag">37–46 坪</span>
+                            <span class="tag">換屋族</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="doc-list__icon"><i class="fa-solid fa-fire"></i></span>
+                    <div>
+                        <strong>互動意願</strong>　若客戶進一步點擊圖文選單，疊加意願標籤<br>
+                        <div class="tag-row" style="margin-top:6px;">
+                            <span class="tag">點擊賞屋專線</span>
+                            <span class="tag">高意願潛在客</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="doc-note">
+                <strong>實務價值：</strong>這些標籤是為了未來的精準分眾！半年後南屯有 40 坪新案，系統就能精準篩出這批人。既提高廣告轉換率，也避免對換屋族發送「台北 15 坪小套房」這種無關資訊導致封鎖。
+            </div>
+
+            <hr class="divider">
+
+            <h3>🏢 線下情境 — 現場賞屋情報建檔</h3>
+            <p>跑單人員將現場狀況記錄進系統，保留第一線最具溫度的銷售情報：</p>
+
+            <blockquote>
+                <p>「與女兒同來，有買過中區達合莊園，對新日御品很有興趣，需求是大坪數，但想等『最終開價』出來再跟家人討論。」</p>
+            </blockquote>
+
+            <p style="font-size: var(--text-sm); color: var(--color-muted);">
+                一段跑單文字，在系統裡轉化為可被篩選的結構化情報：<strong>南屯區 × 大坪數 × 觀望開價 × 家人決策型</strong>。
+            </p>
+        </section>
+
+
+        <!-- ===== 第二步 ===== -->
+        <section class="doc-section" id="step2">
+            <div class="section-label">
+                <div class="section-label__step">2</div>
+                <span class="section-label__text">STEP TWO · 360° 客戶洞察</span>
+            </div>
+            <h2 class="section-title">系統自動生成「360° 客戶洞察」與「下一步建議」</h2>
+            <p class="section-subtitle">破碎的線上軌跡與線下紀錄，彙整成一目了然的戰略情報</p>
+
+            <p>以林太太為例，系統自動生成以下客戶檔案：</p>
+
+            <h4>客戶總體輪廓</h4>
+            <p>具備多次購屋經驗的資深置產／換屋客，具備一定財力，決策重視家人意見（與女兒同來）。</p>
+
+            <h4>產品偏好</h4>
+            <div class="tag-row">
+                <span class="tag tag--dark">台中市南屯區</span>
+                <span class="tag tag--dark">大坪數</span>
+                <span class="tag tag--dark">知名建商</span>
+            </div>
+
+            <h4>購買意願與痛點</h4>
+            <p>目前對「新日御品」高度興趣，主要觀望點為<strong>「最終開價」</strong>。一旦價格公開，屬於可立即推進的高意願客。</p>
+
+            <h4>🤖 系統自動建議（Next Best Action）</h4>
+            <ul class="doc-list">
+                <li>
+                    <span class="doc-list__icon"><i class="fa-solid fa-user-tag"></i></span>
+                    <div>
+                        <strong>指派歸屬</strong><br>
+                        判定為「A 級高潛力回籠客」，優先綁定原接洽跑單業務<strong>「陳業務」</strong>。
+                    </div>
+                </li>
+                <li>
+                    <span class="doc-list__icon"><i class="fa-solid fa-clock"></i></span>
+                    <div>
+                        <strong>觸發時機</strong><br>
+                        一旦新案價格公開，系統自動發通知給業務，要求致電邀約全家回訪。
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- ===== 第三步 ===== -->
+        <section class="doc-section" id="step3">
+            <div class="section-label">
+                <div class="section-label__step">3</div>
+                <span class="section-label__text">STEP THREE · 歷史名單分級調派</span>
+            </div>
+            <h2 class="section-title">新案強銷！歷史未購客名單的「分級調派與精準打擊」</h2>
+            <p class="section-subtitle">主管不需從零開始砸廣告盲測，系統從資料庫精準提煉潛在客源，無縫接軌派單作業</p>
+
+            <p>
+                當南屯新案【天晴萃】進場，系統自動回推撈取半年到一年前對「南屯／大坪數／同價位」有興趣的歷史名單，依互動深度分為三級：
+            </p>
+
+            <div class="tier-grid">
+
+                <!-- 金牌 -->
+                <div class="tier-cell tier-cell--gold">
+                    <div class="tier-cell__header">🥇 第一級：VIP 實體客</div>
+                    <div class="tier-cell__body">
+                        <p><strong>特徵：</strong>有實體來訪紀錄、需求明確，已有專屬業務對應。</p>
+                        <p><strong>系統動作：</strong>出單給原業務（如：陳業務）。</p>
+                    </div>
+                </div>
+
+                <!-- 銀牌 -->
+                <div class="tier-cell tier-cell--silver">
+                    <div class="tier-cell__header">🥈 第二級：線上熱客</div>
+                    <div class="tier-cell__body">
+                        <p><strong>特徵：</strong>未到過接待中心，但在 LINE 點擊過 3 次以上建案資訊，或深夜頻繁查詢。</p>
+                        <p><strong>系統動作：</strong>指派給線上客服轉化專員或值班業務。</p>
+                    </div>
+                </div>
+
+                <!-- 銅牌 -->
+                <div class="tier-cell tier-cell--bronze">
+                    <div class="tier-cell__header">🥉 第三級：淺層靜止戶</div>
+                    <div class="tier-cell__body">
+                        <p><strong>特徵：</strong>看到廣告加 LINE，僅按過一次選單就無後續動作。</p>
+                        <p><strong>系統動作：</strong>拋轉行銷團隊進行 LINE 自動化推播，不浪費業務人力。</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>精準話術對應</h3>
+
+            <div class="script-card">
+                <div class="script-card__label">🥇 第一級 VIP 實體客 — 精準話術</div>
+                <div class="script-card__body">
+                    「林太太您好，上次您看過覺得不錯的建案價格出來了！另外我們在南屯 13 期也有一個符合您大坪數需求的新案<strong>【天晴萃】</strong>，這週末方便跟女兒一起來聽聽看嗎？」
+                </div>
+            </div>
+
+            <div class="script-card">
+                <div class="script-card__label">🥈 第二級 線上熱客 — 破冰話術</div>
+                <div class="script-card__body">
+                    「您好！發現您最近在關注南屯 13 期的建案，我是專案顧問小陳，目前我們有幾份<strong>【天晴萃】</strong>尚未公開的 46 坪格局圖，請問方便傳給您參考嗎？」
+                </div>
+            </div>
+
+            <div class="script-card">
+                <div class="script-card__label">🥉 第三級 淺層靜止戶 — 推播文案</div>
+                <div class="script-card__body">
+                    「錯過新日御品？南屯 13 期最新指標大案<strong>【天晴萃】</strong>公開！37–46 坪換屋首選，首付只要 XX 萬。」
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===== 第四步 ===== -->
+        <section class="doc-section" id="step4">
+            <div class="section-label">
+                <div class="section-label__step">4</div>
+                <span class="section-label__text">STEP FOUR · 自動化派單 × 防呆稽核</span>
+            </div>
+            <h2 class="section-title">名單給出去之後，你看得見嗎？</h2>
+            <p class="section-subtitle">
+                天晴萃開賣、970 筆名單就位——從這一刻起，每一筆的去向，主管都有記錄
+            </p>
+
+            <div class="doc-lead">
+                以前推新案，主管開一個會、傳一個 Excel、說一句「趕快跟」——然後就不知道後來怎麼了。<br><br>
+                現在，【天晴萃】開案當天，主管手機收到三筆<strong>分開的</strong>審核通知。<br>
+                不是一包丟出去，是三個獨立決策點，主管可以依現況逐一放行。
+            </div>
+
+            <h3>節點一：主管分筆審批</h3>
+
+            <!-- 通知一 -->
+            <div class="notif-card">
+                <div class="notif-card__header">
+                    <span><i class="fa-solid fa-mobile-screen-button"></i>&nbsp; 通知一 — 淺層推播客</span>
+                    <span class="notif-card__count">800 筆</span>
+                </div>
+                <div class="notif-card__body">
+                    新案【<strong>天晴萃</strong>】淺層推播客已就緒，是否放行行銷推播？
+                </div>
+                <div class="notif-card__note">
+                    這 800 筆當初看到廣告加 LINE，但只互動過一次就沒再動。行銷推播成本低、不浪費業務時間，先讓媒體幫你試水溫。
+                </div>
+                <div class="notif-card__actions">
+                    <span class="action-btn action-btn--yes">Y 放行</span>
+                    <span class="action-btn action-btn--no">N 暫緩</span>
+                    <span class="action-btn action-btn--adj">調整條件</span>
+                </div>
+            </div>
+
+            <!-- 通知二 -->
+            <div class="notif-card">
+                <div class="notif-card__header">
+                    <span><i class="fa-solid fa-mobile-screen-button"></i>&nbsp; 通知二 — 線上高意願名單</span>
+                    <span class="notif-card__count">50 筆</span>
+                </div>
+                <div class="notif-card__body">
+                    新案【<strong>天晴萃</strong>】線上高意願名單，系統已預排輪派業務，是否放行派發？
+                </div>
+                <div class="notif-card__note">
+                    這 50 筆在 LINE 查過 3 次以上南屯 13 期資訊、有幾筆還是深夜查的——這種人需要業務主動接觸，不是等他自己來。
+                </div>
+                <div class="notif-card__actions">
+                    <span class="action-btn action-btn--yes">Y 放行</span>
+                    <span class="action-btn action-btn--no">N 暫緩</span>
+                    <span class="action-btn action-btn--adj">調整條件</span>
+                </div>
+            </div>
+
+            <!-- 通知三 -->
+            <div class="notif-card">
+                <div class="notif-card__header">
+                    <span><i class="fa-solid fa-mobile-screen-button"></i>&nbsp; 通知三 — 線下實體舊客</span>
+                    <span class="notif-card__count">120 筆</span>
+                </div>
+                <div class="notif-card__body">
+                    新案【<strong>天晴萃</strong>】線下實體舊客，系統已對應原負責業務，是否放行通知？
+                </div>
+                <div class="notif-card__note">
+                    這 120 筆曾經進過接待中心、有跑單紀錄，系統已對應回原業務。其中包含像林太太這樣明確說過「等最終開價」的 A 級客——現在開價出來了，就是現在打。
+                </div>
+                <div class="notif-card__actions">
+                    <span class="action-btn action-btn--yes">Y 放行</span>
+                    <span class="action-btn action-btn--no">N 暫緩</span>
+                    <span class="action-btn action-btn--adj">調整條件</span>
+                </div>
+            </div>
+
+            <h3>節點二：多線平行執行</h3>
+            <p>主管按下 Y 的那一秒，不需要再轉達、再提醒、再開一個會——【即刻通】同步發出兩條任務通知，各自負責、各自執行：</p>
+
+            <div class="task-row">
+                <div class="task-card">
+                    <div class="task-card__label"><i class="fa-solid fa-bullhorn"></i>&nbsp; 行銷端</div>
+                    <div class="task-card__body">
+                        「主管已核准，800 筆名單已匯入後台。<strong>週五截止</strong>，請完成【天晴萃】推播文案設定。逾時系統將回報主管。」
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-card__label"><i class="fa-solid fa-headset"></i>&nbsp; 業務端 — 陳業務</div>
+                    <div class="task-card__body">
+                        「陳業務您好，您有 5 筆【天晴萃】指派名單，含 1 筆 A 級優先（林太太，需求 40坪＋南屯，觀望點已解除）。<strong>請三個工作天內完成首次聯繫並更新紀事。</strong>」
+                    </div>
+                </div>
+            </div>
+
+            <h3>節點三：防呆與稽核機制</h3>
+            <p>名單給出去之後，最怕的不是業務說「我打了」——最怕的是「我打了」但系統裡什麼記錄都沒有。</p>
+            <p>派單後第七天，系統自動掃描所有名單的客戶紀事欄位。凡是空白，【即刻通】立刻發警報給主管：</p>
+
+            <div class="alert-box">
+                <div class="alert-box__title">⚠️ 逾期未聯繫警報</div>
+                <p>
+                    業務【<strong>小陳</strong>】的 5 筆【天晴萃】名單，派發後已逾 7 天，客戶紀事欄位仍為空白。<br>
+                    其中包含 2 筆線上高意願客、1 筆曾主動來電詢問格局。<br>
+                    請主管確認：<strong>介入了解 / 重新收回轉派</strong>。
+                </p>
+            </div>
+
+            <p style="font-size: var(--text-sm); color: var(--color-muted);">
+                這不是懲罰業務。這是保護這 5 筆名單背後，你當初花錢買回來的機會。
+            </p>
+        </section>
+
+
+        <!-- ===== 結語 ===== -->
+        <section class="doc-section" id="closing">
+            <div class="section-label">
+                <div class="section-label__step"><i class="fa-solid fa-flag" style="font-size:10px;"></i></div>
+                <span class="section-label__text">CLOSING · 總結結語</span>
+            </div>
+
+            <div class="doc-closing">
+                <div class="doc-closing__em">
+                    從林太太走進接待中心的那一刻起，<br>
+                    天晴萃開賣的那一天，不是從零開始
+                </div>
+                <p>
+                    她的每一個偏好、每一次遲疑、每一個「等我再想想」——<br>
+                    都在系統裡等著下一個開口的機會。<br><br>
+                    是從 <strong>970 筆已知道他們要什麼的人</strong>，精準出手。<br><br>
+                    這套機制保護的，不只是名單。<br>
+                    是你每一分廣告費換回來的機會，<strong>一次都不浪費</strong>。
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]: CDP 整合行銷文案 — FB / EDM / Landing Page
+    - generic [ref=e4]:
+      - link "FB 廣告" [ref=e5] [cursor=pointer]:
+        - /url: "#fb-ads"
+      - link "EDM 簡報" [ref=e6] [cursor=pointer]:
+        - /url: "#edm"
+      - link "Landing Page" [ref=e7] [cursor=pointer]:
+        - /url: "#landing-page"
+  - generic [ref=e8]:
+    - banner [ref=e9]:
+      - generic [ref=e10]: CDP 整合行銷 / 2026 Q2 / 文案企劃稿
+      - heading "房地產 AI CDP 整合行銷文案" [level=1] [ref=e11]:
+        - text: 房地產 AI CDP
+        - text: 整合行銷文案
+      - generic [ref=e12]:
+        - generic [ref=e13]: 內容：FB 廣告 × 2 / EDM 6 頁 / Landing Page
+        - generic [ref=e14]: 日期：2026-04-23
+        - generic [ref=e15]: 受眾：建商 / 代銷 / 銷售主管
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: "1"
+        - generic [ref=e19]: PART ONE · 兩則 FB 廣告文（A/B Test 測試用）
+      - heading "FB 廣告文 A/B 版本" [level=2] [ref=e20]
+      - paragraph [ref=e21]: 針對不同受眾痛點設計兩個版本，用於 A/B 測試找出最佳轉化路徑
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: 
+          - text: 廣告 A 版：痛點與金錢損失切入（主打：震撼與反思）
+        - generic [ref=e25]:
+          - strong [ref=e26]: 適合受眾：
+          - text: 建商老闆、代銷負責人（對成本極度敏感者）
+        - generic [ref=e27]:
+          - paragraph [ref=e28]:
+            - strong [ref=e29]: 你花了多少錢，買到一個進接待中心的客人？
+          - paragraph [ref=e30]:
+            - text: 數位廣告 + 活動造勢 + 人員成本——每一筆實體來人，保守估計落在
+            - strong [ref=e31]: 3,000 到 8,000 元
+            - text: 。
+          - paragraph [ref=e32]: 那個週末進來、問了格局、說「回去跟家人討論」的林太太，你花了 5,000 元讓她走進來。但三個月後，這筆名單還躺在系統裡。沒有人追她，也沒有人知道她其實還在等一個開價。
+          - paragraph [ref=e33]:
+            - strong [ref=e34]: 這不是業務的問題。這是你沒有一套系統幫業務記住她。
+          - separator [ref=e35]
+          - paragraph [ref=e36]:
+            - strong [ref=e37]: 【房地產專屬 AI CDP 業績引擎】
+            - text: 讓沉睡名單，變成下一個新案業績！
+          - list [ref=e38]:
+            - listitem [ref=e39]:
+              - text: ✅
+              - strong [ref=e40]: 生成式 AI 賦能
+              - text: ：自動生成破冰話術，精準喚醒舊客。
+            - listitem [ref=e41]:
+              - text: ✅
+              - strong [ref=e42]: 專屬「即刻通」APP
+              - text: ：防呆稽核，確保每一筆花錢買來的名單都被追到底。
+            - listitem [ref=e43]:
+              - text: ✅
+              - strong [ref=e44]: 2 週極速導入
+              - text: ：無痛接軌現有銷控流程。
+          - paragraph [ref=e45]: 別讓行銷預算變成死水。
+          - generic [ref=e46]: 👉 點擊連結，了解如何喚醒你的沉睡金礦
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: 
+          - text: 廣告 B 版：主管痛點切入（主打：管理控制力）
+        - generic [ref=e50]:
+          - strong [ref=e51]: 適合受眾：
+          - text: 專案經理、銷售主管、總監（需要管理團隊與進度者）
+        - generic [ref=e52]:
+          - paragraph [ref=e53]:
+            - strong [ref=e54]: 主管，你最大的管理漏洞，不在業務不努力——
+            - text: 在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。
+          - paragraph [ref=e55]:
+            - text: 以前你管業務靠開會、靠問、靠感覺。
+            - text: 結果就是盲目派單，業務打到心累，客戶接到煩躁。
+          - separator [ref=e56]
+          - paragraph [ref=e57]:
+            - strong [ref=e58]: 【房地產專屬 AI CDP 業績引擎】讓你從「被動管理」變成「主動掌握」：
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - text: 1️⃣
+              - strong [ref=e61]: 你不在場時
+              - text: ，系統幫你記住每個客人說過什麼。
+            - listitem [ref=e62]:
+              - text: 2️⃣
+              - strong [ref=e63]: 你決定誰先打
+              - text: ，AI 幫你把客戶分級，執行不出錯。
+            - listitem [ref=e64]:
+              - text: 3️⃣
+              - strong [ref=e65]: 一週後系統自動警報
+              - text: ，專屬 APP 告訴你誰沒動作，不需要你自己盯！
+          - paragraph [ref=e66]:
+            - text: 你的時間，應該花在決策，而不是追進度。
+            - text: 導入 AI 幕僚，最快 2 週即可上線，趕上下一波強銷期！
+          - generic [ref=e67]: 👉 點擊連結，看 AI 如何幫你管好千萬名單
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]: "2"
+        - generic [ref=e71]: PART TWO · EDM 簡報文案（6 頁結構）
+      - heading "EDM 簡報 — 6 頁完整架構" [level=2] [ref=e72]
+      - paragraph [ref=e73]: 適合業務直接寄給客戶，或作為 1 對 1 拜訪時的 iPad 簡報使用
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - generic [ref=e76]: "1"
+          - text: 封面 — 痛點破題
+        - generic [ref=e77]:
+          - heading "把沉睡的舊名單，變成新案業績！" [level=3] [ref=e78]
+          - paragraph [ref=e79]:
+            - text: 你花了多少錢，買到一個進接待中心的客人？（3,000 - 8,000 元/人）。
+            - text: 別讓未成交名單，成為最昂貴的數位垃圾。
+        - generic [ref=e80]:
+          - strong [ref=e81]: 視覺建議：
+          - text: 對比圖（左邊是燃燒的鈔票/成堆的紙本資料，右邊是發光的數據金礦）。
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - generic [ref=e84]: "2"
+          - text: 行業現況 — 管理漏洞
+        - generic [ref=e85]:
+          - heading "這不是業務的問題，這是系統的斷層。" [level=3] [ref=e86]
+          - paragraph [ref=e87]: 主管，你最大的管理漏洞，不在業務不努力，在你根本不知道哪一筆名單被誰追過。
+          - heading "痛點條列" [level=4] [ref=e88]
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - generic [ref=e92]: 
+              - generic [ref=e93]:
+                - strong [ref=e94]: 線上線下數據斷層
+                - text: — LINE 互動與現場跑單紀錄各存各的，無法串聯。
+            - listitem [ref=e95]:
+              - generic [ref=e97]: 
+              - generic [ref=e98]:
+                - strong [ref=e99]: 盲目派單惹惱客戶
+                - text: — 同一客戶被不同業務重複聯繫，體驗極差。
+            - listitem [ref=e100]:
+              - generic [ref=e102]: 
+              - generic [ref=e103]:
+                - strong [ref=e104]: 缺乏防呆，漏網之魚
+                - text: — 名單派出去後沒人追蹤，機會白白流失。
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - generic [ref=e107]: "3"
+          - text: 核心價值 — 房地產專屬的作戰時間軸
+        - generic [ref=e108]:
+          - heading "從開案前到清尾，讓名單在每一個階段都為你生財。" [level=3] [ref=e109]
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - generic [ref=e112]: T-60 天（開案前）
+              - generic [ref=e113]: 貼標建檔
+              - generic [ref=e114]: 名單先養好，等新案一開就能打。
+            - generic [ref=e115]:
+              - generic [ref=e116]: T-0（公開日）
+              - generic [ref=e117]: 分級調派
+              - generic [ref=e118]: 歷史名單立刻啟動，不用等廣告投 2 週才進流量。
+            - generic [ref=e119]:
+              - generic [ref=e120]: T+90 天（清尾期）
+              - generic [ref=e121]: 防呆稽核
+              - generic [ref=e122]: 清尾名單不浪費，自動轉為下個建案的暖身池。
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - generic [ref=e125]: "4"
+          - text: 解決方案 — 4 步 AI 變現旅程
+        - generic [ref=e126]:
+          - heading "以前靠感覺，現在靠數據與系統警報。" [level=3] [ref=e127]
+          - list [ref=e128]:
+            - listitem [ref=e129]:
+              - generic [ref=e131]: 
+              - generic [ref=e132]:
+                - strong [ref=e133]: Step 1 數據縫合
+                - text: 你不在場時，系統幫你記住每個客人說過什麼。
+            - listitem [ref=e134]:
+              - generic [ref=e136]: 
+              - generic [ref=e137]:
+                - strong [ref=e138]: Step 2 意願分級
+                - text: 業務接單前，AI 已做好客戶背調與分級。
+            - listitem [ref=e139]:
+              - generic [ref=e141]: 
+              - generic [ref=e142]:
+                - strong [ref=e143]: Step 3 智慧派單
+                - text: 你決定誰先打，生成式 AI 自動附上專屬「破冰話術」。
+            - listitem [ref=e144]:
+              - generic [ref=e146]: 
+              - generic [ref=e147]:
+                - strong [ref=e148]: Step 4 防呆稽核
+                - text: 專屬「即刻通」APP 追蹤，誰沒動作系統自動提報，不用自己盯。
+      - generic [ref=e149]:
+        - generic [ref=e150]:
+          - generic [ref=e151]: "5"
+          - text: 成功情境 — 遇見林太太
+        - generic [ref=e152]:
+          - heading "一次完美的 AI 喚醒救援" [level=3] [ref=e153]
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - generic [ref=e156]: 3 月看屋
+              - generic [ref=e157]: 林太太覺得不錯但「想等最終開價」
+              - generic [ref=e158]:
+                - text: 系統自動貼標：
+                - generic [ref=e159]: 大坪數
+                - generic [ref=e160]: 觀望開價
+            - generic [ref=e161]:
+              - generic [ref=e162]: 9 月新案
+              - generic [ref=e163]: AI 自動掃描，將林太太列為 A 級熱客
+              - generic [ref=e164]: 歷史名單回掃，精準命中符合條件的潛在買家。
+            - generic [ref=e165]:
+              - generic [ref=e166]: 業務接單
+              - generic [ref=e167]: 收到 AI 提示與專屬話術
+              - generic [ref=e168]: 第一句話精準命中：「林太太，您上次看過的價格出來了，另外我們有個新案更符合您的需求...」
+            - generic [ref=e169]:
+              - generic [ref=e170]: 完美結局
+              - generic [ref=e171]: 沒有「我再想想」，只有「好，這週末見」。
+              - generic [ref=e172]: 精準喚醒，高效成交。
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - generic [ref=e175]: "6"
+          - text: 行動呼籲 — 結尾
+        - generic [ref=e176]:
+          - heading "讓對的房子，在對的時間，遇見對的客戶。" [level=3] [ref=e177]
+          - generic [ref=e178]:
+            - generic [ref=e179]: ✅ 生成式 AI 串接
+            - generic [ref=e180]: ✅ 2 週極速導入
+            - generic [ref=e181]: ✅ 企業級資安防護
+          - generic [ref=e182]: 聯絡專屬顧問，評估您的 AI 銷控方案
+    - generic [ref=e183]:
+      - generic [ref=e184]:
+        - generic [ref=e185]: "3"
+        - generic [ref=e186]: PART THREE · Landing Page 全文案
+      - heading "Landing Page — 高轉化架構" [level=2] [ref=e187]
+      - paragraph [ref=e188]: 採用「痛點共鳴 → 故事引導 → 功能轉譯 → 行業應用 → 信任建立」的經典高轉換架構
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - generic [ref=e191]: 
+          - text: Hero Banner 首屏區
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - generic [ref=e194]: 房地產專屬 MarTech
+            - generic [ref=e195]: AI 業績變現引擎
+          - heading "喚醒沉睡名單，打造您的「全天候 AI 銷售幕僚」" [level=3] [ref=e196]
+          - paragraph [ref=e197]:
+            - text: 每一次的廣告曝光與賞屋，都在為下一個新案儲備精準彈藥。
+            - text: 透過生成式 AI 與專屬行動稽核，讓線上軌跡與線下成交無縫接軌。
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]: 2 週
+              - generic [ref=e201]: 極速導入
+            - generic [ref=e202]:
+              - generic [ref=e203]: 25%↑
+              - generic [ref=e204]: 預估喚醒回籠率提升
+            - generic [ref=e205]:
+              - generic [ref=e206]: 40%↓
+              - generic [ref=e207]: 節省盲目 Call 客時間
+          - generic [ref=e208]: 立即預約免費顧問諮詢
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - generic [ref=e211]: "1"
+          - text: Section 1：痛點區（金錢與管理雙重夾擊）
+        - generic [ref=e212]:
+          - heading "你花了多少錢，買到一個進接待中心的客人？" [level=3] [ref=e213]
+          - paragraph [ref=e214]:
+            - text: 每一筆實體來客，廣告加上人員成本保守估計落在
+            - strong [ref=e215]: 3,000 到 8,000 元
+            - text: 。那個週末進來、說「回去跟家人討論」的客戶，你花了 5,000 元讓她走進來，但三個月後，她卻成了系統裡的死水。
+          - blockquote [ref=e216]:
+            - text: “
+            - paragraph [ref=e217]: 「主管，你最大的管理漏洞，不在業務不努力——在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。」
+          - paragraph [ref=e218]: 這不是業務的問題，而是你沒有一套懂房地產的系統幫你記住客戶。
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - generic [ref=e221]: "2"
+          - text: Section 2：情境故事區（深度共鳴）
+        - generic [ref=e222]:
+          - heading "看看 AI 如何幫你找回「林太太」" [level=3] [ref=e223]
+          - generic [ref=e224]:
+            - generic [ref=e225]:
+              - generic [ref=e226]: "[開案前暖身] 3月15日｜接待中心"
+              - generic [ref=e227]: 林太太看房後表示「想等最終開價」
+              - generic [ref=e228]:
+                - text: 業務輸入備註。系統自動貼標：
+                - generic [ref=e229]: 南屯區
+                - generic [ref=e230]: 換屋族
+                - generic [ref=e231]: 觀望開價
+            - generic [ref=e232]:
+              - generic [ref=e233]: "[持續追蹤] 3月20日｜線上軌跡"
+              - generic [ref=e234]: 林太太點開 LINE 推播，停留 40 秒
+              - generic [ref=e235]:
+                - text: 系統疊加標籤：
+                - generic [ref=e236]: 高互動意願
+                - text: 她自己都沒意識到，需求已被完整記錄。
+            - generic [ref=e237]:
+              - generic [ref=e238]: "[精準喚醒] 9月｜新案即將開賣"
+              - generic [ref=e239]: 系統自動回掃歷史名單，林太太躍升「A 級熱客」
+              - generic [ref=e240]:
+                - text: 業務的「即刻通」APP 跳出通知與
+                - strong [ref=e241]: AI 生成破冰話術
+                - text: ：「林太太您好，上次您觀望的開價出來了，我們有個新案更符合您...」
+            - generic [ref=e242]:
+              - generic [ref=e243]: "[完美成交]"
+              - generic [ref=e244]: 這次，她沒有說「我再想想」
+              - generic [ref=e245]: 她說：「好，禮拜六早上見。」
+          - strong [ref=e247]: 你有多少個林太太還沒被追回來？
+      - generic [ref=e248]:
+        - generic [ref=e249]:
+          - generic [ref=e250]: "3"
+          - text: Section 3：解決方案區（主管視角的 4 步防漏網）
+        - generic [ref=e251]:
+          - heading "你的時間應該花在決策，不是追進度。" [level=3] [ref=e252]
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - generic [ref=e256]: 
+              - generic [ref=e257]: 1. OMO 數據縫合：你不在場，系統幫你記
+              - generic [ref=e258]: 不再有線上線下斷層。系統自動整合 LINE 互動與跑單備註，業務接單前，AI 已經把客戶背調做好。
+            - generic [ref=e259]:
+              - generic [ref=e261]: 
+              - generic [ref=e262]: 2. AI 意願分級：揪出隱藏的熱客
+              - generic [ref=e263]: 告別盲目 Call 客。生成式 AI 讀懂非結構化文字，精準推測產品偏好，自動將意願分級（A/B/C）。
+            - generic [ref=e264]:
+              - generic [ref=e266]: 
+              - generic [ref=e267]: 3. 智慧派單與 GenAI 破冰：你決定誰先打
+              - generic [ref=e268]: 決定權在你手上。系統執行不出錯，更自動為業務生成專屬「破冰話術」，第一句話就切中要害。
+            - generic [ref=e269]:
+              - generic [ref=e271]: 
+              - generic [ref=e272]: 4. 防呆稽核：一週後自動警報
+              - generic [ref=e273]:
+                - text: 專屬
+                - strong [ref=e274]: 「即刻通」APP
+                - text: 無縫串聯第一線。逾期未追蹤的名單，系統直接通報主管，不需你自己辛苦盯進度。
+      - generic [ref=e275]:
+        - generic [ref=e276]:
+          - generic [ref=e277]: "4"
+          - text: Section 4：行業應用區（貼合房地產時間軸）
+        - generic [ref=e278]:
+          - heading "為房地產銷售週期量身打造的作戰計畫" [level=3] [ref=e279]
+          - generic [ref=e280]:
+            - generic [ref=e281]:
+              - generic [ref=e282]: T-60 天（開案前）｜現在就在養名單
+              - generic [ref=e283]: 廣告與 LINE 加友，都在為下一檔儲備彈藥庫
+              - generic [ref=e284]: 現在推的廣告、LINE 加友，都在為下一檔儲備彈藥庫。
+            - generic [ref=e285]:
+              - generic [ref=e286]: T-0（公開日）｜歷史名單同步啟動
+              - generic [ref=e287]: 開賣當天，系統自動喚醒半年前的潛在客
+              - generic [ref=e288]: 不需苦等兩週廣告流量。
+            - generic [ref=e289]:
+              - generic [ref=e290]: T+90 天（清尾期）｜名單絕不浪費
+              - generic [ref=e291]: 沒轉換的名單自動進入下個建案的暖身池
+              - generic [ref=e292]: 不是等著被封存的垃圾數據。
+      - generic [ref=e293]:
+        - generic [ref=e294]:
+          - generic [ref=e295]: "5"
+          - text: Section 5：信任與優勢區（Why Us?）
+        - generic [ref=e296]:
+          - heading "不要讓複雜的系統拖垮銷售節奏。" [level=3] [ref=e297]
+          - generic [ref=e298]:
+            - generic [ref=e299]:
+              - generic [ref=e300]: ⚡
+              - generic [ref=e301]: 2 週極速上線
+              - generic [ref=e302]: 專為房地產銷控邏輯設計，免去漫長開發期。
+            - generic [ref=e303]:
+              - generic [ref=e304]: 🧠
+              - generic [ref=e305]: 生成式 AI 深度整合
+              - generic [ref=e306]: 不只是 Rule-based，AI 真正讀懂語意並產出策略。
+            - generic [ref=e307]:
+              - generic [ref=e308]: 🔒
+              - generic [ref=e309]: 企業級資安防護
+              - generic [ref=e310]: 名單是您的命脈。嚴格權限控管與資料保護，確保資產絕對安全。
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - generic [ref=e313]: 
+          - text: Footer — 最終行動呼籲
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - generic [ref=e316]:
+              - text: 準備好讓沉睡數據
+              - text: 為您賺錢了嗎？
+            - paragraph [ref=e317]:
+              - text: 以前管業務靠感覺，現在靠數據與系統。
+              - text: 交給房地產專屬 AI 幕僚，找回您流失的百萬業績。
+          - heading "表單區域" [level=4] [ref=e318]
+          - generic [ref=e319]:
+            - generic [ref=e321]: 姓名
+            - generic [ref=e324]: 公司名稱
+            - generic [ref=e327]: 職稱
+            - generic [ref=e330]: 聯絡電話
+            - generic [ref=e332]:
+              - generic [ref=e333]: 您目前最大的痛點？
+              - generic [ref=e334]: 名單浪費 / 業務難管 / 廣告費太高 / 其他
+            - generic [ref=e336]: 聯絡顧問，免費評估導入方案

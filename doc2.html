@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDP 整合行銷文案 — FB 廣告 / EDM / Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-black: #111111;
+            --color-ink: #1a1a1a;
+            --color-text: #2d2d2d;
+            --color-muted: #666666;
+            --color-border: #e0e0e0;
+            --color-bg-soft: #f8f8f6;
+            --color-accent: #5C3D2E;
+            --color-accent-light: #f5ede8;
+            --color-highlight: #fffbf0;
+            --color-alert: #7a1a1a;
+            --color-alert-bg: #fff5f5;
+            --color-cta: #C8956C;
+            --color-cta-hover: #b37f58;
+
+            --font-sans: 'Noto Sans TC', sans-serif;
+            --font-serif: 'Noto Serif TC', serif;
+
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 2.5rem;
+
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: #ffffff;
+            line-height: 1.8;
+        }
+
+        /* ===== 頁面頂部索引列 ===== */
+        .doc-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) var(--space-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            z-index: 100;
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+        }
+        .doc-nav__brand {
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+            white-space: nowrap;
+        }
+        .doc-nav__links { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+        .doc-nav__links a {
+            color: var(--color-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .doc-nav__links a:hover { color: var(--color-accent); }
+
+        /* ===== 主容器 ===== */
+        .doc-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        /* ===== 文件頁首 ===== */
+        .doc-header {
+            border-bottom: 2px solid var(--color-black);
+            padding-bottom: var(--space-xl);
+            margin-bottom: var(--space-3xl);
+        }
+        .doc-header__label {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+        .doc-header__title {
+            font-family: var(--font-serif);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            color: var(--color-black);
+            line-height: 1.3;
+            margin-bottom: var(--space-lg);
+        }
+        .doc-header__meta {
+            display: flex;
+            gap: var(--space-xl);
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+        }
+
+        /* ===== 章節 ===== */
+        .doc-section {
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-3xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .doc-section:last-child { border-bottom: none; }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        .section-label__step {
+            width: 28px;
+            height: 28px;
+            background: var(--color-black);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .section-label__text {
+            font-size: var(--text-xs);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            color: var(--color-black);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--space-sm);
+        }
+        .section-subtitle {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            margin-bottom: var(--space-xl);
+            line-height: 1.7;
+        }
+
+        /* ===== 文字元素 ===== */
+        p { margin-bottom: var(--space-md); font-size: var(--text-base); }
+
+        h3 {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--color-black);
+            margin: var(--space-xl) 0 var(--space-md);
+        }
+        h4 {
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--color-ink);
+            margin: var(--space-lg) 0 var(--space-sm);
+        }
+
+        /* ===== 引言區塊 ===== */
+        .doc-lead {
+            background: var(--color-bg-soft);
+            border-left: 3px solid var(--color-black);
+            padding: var(--space-lg) var(--space-xl);
+            margin: var(--space-xl) 0;
+            font-size: var(--text-lg);
+            line-height: 1.9;
+            color: var(--color-ink);
+        }
+        .doc-lead strong { color: var(--color-black); }
+
+        /* ===== Blockquote ===== */
+        blockquote {
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            background: var(--color-highlight);
+            font-size: var(--text-sm);
+            line-height: 1.8;
+            color: var(--color-ink);
+            position: relative;
+        }
+        blockquote::before {
+            content: '\201C';
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--color-border);
+            line-height: 1;
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-md);
+        }
+        blockquote p { padding-left: var(--space-xl); margin: 0; }
+
+        /* ===== 標籤組 ===== */
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: var(--text-xs);
+            font-weight: 500;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border: 1px solid #ddc8be;
+        }
+        .tag--dark {
+            background: var(--color-black);
+            color: #fff;
+            border-color: var(--color-black);
+        }
+
+        /* ===== 項目條列 ===== */
+        .doc-list {
+            list-style: none;
+            margin: var(--space-md) 0 var(--space-lg);
+        }
+        .doc-list li {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--text-sm);
+            line-height: 1.7;
+        }
+        .doc-list li:last-child { border-bottom: none; }
+        .doc-list__icon {
+            width: 20px;
+            flex-shrink: 0;
+            padding-top: 2px;
+            color: var(--color-accent);
+        }
+
+        /* ===== 分隔線 ===== */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: var(--space-xl) 0;
+        }
+        .divider--thick {
+            border-top: 3px solid var(--color-black);
+            margin: var(--space-3xl) 0;
+        }
+
+        /* ===== 說明小字 ===== */
+        .doc-note {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            margin: var(--space-md) 0;
+            line-height: 1.7;
+        }
+
+        /* ===== 廣告卡片 ===== */
+        .ad-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+            background: #fff;
+        }
+        .ad-card__header {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .ad-card__header--a {
+            background: #fff5f0;
+            color: #c0392b;
+        }
+        .ad-card__header--b {
+            background: #f0f5ff;
+            color: #2c3e8f;
+        }
+        .ad-card__body {
+            padding: var(--space-xl);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+        }
+        .ad-card__body strong { color: var(--color-black); }
+        .ad-card__target {
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            border-top: 1px solid var(--color-border);
+        }
+        .ad-card__cta {
+            display: inline-block;
+            margin-top: var(--space-md);
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 4px;
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .ad-card__features {
+            margin: var(--space-md) 0;
+        }
+        .ad-card__features li {
+            list-style: none;
+            padding: var(--space-xs) 0;
+            font-size: var(--text-sm);
+        }
+
+        /* ===== EDM 頁面卡片 ===== */
+        .edm-page {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+            background: #fff;
+        }
+        .edm-page__header {
+            padding: var(--space-md) var(--space-lg);
+            background: var(--color-black);
+            color: #fff;
+            font-size: var(--text-sm);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .edm-page__header span.page-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: #fff;
+            color: var(--color-black);
+            border-radius: 50%;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .edm-page__body {
+            padding: var(--space-xl);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+        }
+        .edm-page__body h4 {
+            margin-top: var(--space-md);
+        }
+        .edm-page__body strong { color: var(--color-black); }
+        .edm-page__note {
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            border-top: 1px solid var(--color-border);
+            line-height: 1.7;
+        }
+
+        /* ===== 時間軸 ===== */
+        .timeline {
+            position: relative;
+            margin: var(--space-xl) 0;
+            padding-left: 28px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+        .timeline__item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            padding-left: var(--space-lg);
+        }
+        .timeline__item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+        .timeline__label {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-accent);
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+        }
+        .timeline__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-xs);
+        }
+        .timeline__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* ===== Landing Page 區段卡 ===== */
+        .lp-section {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+        }
+        .lp-section__header {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border-bottom: 1px solid #ddc8be;
+        }
+        .lp-section__body {
+            padding: var(--space-xl);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+        }
+        .lp-section__body strong { color: var(--color-black); }
+
+        /* ===== 特點網格 ===== */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .feature-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-lg);
+        }
+        .feature-card__icon {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-sm);
+        }
+        .feature-card__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-sm);
+        }
+        .feature-card__desc {
+            font-size: var(--text-xs);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* ===== 三欄 ICON 強調 ===== */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .icon-item {
+            text-align: center;
+            padding: var(--space-lg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+        .icon-item__icon {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-sm);
+        }
+        .icon-item__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-xs);
+        }
+        .icon-item__desc {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            line-height: 1.7;
+        }
+
+        /* ===== CTA 按鈕模擬 ===== */
+        .cta-btn {
+            display: inline-block;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: var(--text-base);
+            text-decoration: none;
+            margin: var(--space-md) 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== 表單模擬 ===== */
+        .form-mock {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+            background: var(--color-bg-soft);
+        }
+        .form-mock__field {
+            margin-bottom: var(--space-md);
+        }
+        .form-mock__label {
+            display: block;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-muted);
+            margin-bottom: var(--space-xs);
+        }
+        .form-mock__input {
+            display: block;
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: var(--text-sm);
+            background: #fff;
+            color: var(--color-text);
+        }
+
+        /* ===== 結語強調 ===== */
+        .doc-closing {
+            text-align: center;
+            padding: var(--space-3xl) var(--space-xl);
+            border: 1px solid var(--color-black);
+            border-radius: 8px;
+            background: var(--color-bg-soft);
+        }
+        .doc-closing__em {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            color: var(--color-black);
+            line-height: 1.5;
+            margin-bottom: var(--space-lg);
+            font-weight: 600;
+        }
+        .doc-closing p {
+            font-size: var(--text-base);
+            color: var(--color-muted);
+            line-height: 1.9;
+        }
+        .doc-closing strong { color: var(--color-black); }
+
+        /* ===== 數據亮點 ===== */
+        .stats-row {
+            display: flex;
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+        .stat-badge {
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: #fff;
+        }
+        .stat-badge__value {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+        .stat-badge__label {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            margin-top: var(--space-xs);
+        }
+
+        /* ===== 響應式 ===== */
+        @media (max-width: 640px) {
+            .doc-wrap { padding: var(--space-xl) var(--space-md); }
+            .doc-nav__links { display: none; }
+            .doc-header__title { font-size: var(--text-2xl); }
+            .doc-header__meta { flex-direction: column; gap: var(--space-sm); }
+            .doc-closing__em { font-size: var(--text-xl); }
+            .feature-grid { grid-template-columns: 1fr; }
+            .icon-grid { grid-template-columns: 1fr; }
+            .stats-row { flex-direction: column; }
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .doc-nav { display: none; }
+            .doc-wrap { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部索引列 -->
+    <nav class="doc-nav">
+        <span class="doc-nav__brand">CDP 整合行銷文案 — FB / EDM / Landing Page</span>
+        <div class="doc-nav__links">
+            <a href="#fb-ads">FB 廣告</a>
+            <a href="#edm">EDM 簡報</a>
+            <a href="#landing-page">Landing Page</a>
+        </div>
+    </nav>
+
+    <div class="doc-wrap">
+
+        <!-- ==================== 文件頁首 ==================== -->
+        <header class="doc-header">
+            <div class="doc-header__label">CDP 整合行銷 &nbsp;/&nbsp; 2026 Q2 &nbsp;/&nbsp; 文案企劃稿</div>
+            <h1 class="doc-header__title">
+                房地產 AI CDP<br>整合行銷文案
+            </h1>
+            <div class="doc-header__meta">
+                <span>內容：FB 廣告 × 2 / EDM 6 頁 / Landing Page</span>
+                <span>日期：2026-04-23</span>
+                <span>受眾：建商 / 代銷 / 銷售主管</span>
+            </div>
+        </header>
+
+
+        <!-- ============================================================ -->
+        <!-- (1) FB 廣告 A/B Test                                         -->
+        <!-- ============================================================ -->
+        <section class="doc-section" id="fb-ads">
+            <div class="section-label">
+                <div class="section-label__step">1</div>
+                <span class="section-label__text">PART ONE · 兩則 FB 廣告文（A/B Test 測試用）</span>
+            </div>
+            <h2 class="section-title">FB 廣告文 A/B 版本</h2>
+            <p class="section-subtitle">針對不同受眾痛點設計兩個版本，用於 A/B 測試找出最佳轉化路徑</p>
+
+            <!-- ===== 廣告 A 版 ===== -->
+            <div class="ad-card">
+                <div class="ad-card__header ad-card__header--a">
+                    <i class="fa-solid fa-fire"></i>
+                    廣告 A 版：痛點與金錢損失切入（主打：震撼與反思）
+                </div>
+                <div class="ad-card__target">
+                    <strong>適合受眾：</strong>建商老闆、代銷負責人（對成本極度敏感者）
+                </div>
+                <div class="ad-card__body">
+                    <p><strong>你花了多少錢，買到一個進接待中心的客人？</strong></p>
+                    <p>
+                        數位廣告 + 活動造勢 + 人員成本——每一筆實體來人，保守估計落在 <strong>3,000 到 8,000 元</strong>。
+                    </p>
+                    <p>
+                        那個週末進來、問了格局、說「回去跟家人討論」的林太太，你花了 5,000 元讓她走進來。但三個月後，這筆名單還躺在系統裡。沒有人追她，也沒有人知道她其實還在等一個開價。
+                    </p>
+                    <p><strong>這不是業務的問題。這是你沒有一套系統幫業務記住她。</strong></p>
+
+                    <hr class="divider">
+
+                    <p><strong>【房地產專屬 AI CDP 業績引擎】</strong><br>讓沉睡名單，變成下一個新案業績！</p>
+
+                    <ul class="ad-card__features">
+                        <li>✅ <strong>生成式 AI 賦能</strong>：自動生成破冰話術，精準喚醒舊客。</li>
+                        <li>✅ <strong>專屬「即刻通」APP</strong>：防呆稽核，確保每一筆花錢買來的名單都被追到底。</li>
+                        <li>✅ <strong>2 週極速導入</strong>：無痛接軌現有銷控流程。</li>
+                    </ul>
+
+                    <p>別讓行銷預算變成死水。</p>
+                    <span class="cta-btn">👉 點擊連結，了解如何喚醒你的沉睡金礦</span>
+                </div>
+            </div>
+
+            <!-- ===== 廣告 B 版 ===== -->
+            <div class="ad-card">
+                <div class="ad-card__header ad-card__header--b">
+                    <i class="fa-solid fa-fire"></i>
+                    廣告 B 版：主管痛點切入（主打：管理控制力）
+                </div>
+                <div class="ad-card__target">
+                    <strong>適合受眾：</strong>專案經理、銷售主管、總監（需要管理團隊與進度者）
+                </div>
+                <div class="ad-card__body">
+                    <p><strong>主管，你最大的管理漏洞，不在業務不努力——</strong><br>在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。</p>
+                    <p>
+                        以前你管業務靠開會、靠問、靠感覺。<br>
+                        結果就是盲目派單，業務打到心累，客戶接到煩躁。
+                    </p>
+
+                    <hr class="divider">
+
+                    <p><strong>【房地產專屬 AI CDP 業績引擎】讓你從「被動管理」變成「主動掌握」：</strong></p>
+
+                    <ul class="ad-card__features">
+                        <li>1️⃣ <strong>你不在場時</strong>，系統幫你記住每個客人說過什麼。</li>
+                        <li>2️⃣ <strong>你決定誰先打</strong>，AI 幫你把客戶分級，執行不出錯。</li>
+                        <li>3️⃣ <strong>一週後系統自動警報</strong>，專屬 APP 告訴你誰沒動作，不需要你自己盯！</li>
+                    </ul>
+
+                    <p>
+                        你的時間，應該花在決策，而不是追進度。<br>
+                        導入 AI 幕僚，最快 2 週即可上線，趕上下一波強銷期！
+                    </p>
+                    <span class="cta-btn">👉 點擊連結，看 AI 如何幫你管好千萬名單</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================================ -->
+        <!-- (2) EDM 簡報架構（6 頁）                                      -->
+        <!-- ============================================================ -->
+        <section class="doc-section" id="edm">
+            <div class="section-label">
+                <div class="section-label__step">2</div>
+                <span class="section-label__text">PART TWO · EDM 簡報文案（6 頁結構）</span>
+            </div>
+            <h2 class="section-title">EDM 簡報 — 6 頁完整架構</h2>
+            <p class="section-subtitle">適合業務直接寄給客戶，或作為 1 對 1 拜訪時的 iPad 簡報使用</p>
+
+            <!-- ===== Page 1 ===== -->
+            <div class="edm-page">
+                <div class="edm-page__header">
+                    <span class="page-num">1</span>
+                    封面 — 痛點破題
+                </div>
+                <div class="edm-page__body">
+                    <h3 style="margin-top:0;">把沉睡的舊名單，變成新案業績！</h3>
+                    <p style="color: var(--color-muted);">
+                        你花了多少錢，買到一個進接待中心的客人？（3,000 - 8,000 元/人）。<br>
+                        別讓未成交名單，成為最昂貴的數位垃圾。
+                    </p>
+                </div>
+                <div class="edm-page__note">
+                    <strong>視覺建議：</strong>對比圖（左邊是燃燒的鈔票/成堆的紙本資料，右邊是發光的數據金礦）。
+                </div>
+            </div>
+
+            <!-- ===== Page 2 ===== -->
+            <div class="edm-page">
+                <div class="edm-page__header">
+                    <span class="page-num">2</span>
+                    行業現況 — 管理漏洞
+                </div>
+                <div class="edm-page__body">
+                    <h3 style="margin-top:0;">這不是業務的問題，這是系統的斷層。</h3>
+                    <p>
+                        主管，你最大的管理漏洞，不在業務不努力，在你根本不知道哪一筆名單被誰追過。
+                    </p>
+
+                    <h4>痛點條列</h4>
+                    <ul class="doc-list">
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-link-slash"></i></span>
+                            <div><strong>線上線下數據斷層</strong> — LINE 互動與現場跑單紀錄各存各的，無法串聯。</div>
+                        </li>
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-shuffle"></i></span>
+                            <div><strong>盲目派單惹惱客戶</strong> — 同一客戶被不同業務重複聯繫，體驗極差。</div>
+                        </li>
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-fish-fins"></i></span>
+                            <div><strong>缺乏防呆，漏網之魚</strong> — 名單派出去後沒人追蹤，機會白白流失。</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== Page 3 ===== -->
+            <div class="edm-page">
+                <div class="edm-page__header">
+                    <span class="page-num">3</span>
+                    核心價值 — 房地產專屬的作戰時間軸
+                </div>
+                <div class="edm-page__body">
+                    <h3 style="margin-top:0;">從開案前到清尾，讓名單在每一個階段都為你生財。</h3>
+
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__label">T-60 天（開案前）</div>
+                            <div class="timeline__title">貼標建檔</div>
+                            <div class="timeline__desc">名單先養好，等新案一開就能打。</div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">T-0（公開日）</div>
+                            <div class="timeline__title">分級調派</div>
+                            <div class="timeline__desc">歷史名單立刻啟動，不用等廣告投 2 週才進流量。</div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">T+90 天（清尾期）</div>
+                            <div class="timeline__title">防呆稽核</div>
+                            <div class="timeline__desc">清尾名單不浪費，自動轉為下個建案的暖身池。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Page 4 ===== -->
+            <div class="edm-page">
+                <div class="edm-page__header">
+                    <span class="page-num">4</span>
+                    解決方案 — 4 步 AI 變現旅程
+                </div>
+                <div class="edm-page__body">
+                    <h3 style="margin-top:0;">以前靠感覺，現在靠數據與系統警報。</h3>
+
+                    <ul class="doc-list">
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-link"></i></span>
+                            <div>
+                                <strong>Step 1　數據縫合</strong><br>
+                                你不在場時，系統幫你記住每個客人說過什麼。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-ranking-star"></i></span>
+                            <div>
+                                <strong>Step 2　意願分級</strong><br>
+                                業務接單前，AI 已做好客戶背調與分級。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <div>
+                                <strong>Step 3　智慧派單</strong><br>
+                                你決定誰先打，生成式 AI 自動附上專屬「破冰話術」。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="doc-list__icon"><i class="fa-solid fa-shield-halved"></i></span>
+                            <div>
+                                <strong>Step 4　防呆稽核</strong><br>
+                                專屬「即刻通」APP 追蹤，誰沒動作系統自動提報，不用自己盯。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== Page 5 ===== -->
+            <div class="edm-page">
+                <div class="edm-page__header">
+                    <span class="page-num">5</span>
+                    成功情境 — 遇見林太太
+                </div>
+                <div class="edm-page__body">
+                    <h3 style="margin-top:0;">一次完美的 AI 喚醒救援</h3>
+
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__label">3 月看屋</div>
+                            <div class="timeline__title">林太太覺得不錯但「想等最終開價」</div>
+                            <div class="timeline__desc">
+                                系統自動貼標：
+                                <span class="tag" style="margin-left:4px;">大坪數</span>
+                                <span class="tag">觀望開價</span>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">9 月新案</div>
+                            <div class="timeline__title">AI 自動掃描，將林太太列為 A 級熱客</div>
+                            <div class="timeline__desc">歷史名單回掃，精準命中符合條件的潛在買家。</div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">業務接單</div>
+                            <div class="timeline__title">收到 AI 提示與專屬話術</div>
+                            <div class="timeline__desc">
+                                第一句話精準命中：「林太太，您上次看過的價格出來了，另外我們有個新案更符合您的需求...」
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">完美結局</div>
+                            <div class="timeline__title">沒有「我再想想」，只有「好，這週末見」。</div>
+                            <div class="timeline__desc">精準喚醒，高效成交。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Page 6 ===== -->
+            <div class="edm-page">
+                <div class="edm-page__header">
+                    <span class="page-num">6</span>
+                    行動呼籲 — 結尾
+                </div>
+                <div class="edm-page__body" style="text-align: center;">
+                    <h3 style="margin-top:0;">讓對的房子，在對的時間，遇見對的客戶。</h3>
+                    <div class="tag-row" style="justify-content: center; margin: var(--space-lg) 0;">
+                        <span class="tag tag--dark">✅ 生成式 AI 串接</span>
+                        <span class="tag tag--dark">✅ 2 週極速導入</span>
+                        <span class="tag tag--dark">✅ 企業級資安防護</span>
+                    </div>
+                    <span class="cta-btn">聯絡專屬顧問，評估您的 AI 銷控方案</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================================ -->
+        <!-- (3) Landing Page 全文案                                       -->
+        <!-- ============================================================ -->
+        <section class="doc-section" id="landing-page">
+            <div class="section-label">
+                <div class="section-label__step">3</div>
+                <span class="section-label__text">PART THREE · Landing Page 全文案</span>
+            </div>
+            <h2 class="section-title">Landing Page — 高轉化架構</h2>
+            <p class="section-subtitle">
+                採用「痛點共鳴 → 故事引導 → 功能轉譯 → 行業應用 → 信任建立」的經典高轉換架構
+            </p>
+
+            <!-- ===== Hero Banner ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-star"></i>&nbsp; Hero Banner 首屏區
+                </div>
+                <div class="lp-section__body">
+                    <div class="tag-row">
+                        <span class="tag">房地產專屬 MarTech</span>
+                        <span class="tag">AI 業績變現引擎</span>
+                    </div>
+
+                    <h3 style="margin-top: var(--space-md); font-size: var(--text-2xl);">
+                        喚醒沉睡名單，打造您的「全天候 AI 銷售幕僚」
+                    </h3>
+                    <p>
+                        每一次的廣告曝光與賞屋，都在為下一個新案儲備精準彈藥。<br>
+                        透過生成式 AI 與專屬行動稽核，讓線上軌跡與線下成交無縫接軌。
+                    </p>
+
+                    <div class="stats-row">
+                        <div class="stat-badge">
+                            <div class="stat-badge__value">2 週</div>
+                            <div class="stat-badge__label">極速導入</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-badge__value">25%↑</div>
+                            <div class="stat-badge__label">預估喚醒回籠率提升</div>
+                        </div>
+                        <div class="stat-badge">
+                            <div class="stat-badge__value">40%↓</div>
+                            <div class="stat-badge__label">節省盲目 Call 客時間</div>
+                        </div>
+                    </div>
+
+                    <span class="cta-btn">立即預約免費顧問諮詢</span>
+                </div>
+            </div>
+
+            <!-- ===== Section 1：痛點區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-1"></i>&nbsp; Section 1：痛點區（金錢與管理雙重夾擊）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">你花了多少錢，買到一個進接待中心的客人？</h3>
+                    <p>
+                        每一筆實體來客，廣告加上人員成本保守估計落在 <strong>3,000 到 8,000 元</strong>。那個週末進來、說「回去跟家人討論」的客戶，你花了 5,000 元讓她走進來，但三個月後，她卻成了系統裡的死水。
+                    </p>
+
+                    <blockquote>
+                        <p>
+                            「主管，你最大的管理漏洞，不在業務不努力——在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。」
+                        </p>
+                    </blockquote>
+
+                    <p>這不是業務的問題，而是你沒有一套懂房地產的系統幫你記住客戶。</p>
+                </div>
+            </div>
+
+            <!-- ===== Section 2：情境故事區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-2"></i>&nbsp; Section 2：情境故事區（深度共鳴）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">看看 AI 如何幫你找回「林太太」</h3>
+
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__label">[開案前暖身] 3月15日｜接待中心</div>
+                            <div class="timeline__title">林太太看房後表示「想等最終開價」</div>
+                            <div class="timeline__desc">
+                                業務輸入備註。系統自動貼標：
+                                <span class="tag" style="margin-left:4px;">南屯區</span>
+                                <span class="tag">換屋族</span>
+                                <span class="tag">觀望開價</span>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">[持續追蹤] 3月20日｜線上軌跡</div>
+                            <div class="timeline__title">林太太點開 LINE 推播，停留 40 秒</div>
+                            <div class="timeline__desc">
+                                系統疊加標籤：<span class="tag" style="margin-left:4px;">高互動意願</span><br>
+                                她自己都沒意識到，需求已被完整記錄。
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">[精準喚醒] 9月｜新案即將開賣</div>
+                            <div class="timeline__title">系統自動回掃歷史名單，林太太躍升「A 級熱客」</div>
+                            <div class="timeline__desc">
+                                業務的「即刻通」APP 跳出通知與 <strong>AI 生成破冰話術</strong>：「林太太您好，上次您觀望的開價出來了，我們有個新案更符合您...」
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">[完美成交]</div>
+                            <div class="timeline__title">這次，她沒有說「我再想想」</div>
+                            <div class="timeline__desc">她說：「好，禮拜六早上見。」</div>
+                        </div>
+                    </div>
+
+                    <div class="doc-lead">
+                        <strong>你有多少個林太太還沒被追回來？</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Section 3：解決方案區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-3"></i>&nbsp; Section 3：解決方案區（主管視角的 4 步防漏網）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">你的時間應該花在決策，不是追進度。</h3>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="feature-card__title">1. OMO 數據縫合：你不在場，系統幫你記</div>
+                            <div class="feature-card__desc">
+                                不再有線上線下斷層。系統自動整合 LINE 互動與跑單備註，業務接單前，AI 已經把客戶背調做好。
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-ranking-star"></i></div>
+                            <div class="feature-card__title">2. AI 意願分級：揪出隱藏的熱客</div>
+                            <div class="feature-card__desc">
+                                告別盲目 Call 客。生成式 AI 讀懂非結構化文字，精準推測產品偏好，自動將意願分級（A/B/C）。
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <div class="feature-card__title">3. 智慧派單與 GenAI 破冰：你決定誰先打</div>
+                            <div class="feature-card__desc">
+                                決定權在你手上。系統執行不出錯，更自動為業務生成專屬「破冰話術」，第一句話就切中要害。
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="feature-card__title">4. 防呆稽核：一週後自動警報</div>
+                            <div class="feature-card__desc">
+                                專屬<strong>「即刻通」APP</strong> 無縫串聯第一線。逾期未追蹤的名單，系統直接通報主管，不需你自己辛苦盯進度。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Section 4：行業應用區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-4"></i>&nbsp; Section 4：行業應用區（貼合房地產時間軸）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">為房地產銷售週期量身打造的作戰計畫</h3>
+
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__label">T-60 天（開案前）｜現在就在養名單</div>
+                            <div class="timeline__title">廣告與 LINE 加友，都在為下一檔儲備彈藥庫</div>
+                            <div class="timeline__desc">現在推的廣告、LINE 加友，都在為下一檔儲備彈藥庫。</div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">T-0（公開日）｜歷史名單同步啟動</div>
+                            <div class="timeline__title">開賣當天，系統自動喚醒半年前的潛在客</div>
+                            <div class="timeline__desc">不需苦等兩週廣告流量。</div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">T+90 天（清尾期）｜名單絕不浪費</div>
+                            <div class="timeline__title">沒轉換的名單自動進入下個建案的暖身池</div>
+                            <div class="timeline__desc">不是等著被封存的垃圾數據。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Section 5：信任與優勢區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-5"></i>&nbsp; Section 5：信任與優勢區（Why Us?）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">不要讓複雜的系統拖垮銷售節奏。</h3>
+
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <div class="icon-item__icon">⚡</div>
+                            <div class="icon-item__title">2 週極速上線</div>
+                            <div class="icon-item__desc">專為房地產銷控邏輯設計，免去漫長開發期。</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-item__icon">🧠</div>
+                            <div class="icon-item__title">生成式 AI 深度整合</div>
+                            <div class="icon-item__desc">不只是 Rule-based，AI 真正讀懂語意並產出策略。</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-item__icon">🔒</div>
+                            <div class="icon-item__title">企業級資安防護</div>
+                            <div class="icon-item__desc">名單是您的命脈。嚴格權限控管與資料保護，確保資產絕對安全。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Footer / 最終行動呼籲 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-flag-checkered"></i>&nbsp; Footer — 最終行動呼籲
+                </div>
+                <div class="lp-section__body">
+                    <div class="doc-closing" style="border: none; background: transparent; padding: var(--space-xl) 0;">
+                        <div class="doc-closing__em">
+                            準備好讓沉睡數據<br>為您賺錢了嗎？
+                        </div>
+                        <p>
+                            以前管業務靠感覺，現在靠數據與系統。<br>
+                            交給房地產專屬 AI 幕僚，找回您流失的百萬業績。
+                        </p>
+                    </div>
+
+                    <h4>表單區域</h4>
+                    <div class="form-mock">
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">姓名</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">公司名稱</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">職稱</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">聯絡電話</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">您目前最大的痛點？</label>
+                            <div class="form-mock__input" style="min-height:36px; display:flex; align-items:center; padding-left:var(--space-md); color: var(--color-muted); font-size: var(--text-sm);">
+                                名單浪費 / 業務難管 / 廣告費太高 / 其他
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: var(--space-lg);">
+                            <span class="cta-btn">聯絡顧問，免費評估導入方案</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
