@@ -46,6 +46,18 @@
             --space-xl: 2rem;
             --space-2xl: 3rem;
             --space-3xl: 4rem;
+
+            /* EDM 陌生開發版色彩 */
+            --coffee: #5C3D2E;
+            --coffee-dark: #3E2723;
+            --coffee-light: #8D6E63;
+            --gold: #C8956C;
+            --gold-light: #E8C8A0;
+            --warm: #FDF8F3;
+            --cream: #FFFAF5;
+            --edm-text: #3E2723;
+            --edm-muted: #6D5D53;
+            --edm-border: #E0D5CC;
         }
 
         html { font-size: 16px; scroll-behavior: smooth; }
@@ -730,6 +742,328 @@
             .doc-nav { display: none; }
             .doc-wrap { padding: 0; }
         }
+
+        /* ===== EDM 陌生開發版 — Slide 簡報樣式 ===== */
+        .slide {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(62,39,35,0.12);
+            overflow: hidden;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide__page {
+            padding: 12px 28px;
+            font-size: 0.7rem;
+            color: var(--edm-muted);
+            letter-spacing: 0.12em;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--edm-border);
+        }
+        .slide__body {
+            padding: 48px 52px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide__body--center { align-items: center; text-align: center; }
+
+        /* --- 封面 --- */
+        .slide.cover {
+            background: var(--coffee-dark);
+            color: #fff;
+            min-height: 560px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide.cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(200,149,108,0.08);
+        }
+        .slide.cover .slide__page {
+            border-color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+        }
+        .cover__question {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .cover__question em {
+            font-style: normal;
+            color: var(--gold);
+        }
+        .cover__desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.9;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        .cover__brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: auto;
+        }
+        .cover__brand-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--gold-light);
+        }
+        .cover__brand-sub {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* --- Slide 通用標題 --- */
+        .slide-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--coffee-dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .slide-subtitle {
+            font-size: 0.875rem;
+            color: var(--edm-muted);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        /* --- 故事卡 --- */
+        .story-card {
+            background: var(--warm);
+            border: 1px solid var(--edm-border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .story-card::before {
+            content: '\201C';
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            color: var(--gold-light);
+            position: absolute;
+            top: 8px;
+            left: 20px;
+            line-height: 1;
+        }
+        .story-card__text {
+            font-size: 0.95rem;
+            line-height: 2;
+            padding-left: 28px;
+        }
+        .story-card__text strong { color: var(--coffee); }
+        .story-punchline {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--coffee);
+            text-align: center;
+            padding: 20px;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid var(--edm-border);
+            line-height: 1.8;
+        }
+        .story-punchline em {
+            font-style: normal;
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: var(--gold-light);
+            text-underline-offset: 4px;
+        }
+
+        /* --- 解法流程 --- */
+        .solution-flow { list-style: none; }
+        .solution-flow li {
+            display: flex;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--edm-border);
+            align-items: flex-start;
+        }
+        .solution-flow li:last-child { border-bottom: none; }
+        .solution-flow__check {
+            width: 32px; height: 32px;
+            background: #E8F5E9;
+            color: #4CAF50;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .solution-flow__text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .solution-flow__text strong { color: var(--coffee); }
+        .solution-flow__highlight {
+            display: inline-block;
+            background: #FFF8E1;
+            padding: 1px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #F57F17;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        /* EDM 區段內的 solution-note（覆蓋 fb-ads 版） */
+        #edm .solution-note {
+            margin-top: 24px;
+            background: var(--warm);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--edm-muted);
+            border-radius: 0 8px 8px 0;
+            flex: unset;
+            position: static;
+            border: none;
+            border-left: 3px solid var(--gold);
+        }
+        #edm .solution-note::before,
+        #edm .solution-note::after { display: none; }
+        #edm .solution-note strong { color: var(--coffee); }
+
+        /* --- 信任區 --- */
+        .trust-hero { text-align: center; margin-bottom: 28px; }
+        .trust-hero__icon {
+            width: 56px; height: 56px;
+            background: var(--warm);
+            border: 2px solid var(--gold-light);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .trust-hero__text {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--coffee-dark);
+            line-height: 1.7;
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .trust-cell {
+            text-align: center;
+            padding: 20px 16px;
+            border: 1px solid var(--edm-border);
+            border-radius: 10px;
+            background: var(--cream);
+        }
+        .trust-cell__icon {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .trust-cell__value {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--coffee);
+            margin-bottom: 4px;
+        }
+        .trust-cell__label {
+            font-size: 0.75rem;
+            color: var(--edm-muted);
+            line-height: 1.5;
+        }
+        .trust-quote {
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--edm-text);
+            line-height: 1.9;
+            padding: 16px 24px;
+            background: var(--warm);
+            border-radius: 10px;
+            border: 1px solid var(--edm-border);
+            font-style: italic;
+        }
+
+        /* --- CTA Slide --- */
+        .slide.cta-slide {
+            background: linear-gradient(160deg, var(--coffee-dark) 0%, #4A2E22 50%, var(--coffee) 100%);
+            color: #fff;
+        }
+        .slide.cta-slide .slide__page {
+            border-color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+        }
+        .cta-emoji { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-title {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .cta-sub {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 36px;
+            line-height: 1.9;
+        }
+        #edm .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 12px;
+            letter-spacing: 0;
+            transition: background 0.3s;
+        }
+        #edm .cta-btn:hover {
+            background: var(--gold-light);
+            color: var(--coffee-dark);
+        }
+        .cta-alt {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* --- Slide 響應式 --- */
+        @media (max-width: 640px) {
+            .slide { margin: 20px 0; min-height: auto; }
+            .slide__body { padding: 28px 24px; }
+            .cover__question { font-size: 1.5rem; }
+            .trust-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            .slide { box-shadow: none; margin: 0; page-break-after: always; border-radius: 0; }
+        }
     </style>
 </head>
 <body>
@@ -905,189 +1239,184 @@
 
 
         <!-- ============================================================ -->
-        <!-- (2) EDM 簡報架構（6 頁）                                      -->
+        <!-- (2) EDM 簡報（陌生開發版・5 頁）                              -->
         <!-- ============================================================ -->
         <section class="doc-section" id="edm">
             <div class="section-label">
                 <div class="section-label__step">2</div>
-                <span class="section-label__text">PART TWO · EDM 簡報文案（6 頁結構）</span>
+                <span class="section-label__text">PART TWO · EDM 簡報文案（陌生開發版・5 頁結構）</span>
             </div>
-            <h2 class="section-title">EDM 簡報 — 6 頁完整架構</h2>
-            <p class="section-subtitle">適合業務直接寄給客戶，或作為 1 對 1 拜訪時的 iPad 簡報使用</p>
+            <h2 class="section-title">EDM 簡報 — 陌生開發版</h2>
+            <p class="section-subtitle">適合業務寄給潛在客戶，以場景式提問引發共鳴，5 頁精簡結構</p>
 
-            <!-- ===== Page 1 ===== -->
-            <div class="edm-page">
-                <div class="edm-page__header">
-                    <span class="page-num">1</span>
-                    封面 — 痛點破題
+            <!-- ===== Slide 1：封面 — 場景式提問 ===== -->
+            <div class="slide cover">
+                <div class="slide__page">
+                    <span>AI 業績引擎</span>
+                    <span>1 / 5</span>
                 </div>
-                <div class="edm-page__body">
-                    <h3 style="margin-top:0;">把沉睡的舊名單，變成新案業績！</h3>
-                    <p style="color: var(--color-muted);">
-                        你花了多少錢，買到一個進接待中心的客人？（3,000 - 8,000 元/人）。<br>
-                        別讓未成交名單，成為最昂貴的數位垃圾。
+                <div class="slide__body">
+                    <h1 class="cover__question">
+                        你花了 <em>5,000 元</em><br>
+                        讓一個客人走進接待中心。<br>
+                        三個月後——<br>
+                        還有人記得追她嗎？
+                    </h1>
+                    <p class="cover__desc">
+                        每一筆走進來的客人，都是你花真金白銀換來的。<br>
+                        但推新案的時候，這些名單還在替你工作嗎？
                     </p>
-                </div>
-                <div class="edm-page__note">
-                    <strong>視覺建議：</strong>對比圖（左邊是燃燒的鈔票/成堆的紙本資料，右邊是發光的數據金礦）。
-                </div>
-            </div>
-
-            <!-- ===== Page 2 ===== -->
-            <div class="edm-page">
-                <div class="edm-page__header">
-                    <span class="page-num">2</span>
-                    行業現況 — 管理漏洞
-                </div>
-                <div class="edm-page__body">
-                    <h3 style="margin-top:0;">這不是業務的問題，這是系統的斷層。</h3>
-                    <p>
-                        主管，你最大的管理漏洞，不在業務不努力，在你根本不知道哪一筆名單被誰追過。
-                    </p>
-
-                    <h4>痛點條列</h4>
-                    <ul class="doc-list">
-                        <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-link-slash"></i></span>
-                            <div><strong>線上線下數據斷層</strong> — LINE 互動與現場跑單紀錄各存各的，無法串聯。</div>
-                        </li>
-                        <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-shuffle"></i></span>
-                            <div><strong>盲目派單惹惱客戶</strong> — 同一客戶被不同業務重複聯繫，體驗極差。</div>
-                        </li>
-                        <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-fish-fins"></i></span>
-                            <div><strong>缺乏防呆，漏網之魚</strong> — 名單派出去後沒人追蹤，機會白白流失。</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- ===== Page 3 ===== -->
-            <div class="edm-page">
-                <div class="edm-page__header">
-                    <span class="page-num">3</span>
-                    核心價值 — 房地產專屬的作戰時間軸
-                </div>
-                <div class="edm-page__body">
-                    <h3 style="margin-top:0;">從開案前到清尾，讓名單在每一個階段都為你生財。</h3>
-
-                    <div class="timeline">
-                        <div class="timeline__item">
-                            <div class="timeline__label">T-60 天（開案前）</div>
-                            <div class="timeline__title">貼標建檔</div>
-                            <div class="timeline__desc">名單先養好，等新案一開就能打。</div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__label">T-0（公開日）</div>
-                            <div class="timeline__title">分級調派</div>
-                            <div class="timeline__desc">歷史名單立刻啟動，不用等廣告投 2 週才進流量。</div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__label">T+90 天（清尾期）</div>
-                            <div class="timeline__title">防呆稽核</div>
-                            <div class="timeline__desc">清尾名單不浪費，自動轉為下個建案的暖身池。</div>
+                    <div class="cover__brand">
+                        <div>
+                            <div class="cover__brand-name">AI 業績引擎</div>
+                            <div class="cover__brand-sub">房產專屬 CDP 客戶數據平台</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== Page 4 ===== -->
-            <div class="edm-page">
-                <div class="edm-page__header">
-                    <span class="page-num">4</span>
-                    解決方案 — 4 步 AI 變現旅程
+            <!-- ===== Slide 2：林太太的故事 ===== -->
+            <div class="slide">
+                <div class="slide__page">
+                    <span>一個真實的場景</span>
+                    <span>2 / 5</span>
                 </div>
-                <div class="edm-page__body">
-                    <h3 style="margin-top:0;">以前靠感覺，現在靠數據與系統警報。</h3>
+                <div class="slide__body">
+                    <h2 class="slide-title">這個場景，你一定不陌生</h2>
+                    <p class="slide-subtitle">每個接待中心，都有好幾個「林太太」。</p>
 
-                    <ul class="doc-list">
+                    <div class="story-card">
+                        <div class="story-card__text">
+                            週末下午，林太太帶女兒走進接待中心。<br>
+                            她看了 49 坪的戶型、問了格局、問了開價。<br><br>
+                            跑單紀錄寫著：<strong>「與女兒同來，需求大坪數，等最終開價再跟家人討論。」</strong><br><br>
+                            三個月過去。<br>
+                            名單還在系統裡。<strong>沒人追她</strong>，也沒人知道——<br>
+                            她其實一直在等一通電話。
+                        </div>
+                    </div>
+
+                    <div class="story-punchline">
+                        問題不在業務不認真。<br>
+                        問題在<em>沒有一套系統幫業務記住她</em>。
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Slide 3：如果系統記得住 ===== -->
+            <div class="slide">
+                <div class="slide__page">
+                    <span>如果系統記得住呢？</span>
+                    <span>3 / 5</span>
+                </div>
+                <div class="slide__body">
+                    <h2 class="slide-title">如果系統記得住，會發生什麼事？</h2>
+                    <p class="slide-subtitle">用林太太的例子，走一遍 AI 業績引擎的運作流程。</p>
+
+                    <ul class="solution-flow">
                         <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-link"></i></span>
-                            <div>
-                                <strong>Step 1　數據縫合</strong><br>
-                                你不在場時，系統幫你記住每個客人說過什麼。
+                            <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                            <div class="solution-flow__text">
+                                林太太加 LINE 那天，系統<strong>自動記下</strong>她對「南屯、大坪數、知名建商」有興趣。
+                                <span class="solution-flow__highlight">自動貼標</span>
                             </div>
                         </li>
                         <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-ranking-star"></i></span>
-                            <div>
-                                <strong>Step 2　意願分級</strong><br>
-                                業務接單前，AI 已做好客戶背調與分級。
+                            <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                            <div class="solution-flow__text">
+                                現場跑單紀錄同步進系統。<strong>「等最終開價 ＋ 家人決策型」</strong>成為可篩選的標籤。
+                                <span class="solution-flow__highlight">情報建檔</span>
                             </div>
                         </li>
                         <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                            <div>
-                                <strong>Step 3　智慧派單</strong><br>
-                                你決定誰先打，生成式 AI 自動附上專屬「破冰話術」。
+                            <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                            <div class="solution-flow__text">
+                                三個月後，新案【天晴萃】開賣。系統<strong>自動把林太太撈出來</strong>，列入 A 級名單。
+                                <span class="solution-flow__highlight">智慧撈客</span>
                             </div>
                         </li>
                         <li>
-                            <span class="doc-list__icon"><i class="fa-solid fa-shield-halved"></i></span>
-                            <div>
-                                <strong>Step 4　防呆稽核</strong><br>
-                                專屬「即刻通」APP 追蹤，誰沒動作系統自動提報，不用自己盯。
+                            <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                            <div class="solution-flow__text">
+                                自動通知原業務：<strong>「林太太可以打了，她等的開價已經出來。」</strong>
+                                <span class="solution-flow__highlight">即時派單</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                            <div class="solution-flow__text">
+                                業務七天沒打、沒留紀錄——<strong>主管 APP 自動收到提醒</strong>。
+                                <span class="solution-flow__highlight">進度追蹤</span>
                             </div>
                         </li>
                     </ul>
-                </div>
-            </div>
 
-            <!-- ===== Page 5 ===== -->
-            <div class="edm-page">
-                <div class="edm-page__header">
-                    <span class="page-num">5</span>
-                    成功情境 — 遇見林太太
-                </div>
-                <div class="edm-page__body">
-                    <h3 style="margin-top:0;">一次完美的 AI 喚醒救援</h3>
-
-                    <div class="timeline">
-                        <div class="timeline__item">
-                            <div class="timeline__label">3 月看屋</div>
-                            <div class="timeline__title">林太太覺得不錯但「想等最終開價」</div>
-                            <div class="timeline__desc">
-                                系統自動貼標：
-                                <span class="tag" style="margin-left:4px;">大坪數</span>
-                                <span class="tag">觀望開價</span>
-                            </div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__label">9 月新案</div>
-                            <div class="timeline__title">AI 自動掃描，將林太太列為 A 級熱客</div>
-                            <div class="timeline__desc">歷史名單回掃，精準命中符合條件的潛在買家。</div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__label">業務接單</div>
-                            <div class="timeline__title">收到 AI 提示與專屬話術</div>
-                            <div class="timeline__desc">
-                                第一句話精準命中：「林太太，您上次看過的價格出來了，另外我們有個新案更符合您的需求...」
-                            </div>
-                        </div>
-                        <div class="timeline__item">
-                            <div class="timeline__label">完美結局</div>
-                            <div class="timeline__title">沒有「我再想想」，只有「好，這週末見」。</div>
-                            <div class="timeline__desc">精準喚醒，高效成交。</div>
-                        </div>
+                    <div class="solution-note">
+                        <strong>她不是流失客。她一直在等。</strong><br>
+                        只是以前沒有系統替你看住她。
                     </div>
                 </div>
             </div>
 
-            <!-- ===== Page 6 ===== -->
-            <div class="edm-page">
-                <div class="edm-page__header">
-                    <span class="page-num">6</span>
-                    行動呼籲 — 結尾
+            <!-- ===== Slide 4：信任建立 ===== -->
+            <div class="slide">
+                <div class="slide__page">
+                    <span>已經有人在用了</span>
+                    <span>4 / 5</span>
                 </div>
-                <div class="edm-page__body" style="text-align: center;">
-                    <h3 style="margin-top:0;">讓對的房子，在對的時間，遇見對的客戶。</h3>
-                    <div class="tag-row" style="justify-content: center; margin: var(--space-lg) 0;">
-                        <span class="tag tag--dark">✅ 生成式 AI 串接</span>
-                        <span class="tag tag--dark">✅ 2 週極速導入</span>
-                        <span class="tag tag--dark">✅ 企業級資安防護</span>
+                <div class="slide__body">
+                    <div class="trust-hero">
+                        <div class="trust-hero__icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="trust-hero__text">
+                            全台前十大代銷之一<br>
+                            已正式導入 AI 業績引擎
+                        </div>
                     </div>
-                    <span class="cta-btn">聯絡專屬顧問，評估您的 AI 銷控方案</span>
+
+                    <div class="trust-grid">
+                        <div class="trust-cell">
+                            <div class="trust-cell__icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="trust-cell__value">北中南</div>
+                            <div class="trust-cell__label">涵蓋案場範圍</div>
+                        </div>
+                        <div class="trust-cell">
+                            <div class="trust-cell__icon"><i class="fa-solid fa-database"></i></div>
+                            <div class="trust-cell__value">數萬筆</div>
+                            <div class="trust-cell__label">歷史名單管理中</div>
+                        </div>
+                        <div class="trust-cell">
+                            <div class="trust-cell__icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                            <div class="trust-cell__value">實際運行</div>
+                            <div class="trust-cell__label">非概念驗證階段</div>
+                        </div>
+                    </div>
+
+                    <div class="trust-quote">
+                        「推新案不是從零開始，<br>
+                        是從上千筆已經知道他們要什麼的名單，精準出手。」
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Slide 5：CTA ===== -->
+            <div class="slide cta-slide">
+                <div class="slide__page">
+                    <span>下一步</span>
+                    <span>5 / 5</span>
+                </div>
+                <div class="slide__body slide__body--center">
+                    <div class="cta-emoji">📊</div>
+                    <h2 class="cta-title">
+                        你的名單裡，<br>
+                        藏著多少個「林太太」？
+                    </h2>
+                    <p class="cta-sub">
+                        不需要準備任何資料。<br>
+                        花 30 分鐘，讓我們用您的案場情境走一遍系統，<br>
+                        您自己判斷值不值得。
+                    </p>
+                    <a href="#" class="cta-btn">免費了解 AI 業績引擎 →</a>
+                    <p class="cta-alt">點擊前往了解更多</p>
                 </div>
             </div>
         </section>
