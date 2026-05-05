@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDP 整合行銷文案 — FB 廣告 / EDM / Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-black: #111111;
+            --color-ink: #1a1a1a;
+            --color-text: #2d2d2d;
+            --color-muted: #666666;
+            --color-border: #e0e0e0;
+            --color-bg-soft: #f8f8f6;
+            --color-accent: #5C3D2E;
+            --color-accent-light: #f5ede8;
+            --color-highlight: #fffbf0;
+            --color-alert: #7a1a1a;
+            --color-alert-bg: #fff5f5;
+            --color-cta: #C8956C;
+            --color-cta-hover: #b37f58;
+
+            --font-sans: 'Noto Sans TC', sans-serif;
+            --font-serif: 'Noto Serif TC', serif;
+
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 2.5rem;
+
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+
+            /* EDM 陌生開發版色彩 */
+            --coffee: #5C3D2E;
+            --coffee-dark: #3E2723;
+            --coffee-light: #8D6E63;
+            --gold: #C8956C;
+            --gold-light: #E8C8A0;
+            --warm: #FDF8F3;
+            --cream: #FFFAF5;
+            --edm-text: #3E2723;
+            --edm-muted: #6D5D53;
+            --edm-border: #E0D5CC;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: #ffffff;
+            line-height: 1.8;
+        }
+
+        /* ===== 頁面頂部索引列 ===== */
+        .doc-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) var(--space-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            z-index: 100;
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+        }
+        .doc-nav__brand {
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+            white-space: nowrap;
+        }
+        .doc-nav__links { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+        .doc-nav__links a {
+            color: var(--color-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .doc-nav__links a:hover { color: var(--color-accent); }
+
+        /* ===== 主容器 ===== */
+        .doc-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        /* ===== 文件頁首 ===== */
+        .doc-header {
+            border-bottom: 2px solid var(--color-black);
+            padding-bottom: var(--space-xl);
+            margin-bottom: var(--space-3xl);
+        }
+        .doc-header__label {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+        .doc-header__title {
+            font-family: var(--font-serif);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            color: var(--color-black);
+            line-height: 1.3;
+            margin-bottom: var(--space-lg);
+        }
+        .doc-header__meta {
+            display: flex;
+            gap: var(--space-xl);
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+        }
+
+        /* ===== 章節 ===== */
+        .doc-section {
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-3xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .doc-section:last-child { border-bottom: none; }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        .section-label__step {
+            width: 28px;
+            height: 28px;
+            background: var(--color-black);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .section-label__text {
+            font-size: var(--text-xs);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            color: var(--color-black);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--space-sm);
+        }
+        .section-subtitle {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            margin-bottom: var(--space-xl);
+            line-height: 1.7;
+        }
+
+        /* ===== 文字元素 ===== */
+        p { margin-bottom: var(--space-md); font-size: var(--text-base); }
+
+        h3 {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--color-black);
+            margin: var(--space-xl) 0 var(--space-md);
+        }
+        h4 {
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--color-ink);
+            margin: var(--space-lg) 0 var(--space-sm);
+        }
+
+        /* ===== 引言區塊 ===== */
+        .doc-lead {
+            background: var(--color-bg-soft);
+            border-left: 3px solid var(--color-black);
+            padding: var(--space-lg) var(--space-xl);
+            margin: var(--space-xl) 0;
+            font-size: var(--text-lg);
+            line-height: 1.9;
+            color: var(--color-ink);
+        }
+        .doc-lead strong { color: var(--color-black); }
+
+        /* ===== Blockquote ===== */
+        blockquote {
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            background: var(--color-highlight);
+            font-size: var(--text-sm);
+            line-height: 1.8;
+            color: var(--color-ink);
+            position: relative;
+        }
+        blockquote::before {
+            content: '\201C';
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--color-border);
+            line-height: 1;
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-md);
+        }
+        blockquote p { padding-left: var(--space-xl); margin: 0; }
+
+        /* ===== 標籤組 ===== */
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: var(--text-xs);
+            font-weight: 500;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border: 1px solid #ddc8be;
+        }
+        .tag--dark {
+            background: var(--color-black);
+            color: #fff;
+            border-color: var(--color-black);
+        }
+
+        /* ===== 項目條列 ===== */
+        .doc-list {
+            list-style: none;
+            margin: var(--space-md) 0 var(--space-lg);
+        }
+        .doc-list li {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--text-sm);
+            line-height: 1.7;
+        }
+        .doc-list li:last-child { border-bottom: none; }
+        .doc-list__icon {
+            width: 20px;
+            flex-shrink: 0;
+            padding-top: 2px;
+            color: var(--color-accent);
+        }
+
+        /* ===== 分隔線 ===== */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: var(--space-xl) 0;
+        }
+        .divider--thick {
+            border-top: 3px solid var(--color-black);
+            margin: var(--space-3xl) 0;
+        }
+
+        /* ===== 說明小字 ===== */
+        .doc-note {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            margin: var(--space-md) 0;
+            line-height: 1.7;
+        }
+
+        /* ===== 廣告卡片 ===== */
+        .ad-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+            background: #fff;
+        }
+        .ad-card__header {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .ad-card__header--a {
+            background: #fff5f0;
+            color: #c0392b;
+        }
+        .ad-card__header--b {
+            background: #f0f5ff;
+            color: #2c3e8f;
+        }
+        .ad-card__body {
+            padding: var(--space-xl);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+        }
+        .ad-card__body strong { color: var(--color-black); }
+        .ad-card__target {
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            border-top: 1px solid var(--color-border);
+        }
+        .ad-card__cta {
+            display: inline-block;
+            margin-top: var(--space-md);
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 4px;
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .ad-card__features {
+            margin: var(--space-md) 0;
+        }
+        .ad-card__features li {
+            list-style: none;
+            padding: var(--space-xs) 0;
+            font-size: var(--text-sm);
+        }
+
+        /* ===== EDM 頁面卡片 ===== */
+        .edm-page {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+            background: #fff;
+        }
+        .edm-page__header {
+            padding: var(--space-md) var(--space-lg);
+            background: var(--color-black);
+            color: #fff;
+            font-size: var(--text-sm);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .edm-page__header span.page-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: #fff;
+            color: var(--color-black);
+            border-radius: 50%;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .edm-page__body {
+            padding: var(--space-xl);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+        }
+        .edm-page__body h4 {
+            margin-top: var(--space-md);
+        }
+        .edm-page__body strong { color: var(--color-black); }
+        .edm-page__note {
+            padding: var(--space-sm) var(--space-lg);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            background: var(--color-bg-soft);
+            border-top: 1px solid var(--color-border);
+            line-height: 1.7;
+        }
+
+        /* ===== 時間軸 ===== */
+        .timeline {
+            position: relative;
+            margin: var(--space-xl) 0;
+            padding-left: 28px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+        .timeline__item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            padding-left: var(--space-lg);
+        }
+        .timeline__item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+        .timeline__label {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-accent);
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+        }
+        .timeline__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-xs);
+        }
+        .timeline__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* ===== Landing Page 區段卡 ===== */
+        .lp-section {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+        }
+        .lp-section__header {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border-bottom: 1px solid #ddc8be;
+        }
+        .lp-section__body {
+            padding: var(--space-xl);
+            font-size: var(--text-sm);
+            line-height: 1.9;
+        }
+        .lp-section__body strong { color: var(--color-black); }
+
+        /* ===== 特點網格 ===== */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .feature-card {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-lg);
+        }
+        .feature-card__icon {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-sm);
+        }
+        .feature-card__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-sm);
+        }
+        .feature-card__desc {
+            font-size: var(--text-xs);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* ===== 雙欄解決方案（對客戶 × 對內部） ===== */
+        .dual-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+        .dual-col__side {
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .dual-col__header {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .dual-col__header--client {
+            background: #f0f8f0;
+            color: #2e7d32;
+            border-bottom: 2px solid #a5d6a7;
+        }
+        .dual-col__header--internal {
+            background: #f0f4ff;
+            color: #1565c0;
+            border-bottom: 2px solid #90caf9;
+        }
+        .dual-col__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .dual-col__item {
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--text-sm);
+            line-height: 1.8;
+        }
+        .dual-col__item:last-child { border-bottom: none; }
+        .dual-col__item-icon {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-sm);
+        }
+        .dual-col__item-title {
+            font-weight: 700;
+            color: var(--color-black);
+            margin-bottom: var(--space-xs);
+            font-size: var(--text-sm);
+        }
+        .dual-col__item-desc {
+            font-size: var(--text-xs);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        @media (max-width: 640px) {
+            .dual-col { grid-template-columns: 1fr; }
+        }
+
+        /* ===== 場景卡片（Section 4） ===== */
+        .scene-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .scene-card {
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .scene-card__header {
+            padding: var(--space-md) var(--space-lg);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .scene-card__header--before {
+            background: #fff8e1;
+            color: #f57f17;
+        }
+        .scene-card__header--launch {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .scene-card__header--after {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        .scene-card__body {
+            padding: var(--space-lg);
+        }
+        .scene-card__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-sm);
+            line-height: 1.5;
+        }
+        .scene-card__desc {
+            font-size: var(--text-xs);
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+        @media (max-width: 640px) {
+            .scene-cards { grid-template-columns: 1fr; }
+        }
+
+        /* ===== 三欄 ICON 強調 ===== */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        .icon-item {
+            text-align: center;
+            padding: var(--space-lg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+        .icon-item__icon {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-sm);
+        }
+        .icon-item__title {
+            font-weight: 700;
+            font-size: var(--text-sm);
+            color: var(--color-black);
+            margin-bottom: var(--space-xs);
+        }
+        .icon-item__desc {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            line-height: 1.7;
+        }
+
+        /* ===== 廣告 + 解決方案並排佈局 ===== */
+        .ad-row {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: stretch;
+            margin: var(--space-xl) calc(-1 * var(--space-xl));
+            padding: 0 var(--space-xl);
+        }
+        .ad-row .ad-card {
+            flex: 1;
+            min-width: 0;
+            margin: 0;
+        }
+        .solution-note {
+            flex: 0 0 260px;
+            position: relative;
+            background: #f1efeb;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            font-size: var(--text-xs);
+            line-height: 1.8;
+            color: var(--color-muted);
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+        }
+        /* 左側指向箭頭 */
+        .solution-note::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 40px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--color-border);
+        }
+        .solution-note::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 40px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #f1efeb;
+        }
+        .solution-note__title {
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .solution-note__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .solution-note__list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px dashed var(--color-border);
+            font-size: var(--text-xs);
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+        .solution-note__list li:last-child {
+            border-bottom: none;
+        }
+        .solution-note__list li strong {
+            color: var(--color-accent);
+            display: block;
+            font-size: var(--text-xs);
+        }
+        @media (max-width: 900px) {
+            .ad-row {
+                flex-direction: column;
+                margin: var(--space-xl) 0;
+                padding: 0;
+            }
+            .solution-note {
+                flex: none;
+            }
+            .solution-note::before,
+            .solution-note::after {
+                display: none;
+            }
+        }
+
+        /* ===== CTA 按鈕模擬 ===== */
+        .cta-btn {
+            display: inline-block;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: var(--text-base);
+            text-decoration: none;
+            margin: var(--space-md) 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== 表單模擬 ===== */
+        .form-mock {
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+            background: var(--color-bg-soft);
+        }
+        .form-mock__field {
+            margin-bottom: var(--space-md);
+        }
+        .form-mock__label {
+            display: block;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--color-muted);
+            margin-bottom: var(--space-xs);
+        }
+        .form-mock__input {
+            display: block;
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: var(--text-sm);
+            background: #fff;
+            color: var(--color-text);
+        }
+
+        /* ===== 結語強調 ===== */
+        .doc-closing {
+            text-align: center;
+            padding: var(--space-3xl) var(--space-xl);
+            border: 1px solid var(--color-black);
+            border-radius: 8px;
+            background: var(--color-bg-soft);
+        }
+        .doc-closing__em {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            color: var(--color-black);
+            line-height: 1.5;
+            margin-bottom: var(--space-lg);
+            font-weight: 600;
+        }
+        .doc-closing p {
+            font-size: var(--text-base);
+            color: var(--color-muted);
+            line-height: 1.9;
+        }
+        .doc-closing strong { color: var(--color-black); }
+
+        /* ===== 數據亮點 ===== */
+        .stats-row {
+            display: flex;
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+        .stat-badge {
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background: #fff;
+        }
+        .stat-badge__value {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+        .stat-badge__label {
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            margin-top: var(--space-xs);
+        }
+
+        /* ===== 響應式 ===== */
+        @media (max-width: 640px) {
+            .doc-wrap { padding: var(--space-xl) var(--space-md); }
+            .doc-nav__links { display: none; }
+            .doc-header__title { font-size: var(--text-2xl); }
+            .doc-header__meta { flex-direction: column; gap: var(--space-sm); }
+            .doc-closing__em { font-size: var(--text-xl); }
+            .feature-grid { grid-template-columns: 1fr; }
+            .icon-grid { grid-template-columns: 1fr; }
+            .stats-row { flex-direction: column; }
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .doc-nav { display: none; }
+            .doc-wrap { padding: 0; }
+        }
+
+        /* ===== EDM 陌生開發版 — 一頁式 EDM 樣式 ===== */
+        #edm .section-subtitle {
+            max-width: 640px;
+        }
+        .edm-onepage {
+            margin-top: var(--space-xl);
+            border: 1px solid var(--edm-border);
+            border-radius: 24px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top right, rgba(200,149,108,0.18), transparent 30%),
+                linear-gradient(180deg, #fffaf6 0%, #ffffff 26%, #fdf7f1 100%);
+            box-shadow: 0 20px 48px rgba(62,39,35,0.12);
+        }
+        .edm-onepage__hero {
+            position: relative;
+            padding: 44px 44px 36px;
+            background: linear-gradient(160deg, var(--coffee-dark) 0%, #4c2d21 48%, var(--coffee) 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+        .edm-onepage__hero::after {
+            content: '';
+            position: absolute;
+            inset: auto -80px -120px auto;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232,200,160,0.28) 0%, rgba(232,200,160,0) 72%);
+        }
+        .edm-onepage__hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+            gap: 24px;
+            align-items: end;
+            z-index: 1;
+        }
+        .edm-onepage__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+        .edm-onepage__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.45;
+            color: #fff;
+            margin: 0 0 16px;
+        }
+        .edm-onepage__title em {
+            font-style: normal;
+            color: var(--gold-light);
+        }
+        .edm-onepage__desc {
+            max-width: 560px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.76);
+            line-height: 1.9;
+        }
+        .edm-onepage__cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+        .edm-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 24px;
+            border-radius: 999px;
+            background: var(--gold);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 10px 22px rgba(17,17,17,0.18);
+            transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .edm-cta-btn:hover {
+            transform: translateY(-1px);
+            background: var(--gold-light);
+            color: var(--coffee-dark);
+            box-shadow: 0 14px 28px rgba(17,17,17,0.2);
+        }
+        .edm-cta-btn--ghost {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: none;
+            backdrop-filter: blur(8px);
+        }
+        .edm-cta-btn--ghost:hover {
+            background: rgba(255,255,255,0.16);
+            color: #fff;
+            box-shadow: none;
+        }
+        .edm-onepage__aside {
+            padding: 22px 24px;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+            backdrop-filter: blur(10px);
+        }
+        .edm-onepage__aside-label {
+            margin-bottom: 14px;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.58);
+        }
+        .edm-onepage__aside-list {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+        .edm-onepage__aside-list li {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.84);
+        }
+        .edm-onepage__aside-list strong {
+            color: var(--gold-light);
+        }
+        .edm-onepage__body {
+            padding: 32px 40px 40px;
+            display: grid;
+            gap: 24px;
+        }
+        .edm-card {
+            border: 1px solid var(--edm-border);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 28px;
+        }
+        .edm-card__kicker {
+            margin-bottom: 10px;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--coffee-light);
+        }
+        .edm-card__title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--coffee-dark);
+            line-height: 1.5;
+            margin: 0 0 8px;
+        }
+        .edm-card__subtitle {
+            font-size: 0.9rem;
+            color: var(--edm-muted);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .edm-story-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* --- 故事卡 --- */
+        .story-card {
+            background: var(--warm);
+            border: 1px solid var(--edm-border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .story-card::before {
+            content: '\201C';
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            color: var(--gold-light);
+            position: absolute;
+            top: 8px;
+            left: 20px;
+            line-height: 1;
+        }
+        .story-card__text {
+            font-size: 0.95rem;
+            line-height: 2;
+            padding-left: 28px;
+        }
+        .story-card__text strong { color: var(--coffee); }
+        .story-punchline {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--coffee);
+            text-align: center;
+            padding: 20px;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid var(--edm-border);
+            line-height: 1.8;
+        }
+        .story-punchline em {
+            font-style: normal;
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: var(--gold-light);
+            text-underline-offset: 4px;
+        }
+        .edm-story-side {
+            border: 1px solid var(--edm-border);
+            border-radius: 16px;
+            background: var(--cream);
+            padding: 24px;
+        }
+        .edm-story-side__title {
+            margin: 0 0 14px;
+            font-size: 1rem;
+            color: var(--coffee-dark);
+        }
+        .edm-point-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+        .edm-point-list li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.84rem;
+            line-height: 1.8;
+            color: var(--edm-text);
+        }
+        .edm-point-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        /* --- 解法流程 --- */
+        .solution-flow { list-style: none; }
+        .solution-flow li {
+            display: flex;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--edm-border);
+            align-items: flex-start;
+        }
+        .solution-flow li:last-child { border-bottom: none; }
+        .solution-flow__check {
+            width: 32px; height: 32px;
+            background: #E8F5E9;
+            color: #4CAF50;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .solution-flow__text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .solution-flow__text strong { color: var(--coffee); }
+        .solution-flow__highlight {
+            display: inline-block;
+            background: #FFF8E1;
+            padding: 1px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #F57F17;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        .edm-inline-note {
+            margin-top: 24px;
+            background: var(--warm);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--edm-muted);
+            border-radius: 0 8px 8px 0;
+        }
+        .edm-inline-note strong { color: var(--coffee); }
+
+        /* --- 信任區 --- */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .trust-cell {
+            text-align: center;
+            padding: 20px 16px;
+            border: 1px solid var(--edm-border);
+            border-radius: 10px;
+            background: var(--cream);
+        }
+        .trust-cell__icon {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .trust-cell__value {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--coffee);
+            margin-bottom: 4px;
+        }
+        .trust-cell__label {
+            font-size: 0.75rem;
+            color: var(--edm-muted);
+            line-height: 1.5;
+        }
+        .trust-quote {
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--edm-text);
+            line-height: 1.9;
+            padding: 16px 24px;
+            background: var(--warm);
+            border-radius: 10px;
+            border: 1px solid var(--edm-border);
+            font-style: italic;
+        }
+
+        .edm-onepage__footer {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.9fr);
+            gap: 20px;
+            align-items: center;
+            padding: 28px;
+            border: 1px solid var(--edm-border);
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff3e6 0%, #ffffff 62%, #f7eee8 100%);
+        }
+        .edm-onepage__closing {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.6;
+            color: var(--coffee-dark);
+            margin-bottom: 10px;
+        }
+        .edm-onepage__closing-copy {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--edm-muted);
+            line-height: 1.9;
+        }
+        .edm-onepage__action {
+            padding: 24px;
+            border-radius: 18px;
+            background: linear-gradient(155deg, var(--coffee-dark) 0%, var(--coffee) 100%);
+            text-align: center;
+        }
+        .edm-onepage__action .edm-cta-btn {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        .edm-onepage__microcopy {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.68);
+            line-height: 1.8;
+        }
+        .edm-onepage__microcopy strong {
+            color: #fff;
+        }
+
+        /* --- 一頁式響應式 --- */
+        @media (max-width: 860px) {
+            .edm-onepage__hero-grid,
+            .edm-story-layout,
+            .edm-onepage__footer {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .edm-onepage__hero,
+            .edm-onepage__body {
+                padding: 28px 24px;
+            }
+            .edm-card,
+            .edm-onepage__footer {
+                padding: 22px;
+            }
+            .edm-card__title,
+            .edm-onepage__closing {
+                font-size: 1.35rem;
+            }
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            .edm-onepage__cta-group,
+            .edm-onepage__action {
+                width: 100%;
+            }
+            .edm-cta-btn,
+            .edm-cta-btn--ghost {
+                width: 100%;
+            }
+        }
+        @media print {
+            .edm-onepage {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部索引列 -->
+    <nav class="doc-nav">
+        <span class="doc-nav__brand">CDP 整合行銷文案 — FB / EDM / Landing Page</span>
+        <div class="doc-nav__links">
+            <a href="#fb-ads">FB 廣告</a>
+            <a href="#edm">EDM 一頁式</a>
+            <a href="#landing-page">Landing Page</a>
+        </div>
+    </nav>
+
+    <div class="doc-wrap">
+
+        <!-- ==================== 文件頁首 ==================== -->
+        <header class="doc-header">
+            <div class="doc-header__label">CDP 整合行銷 &nbsp;/&nbsp; 2026 Q2 &nbsp;/&nbsp; 文案企劃稿</div>
+            <h1 class="doc-header__title">
+                房地產 AI CDP<br>整合行銷文案
+            </h1>
+            <div class="doc-header__meta">
+                <span>內容：FB 廣告 × 2 / EDM 一頁式 / Landing Page</span>
+                <span>日期：2026-04-23</span>
+                <span>受眾：建商 / 代銷 / 銷售主管</span>
+            </div>
+        </header>
+
+
+        <!-- ============================================================ -->
+        <!-- (1) FB 廣告 A/B Test                                         -->
+        <!-- ============================================================ -->
+        <section class="doc-section" id="fb-ads">
+            <div class="section-label">
+                <div class="section-label__step">1</div>
+                <span class="section-label__text">PART ONE · 兩則 FB 廣告文（A/B Test 測試用）</span>
+            </div>
+            <h2 class="section-title">FB 廣告文 A/B 版本</h2>
+            <p class="section-subtitle">針對不同受眾痛點設計兩個版本，用於 A/B 測試找出最佳轉化路徑</p>
+
+            <!-- ===== 廣告 A 版 + 解決方案 ===== -->
+            <div class="ad-row">
+                <div class="ad-card">
+                    <div class="ad-card__header ad-card__header--a">
+                        <i class="fa-solid fa-fire"></i>
+                        廣告 A 版：痛點與金錢損失切入（主打：震撼與反思）
+                    </div>
+                    <div class="ad-card__target">
+                        <strong>適合受眾：</strong>建商老闆、代銷負責人（對成本極度敏感者）
+                    </div>
+                    <div class="ad-card__body">
+                        <p><strong>你花了多少錢，買到一個進接待中心的客人？</strong></p>
+                        <p>
+                            數位廣告 + 活動造勢 + 人員成本——每一筆實體來人，保守估計落在 <strong>3,000 到 8,000 元</strong>。
+                        </p>
+                        <p>
+                            那個週末進來、問了格局、說「回去跟家人討論」的林太太，你花了 5,000 元讓她走進來。但三個月後，這筆名單還躺在系統裡。沒有人追她，也沒有人知道她其實還在等一個開價。
+                        </p>
+                        <p><strong>這不是業務的問題。這是你沒有一套系統幫業務記住她。</strong></p>
+
+                        <hr class="divider">
+
+                        <p><strong>【房地產專屬 AI CDP 業績引擎】</strong><br>讓沉睡名單，變成下一個新案業績！</p>
+
+                        <ul class="ad-card__features">
+                            <li>✅ <strong>生成式 AI 賦能</strong>：自動生成破冰話術，精準喚醒舊客。</li>
+                            <li>✅ <strong>專屬「即刻通」APP</strong>：防呆稽核，確保每一筆花錢買來的名單都被追到底。</li>
+                            <li>✅ <strong>跨系統資料串接</strong>：無需重新填寫資料，無痛接軌現有銷控流程。</li>
+                        </ul>
+
+                        <p>別讓行銷預算變成死水。</p>
+                        <span class="cta-btn">👉 點擊連結，了解如何喚醒你的沉睡金礦</span>
+                    </div>
+                </div>
+
+                <!-- 解決方案說明（內部討論用） -->
+                <div class="solution-note">
+                    <div style="font-size:var(--text-xs);color:var(--color-muted);letter-spacing:0.08em;margin-bottom:var(--space-xs);">情境背後解決方案</div>
+                    <div class="solution-note__title">
+                        <i class="fa-solid fa-gears"></i> 銷控 × CDP × 即刻通
+                    </div>
+                    <ul class="solution-note__list">
+                        <li>
+                            <strong>❶ 銷控建案觸發</strong>
+                            銷控有新案成立 → 系統自動建立區域標籤、產品偏好標籤，為後續配對打底。
+                        </li>
+                        <li>
+                            <strong>❷ CDP 名單配對分級</strong>
+                            配對 CDP 現有名單，依互動深度自動篩選分類：<br>
+                            <span style="color:var(--color-accent);font-weight:700;">A 級</span> VIP 實體客（有來訪、有跑單、有專屬業務）<br>
+                            <span style="color:var(--color-accent);font-weight:700;">B 級</span> 線上熱客（LINE 互動 3 次以上、深夜瀏覽）<br>
+                            <span style="color:var(--color-accent);font-weight:700;">C 級</span> 淺層靜止戶（加 LINE 僅按一次選單）
+                        </li>
+                        <li>
+                            <strong>❸ AI 生成推播與話術</strong>
+                            針對各等級自動產出對應文案：<br>
+                            A/B 級 → 回傳<strong>銷控待聯繫清單</strong><br>
+                            C 級 → 轉入 <strong>CDP 待推播清單</strong>
+                        </li>
+                        <li>
+                            <strong>❹ 即刻通派單與稽核</strong>
+                            主管手機收到分筆審核通知（淺層推播 / 線上高意願 / 線下實體舊客），逐筆放行後系統自動派單：行銷端收到推播任務、業務端收到指派名單與 AI 話術。派單 7 天後系統自動掃描紀事欄，空白者即刻通警報主管，防止漏追。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== 廣告 B 版 + 解決方案 ===== -->
+            <div class="ad-row">
+                <div class="ad-card">
+                    <div class="ad-card__header ad-card__header--b">
+                        <i class="fa-solid fa-fire"></i>
+                        廣告 B 版：主管痛點切入（主打：管理控制力）
+                    </div>
+                    <div class="ad-card__target">
+                        <strong>適合受眾：</strong>專案經理、銷售主管、總監（需要管理團隊與進度者）
+                    </div>
+                    <div class="ad-card__body">
+                        <p><strong>主管，你最大的管理漏洞，不在業務不努力——</strong><br>在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。</p>
+                        <p>
+                            以前你管業務靠開會、靠問、靠感覺。<br>
+                            結果就是盲目派單，業務打到心累，客戶接到煩躁。
+                        </p>
+
+                        <hr class="divider">
+
+                        <p><strong>【房地產專屬 AI CDP 業績引擎】讓你從「被動管理」變成「主動掌握」：</strong></p>
+
+                        <ul class="ad-card__features">
+                            <li>1️⃣ <strong>你不在場時</strong>，系統幫你記住每個客人說過什麼。</li>
+                            <li>2️⃣ <strong>你決定誰先打</strong>，AI 幫你把客戶分級，執行不出錯。</li>
+                            <li>3️⃣ <strong>一週後系統自動警報</strong>，專屬 APP 告訴你誰沒動作，不需要你自己盯！</li>
+                        </ul>
+
+                        <p>
+                            你的時間，應該花在決策，而不是追進度。<br>
+                            導入 AI 幕僚，讓管理與追蹤不再斷線，趕上下一波強銷期！
+                        </p>
+                        <span class="cta-btn">👉 點擊連結，看 AI 如何幫你管好千萬名單</span>
+                    </div>
+                </div>
+
+                <!-- 解決方案說明（內部討論用） -->
+                <div class="solution-note">
+                    <div style="font-size:var(--text-xs);color:var(--color-muted);letter-spacing:0.08em;margin-bottom:var(--space-xs);">情境背後解決方案</div>
+                    <div class="solution-note__title">
+                        <i class="fa-solid fa-gears"></i> 銷控 × CDP × 即刻通
+                    </div>
+                    <ul class="solution-note__list">
+                        <li>
+                            <strong>❶ 銷控建案 → 主管可視化</strong>
+                            新案成立後，銷控自動建標並同步 CDP。主管在即刻通即時看到標籤建立結果與名單匹配數量，不用等人回報。
+                        </li>
+                        <li>
+                            <strong>❷ CDP 分級 → 主管掌握全貌</strong>
+                            CDP 回傳 A/B/C 分級結果至銷控儀表板：<br>
+                            <span style="color:var(--color-accent);font-weight:700;">A 級</span> 多少筆可立即派單<br>
+                            <span style="color:var(--color-accent);font-weight:700;">B 級</span> 多少筆需業務主動接觸<br>
+                            <span style="color:var(--color-accent);font-weight:700;">C 級</span> 多少筆交由行銷推播<br>
+                            主管一目了然，告別盲目派單。
+                        </li>
+                        <li>
+                            <strong>❸ AI 話術 → 主管審核決策</strong>
+                            GenAI 為各等級產出對應話術，主管在即刻通逐筆審核：決定誰先打、確認話術品質，再放行派單。決定權始終在主管手上。
+                        </li>
+                        <li>
+                            <strong>❹ 即刻通稽核 → 主管自動收警報</strong>
+                            派單後系統自動追蹤進度。7 天內未更新紀事 → 即刻通直接警報主管，列出逾期業務與名單明細，可一鍵介入了解或收回轉派。主管不用自己盯，系統幫你管到底。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================================ -->
+        <!-- (2) EDM 一頁式（陌生開發版）                                  -->
+        <!-- ============================================================ -->
+        <section class="doc-section" id="edm">
+            <div class="section-label">
+                <div class="section-label__step">2</div>
+                <span class="section-label__text">PART TWO · EDM 一頁式文案（陌生開發版）</span>
+            </div>
+            <h2 class="section-title">EDM 一頁式 — 陌生開發版</h2>
+            <p class="section-subtitle">適合業務寄給潛在客戶，以單頁閱讀節奏快速建立共鳴、理解解法並完成 CTA 點擊。</p>
+
+            <div class="edm-onepage">
+                <div class="edm-onepage__hero">
+                    <div class="edm-onepage__hero-grid">
+                        <div>
+                            <div class="edm-onepage__eyebrow">AI 業績引擎｜陌生開發版 EDM</div>
+                            <h3 class="edm-onepage__title">
+                                你花了 <em>5,000 元</em><br>
+                                讓一個客人走進接待中心。<br>
+                                三個月後，還有人記得追她嗎？
+                            </h3>
+                            <p class="edm-onepage__desc">
+                                每一筆走進來的客人，都是你花真金白銀換來的機會。這封 EDM 用一頁講清楚問題、解法與下一步，讓潛在客戶在讀完當下就願意點擊。
+                            </p>
+                            <div class="edm-onepage__cta-group">
+                                <a href="#landing-page" class="edm-cta-btn">預約 30 分鐘情境演示</a>
+                                <a href="#landing-page" class="edm-cta-btn edm-cta-btn--ghost">看 AI 如何喚醒沉睡名單</a>
+                            </div>
+                        </div>
+
+                        <aside class="edm-onepage__aside">
+                            <div class="edm-onepage__aside-label">這封 EDM 要讓對方立刻看到</div>
+                            <ul class="edm-onepage__aside-list">
+                                <li><strong>痛點：</strong>每筆來人都是真金白銀，卻常常漏追。</li>
+                                <li><strong>解法：</strong>AI 自動記錄、分級、派單與稽核，補上人與流程之間的斷點。</li>
+                                <li><strong>下一步：</strong>用 CTA 按鈕把讀者帶往演示與顧問諮詢。</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+
+                <div class="edm-onepage__body">
+                    <div class="edm-card">
+                        <div class="edm-card__kicker">場景共鳴</div>
+                        <h3 class="edm-card__title">這個場景，你一定不陌生</h3>
+                        <p class="edm-card__subtitle">每個接待中心，都有好幾個「林太太」。</p>
+
+                        <div class="edm-story-layout">
+                            <div>
+                                <div class="story-card">
+                                    <div class="story-card__text">
+                                        週末下午，林太太帶女兒走進接待中心。<br>
+                                        她看了 49 坪的戶型、問了格局、問了開價。<br><br>
+                                        跑單紀錄寫著：<strong>「與女兒同來，需求大坪數，等最終開價再跟家人討論。」</strong><br><br>
+                                        三個月過去。<br>
+                                        名單還在系統裡。<strong>沒人追她</strong>，也沒人知道——<br>
+                                        她其實一直在等一通電話。
+                                    </div>
+                                </div>
+
+                                <div class="story-punchline">
+                                    問題不在業務不認真。<br>
+                                    問題在<em>沒有一套系統幫業務記住她</em>。
+                                </div>
+                            </div>
+
+                            <aside class="edm-story-side">
+                                <h4 class="edm-story-side__title">這段故事真正要打中的判斷點</h4>
+                                <ul class="edm-point-list">
+                                    <li>她不是冷名單，而是暫時沒有被正確喚醒的高機會客戶。</li>
+                                    <li>問題不在業務，而在沒有系統接手記憶、分級與提醒。</li>
+                                    <li>只要時間點對，舊名單就是下一檔新案最有效率的業績庫。</li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <div class="edm-card">
+                        <div class="edm-card__kicker">解法流程</div>
+                        <h3 class="edm-card__title">如果系統記得住，會發生什麼事？</h3>
+                        <p class="edm-card__subtitle">用林太太的例子，走一遍 AI 業績引擎的運作流程。</p>
+
+                        <ul class="solution-flow">
+                            <li>
+                                <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                                <div class="solution-flow__text">
+                                    林太太加 LINE 那天，系統<strong>自動記下</strong>她對「南屯、大坪數、知名建商」有興趣。
+                                    <span class="solution-flow__highlight">自動貼標</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                                <div class="solution-flow__text">
+                                    現場跑單紀錄同步進系統。<strong>「等最終開價 ＋ 家人決策型」</strong>成為可篩選的標籤。
+                                    <span class="solution-flow__highlight">情報建檔</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                                <div class="solution-flow__text">
+                                    三個月後，新案【天晴萃】開賣。系統<strong>自動把林太太撈出來</strong>，列入 A 級名單。
+                                    <span class="solution-flow__highlight">智慧撈客</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                                <div class="solution-flow__text">
+                                    自動通知原業務：<strong>「林太太可以打了，她等的開價已經出來。」</strong>
+                                    <span class="solution-flow__highlight">即時派單</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="solution-flow__check"><i class="fa-solid fa-check"></i></span>
+                                <div class="solution-flow__text">
+                                    業務七天沒打、沒留紀錄——<strong>主管 APP 自動收到提醒</strong>。
+                                    <span class="solution-flow__highlight">進度追蹤</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="edm-inline-note">
+                            <strong>她不是流失客。她一直在等。</strong><br>
+                            只是以前沒有系統替你看住她。
+                        </div>
+                    </div>
+
+                    <div class="edm-card">
+                        <div class="edm-card__kicker">信任建立</div>
+                        <h3 class="edm-card__title">已經有人在用，而且不是概念驗證</h3>
+                        <p class="edm-card__subtitle">把「這聽起來不錯」推進到「這值得安排一場演示」。</p>
+
+                        <div class="trust-grid">
+                            <div class="trust-cell">
+                                <div class="trust-cell__icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="trust-cell__value">北中南</div>
+                                <div class="trust-cell__label">涵蓋案場範圍</div>
+                            </div>
+                            <div class="trust-cell">
+                                <div class="trust-cell__icon"><i class="fa-solid fa-database"></i></div>
+                                <div class="trust-cell__value">數萬筆</div>
+                                <div class="trust-cell__label">歷史名單管理中</div>
+                            </div>
+                            <div class="trust-cell">
+                                <div class="trust-cell__icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                                <div class="trust-cell__value">實際運行</div>
+                                <div class="trust-cell__label">非概念驗證階段</div>
+                            </div>
+                        </div>
+
+                        <div class="trust-quote">
+                            「推新案不是從零開始，<br>
+                            是從上千筆已經知道他們要什麼的名單，精準出手。」
+                        </div>
+                    </div>
+
+                    <div class="edm-onepage__footer">
+                        <div>
+                            <div class="edm-card__kicker">Call To Action</div>
+                            <div class="edm-onepage__closing">你的名單裡，藏著多少個「林太太」？</div>
+                            <p class="edm-onepage__closing-copy">
+                                不需要先整理資料。花 30 分鐘，我們直接用你的案場情境走一遍系統，讓你判斷它值不值得導入。
+                            </p>
+                        </div>
+
+                        <div class="edm-onepage__action">
+                            <a href="#landing-page" class="edm-cta-btn">免費了解 AI 業績引擎</a>
+                            <div class="edm-onepage__microcopy"><strong>建商、代銷、銷售主管</strong> 都可以從這一步開始評估導入可行性。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================================ -->
+        <!-- (3) Landing Page 全文案                                       -->
+        <!-- ============================================================ -->
+        <section class="doc-section" id="landing-page">
+            <div class="section-label">
+                <div class="section-label__step">3</div>
+                <span class="section-label__text">PART THREE · Landing Page 全文案</span>
+            </div>
+            <h2 class="section-title">Landing Page — 高轉化架構</h2>
+            <p class="section-subtitle">
+                採用「痛點共鳴 → 故事引導 → 功能轉譯 → 行業應用 → 信任建立」的經典高轉換架構
+            </p>
+
+            <!-- ===== Hero Banner ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-star"></i>&nbsp; Hero Banner 首屏區
+                </div>
+                <div class="lp-section__body">
+                    <div class="tag-row">
+                        <span class="tag">房地產專屬 MarTech</span>
+                        <span class="tag">AI 業績變現引擎</span>
+                    </div>
+
+                    <h3 style="margin-top: var(--space-md); font-size: var(--text-2xl);">
+                        喚醒沉睡名單，打造您的「全天候 AI 銷售幕僚」
+                    </h3>
+                    <p>
+                        每一次的廣告曝光與賞屋，都在為下一個新案儲備精準彈藥。<br>
+                        透過生成式 AI 與專屬行動稽核，讓線上軌跡與線下成交無縫接軌。
+                    </p>
+
+                    <span class="cta-btn">立即預約免費顧問諮詢</span>
+                </div>
+            </div>
+
+            <!-- ===== Section 1：痛點區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-1"></i>&nbsp; Section 1：痛點區（金錢與管理雙重夾擊）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">你花了多少錢，買到一個進接待中心的客人？</h3>
+                    <p>
+                        每一筆實體來客，廣告加上人員成本保守估計落在 <strong>3,000 到 8,000 元</strong>。那個週末進來、說「回去跟家人討論」的客戶，你花了 5,000 元讓她走進來，但三個月後，她卻成了系統裡的死水。
+                    </p>
+
+                    <blockquote>
+                        <p>
+                            「主管，你最大的管理漏洞，不在業務不努力——在你根本不知道哪一筆名單被誰追過、追了幾次、為什麼沒結果。」
+                        </p>
+                    </blockquote>
+
+                    <p>這不是業務的問題，而是你沒有一套懂房地產的系統幫你記住客戶。</p>
+                </div>
+            </div>
+
+            <!-- ===== Section 2：情境故事區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-2"></i>&nbsp; Section 2：情境故事區（深度共鳴）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">看看 AI 如何幫你找回「林太太」</h3>
+
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__label">[開案前暖身] 3月15日｜接待中心</div>
+                            <div class="timeline__title">林太太看房後表示「想等最終開價」</div>
+                            <div class="timeline__desc">
+                                業務輸入備註。系統自動貼標：
+                                <span class="tag" style="margin-left:4px;">南屯區</span>
+                                <span class="tag">換屋族</span>
+                                <span class="tag">觀望開價</span>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">[持續追蹤] 3月20日｜線上軌跡</div>
+                            <div class="timeline__title">林太太點開 LINE 推播，停留 40 秒</div>
+                            <div class="timeline__desc">
+                                系統疊加標籤：<span class="tag" style="margin-left:4px;">高互動意願</span><br>
+                                她自己都沒意識到，需求已被完整記錄。
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">[精準喚醒] 9月｜新案即將開賣</div>
+                            <div class="timeline__title">系統自動回掃歷史名單，林太太躍升「A 級熱客」</div>
+                            <div class="timeline__desc">
+                                業務的「即刻通」APP 跳出通知與 <strong>AI 生成破冰話術</strong>：「林太太您好，上次您觀望的開價出來了，我們有個新案更符合您...」
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">[完美成交]</div>
+                            <div class="timeline__title">這次，她沒有說「我再想想」</div>
+                            <div class="timeline__desc">她說：「好，禮拜六早上見。」</div>
+                        </div>
+                    </div>
+
+                    <div class="doc-lead">
+                        <strong>你有多少個林太太還沒被追回來？</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Section 3：解決方案區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-3"></i>&nbsp; Section 3：解決方案區（對客戶 × 對內部）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">一套系統，兩個方向同時解決</h3>
+                    <p>左邊幫你多成交，右邊幫你少漏單。</p>
+
+                    <div class="dual-col">
+                        <!-- 對客戶：賣更多 -->
+                        <div class="dual-col__side">
+                            <div class="dual-col__header dual-col__header--client">
+                                <i class="fa-solid fa-user-group"></i> 對客戶 — 賣更多
+                            </div>
+                            <ul class="dual-col__list">
+                                <li class="dual-col__item">
+                                    <div class="dual-col__item-icon"><i class="fa-solid fa-id-card"></i></div>
+                                    <div class="dual-col__item-title">自動記住每個客戶</div>
+                                    <div class="dual-col__item-desc">LINE 點擊 + 現場跑單，系統自動合併成一張完整客戶卡。業務接手前就知道客戶要什麼。</div>
+                                </li>
+                                <li class="dual-col__item">
+                                    <div class="dual-col__item-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                                    <div class="dual-col__item-title">AI 幫業務開口</div>
+                                    <div class="dual-col__item-desc">根據客戶歷史自動產出第一句話，業務不用猜怎麼破冰，客戶覺得「你還記得我」。</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 對內部：管更準 -->
+                        <div class="dual-col__side">
+                            <div class="dual-col__header dual-col__header--internal">
+                                <i class="fa-solid fa-chart-line"></i> 對內部 — 管更準
+                            </div>
+                            <ul class="dual-col__list">
+                                <li class="dual-col__item">
+                                    <div class="dual-col__item-icon"><i class="fa-solid fa-ranking-star"></i></div>
+                                    <div class="dual-col__item-title">名單分級一目了然</div>
+                                    <div class="dual-col__item-desc">AI 自動把名單分成 A／B／C 級。主管打開就知道該先派誰、哪些交給行銷推播。</div>
+                                </li>
+                                <li class="dual-col__item">
+                                    <div class="dual-col__item-icon"><i class="fa-solid fa-bell"></i></div>
+                                    <div class="dual-col__item-title">漏追自動警報</div>
+                                    <div class="dual-col__item-desc">派單 7 天沒動作，主管手機直接收到通知。不用自己盯進度表，系統幫你管到底。</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Section 4：行業應用區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-4"></i>&nbsp; Section 4：跟著案場節奏走
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">每一檔案場，系統都跟著你的節奏動</h3>
+
+                    <div class="scene-cards">
+                        <div class="scene-card">
+                            <div class="scene-card__header scene-card__header--before">
+                                <i class="fa-solid fa-seedling"></i>&nbsp; 潛銷期
+                            </div>
+                            <div class="scene-card__body">
+                                <div class="scene-card__title">廣告還在跑，名單已經在分級</div>
+                                <div class="scene-card__desc">潛銷期加的每一個 LINE 好友，系統同步貼標建檔。開賣當天不是從零開始找客人。</div>
+                            </div>
+                        </div>
+                        <div class="scene-card">
+                            <div class="scene-card__header scene-card__header--launch">
+                                <i class="fa-solid fa-rocket"></i>&nbsp; 公開期
+                            </div>
+                            <div class="scene-card__body">
+                                <div class="scene-card__title">開賣第一天，舊客名單同步啟動</div>
+                                <div class="scene-card__desc">不只靠新廣告流量。系統自動比對歷史名單，把符合條件的舊客推進待聯繫清單。</div>
+                            </div>
+                        </div>
+                        <div class="scene-card">
+                            <div class="scene-card__header scene-card__header--after">
+                                <i class="fa-solid fa-rotate"></i>&nbsp; 結案期
+                            </div>
+                            <div class="scene-card__body">
+                                <div class="scene-card__title">沒成交的名單，自動留給下一檔</div>
+                                <div class="scene-card__desc">這檔沒買的客戶不會消失。系統保留完整紀錄，下個案場直接撈出來用。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Section 5：信任與優勢區 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-5"></i>&nbsp; Section 5：信任與優勢區（Why Us?）
+                </div>
+                <div class="lp-section__body">
+                    <h3 style="margin-top:0;">不要讓複雜的系統拖垮銷售節奏。</h3>
+
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <div class="icon-item__icon">⚡</div>
+                            <div class="icon-item__title">2 週極速上線</div>
+                            <div class="icon-item__desc">專為房地產銷控邏輯設計，免去漫長開發期。</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-item__icon">🧠</div>
+                            <div class="icon-item__title">生成式 AI 深度整合</div>
+                            <div class="icon-item__desc">不只是 Rule-based，AI 真正讀懂語意並產出策略。</div>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-item__icon">🔒</div>
+                            <div class="icon-item__title">企業級資安防護</div>
+                            <div class="icon-item__desc">名單是您的命脈。嚴格權限控管與資料保護，確保資產絕對安全。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Footer / 最終行動呼籲 ===== -->
+            <div class="lp-section">
+                <div class="lp-section__header">
+                    <i class="fa-solid fa-flag-checkered"></i>&nbsp; Footer — 最終行動呼籲
+                </div>
+                <div class="lp-section__body">
+                    <div class="doc-closing" style="border: none; background: transparent; padding: var(--space-xl) 0;">
+                        <div class="doc-closing__em">
+                            準備好讓沉睡數據<br>為您賺錢了嗎？
+                        </div>
+                        <p>
+                            以前管業務靠感覺，現在靠數據與系統。<br>
+                            交給房地產專屬 AI 幕僚，找回您流失的百萬業績。
+                        </p>
+                    </div>
+
+                    <h4>表單區域</h4>
+                    <div class="form-mock">
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">姓名</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">公司名稱</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">職稱</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">聯絡電話</label>
+                            <div class="form-mock__input" style="min-height:36px;"></div>
+                        </div>
+                        <div class="form-mock__field">
+                            <label class="form-mock__label">您目前最大的痛點？</label>
+                            <div class="form-mock__input" style="min-height:36px; display:flex; align-items:center; padding-left:var(--space-md); color: var(--color-muted); font-size: var(--text-sm);">
+                                名單浪費 / 業務難管 / 廣告費太高 / 其他
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: var(--space-lg);">
+                            <span class="cta-btn">聯絡顧問，免費評估導入方案</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
