@@ -509,118 +509,6 @@
             line-height: 1.7;
         }
 
-        /* ===== 雙欄解決方案（對客戶 × 對內部） ===== */
-        .dual-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            margin: var(--space-lg) 0;
-        }
-        .dual-col__side {
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .dual-col__header {
-            padding: var(--space-md) var(--space-lg);
-            font-size: var(--text-sm);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-        .dual-col__header--client {
-            background: #f0f8f0;
-            color: #2e7d32;
-            border-bottom: 2px solid #a5d6a7;
-        }
-        .dual-col__header--internal {
-            background: #f0f4ff;
-            color: #1565c0;
-            border-bottom: 2px solid #90caf9;
-        }
-        .dual-col__list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .dual-col__item {
-            padding: var(--space-lg);
-            border-bottom: 1px solid var(--color-border);
-            font-size: var(--text-sm);
-            line-height: 1.8;
-        }
-        .dual-col__item:last-child { border-bottom: none; }
-        .dual-col__item-icon {
-            font-size: var(--text-xl);
-            margin-bottom: var(--space-sm);
-        }
-        .dual-col__item-title {
-            font-weight: 700;
-            color: var(--color-black);
-            margin-bottom: var(--space-xs);
-            font-size: var(--text-sm);
-        }
-        .dual-col__item-desc {
-            font-size: var(--text-xs);
-            color: var(--color-text);
-            line-height: 1.7;
-        }
-        @media (max-width: 640px) {
-            .dual-col { grid-template-columns: 1fr; }
-        }
-
-        /* ===== 場景卡片（Section 4） ===== */
-        .scene-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin: var(--space-lg) 0;
-        }
-        .scene-card {
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-            overflow: hidden;
-            background: #fff;
-        }
-        .scene-card__header {
-            padding: var(--space-md) var(--space-lg);
-            font-size: var(--text-xs);
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            border-bottom: 1px solid var(--color-border);
-        }
-        .scene-card__header--before {
-            background: #fff8e1;
-            color: #f57f17;
-        }
-        .scene-card__header--launch {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-        .scene-card__header--after {
-            background: #f3e5f5;
-            color: #7b1fa2;
-        }
-        .scene-card__body {
-            padding: var(--space-lg);
-        }
-        .scene-card__title {
-            font-weight: 700;
-            font-size: var(--text-sm);
-            color: var(--color-black);
-            margin-bottom: var(--space-sm);
-            line-height: 1.5;
-        }
-        .scene-card__desc {
-            font-size: var(--text-xs);
-            color: var(--color-text);
-            line-height: 1.8;
-        }
-        @media (max-width: 640px) {
-            .scene-cards { grid-template-columns: 1fr; }
-        }
-
         /* ===== 三欄 ICON 強調 ===== */
         .icon-grid {
             display: grid;
@@ -1734,49 +1622,39 @@
             <!-- ===== Section 3：解決方案區 ===== -->
             <div class="lp-section">
                 <div class="lp-section__header">
-                    <i class="fa-solid fa-3"></i>&nbsp; Section 3：解決方案區（對客戶 × 對內部）
+                    <i class="fa-solid fa-3"></i>&nbsp; Section 3：解決方案區（主管視角的 4 步防漏網）
                 </div>
                 <div class="lp-section__body">
-                    <h3 style="margin-top:0;">一套系統，兩個方向同時解決</h3>
-                    <p>左邊幫你多成交，右邊幫你少漏單。</p>
+                    <h3 style="margin-top:0;">你的時間應該花在決策，不是追進度。</h3>
 
-                    <div class="dual-col">
-                        <!-- 對客戶：賣更多 -->
-                        <div class="dual-col__side">
-                            <div class="dual-col__header dual-col__header--client">
-                                <i class="fa-solid fa-user-group"></i> 對客戶 — 賣更多
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="feature-card__title">1. OMO 數據縫合：你不在場，系統幫你記</div>
+                            <div class="feature-card__desc">
+                                不再有線上線下斷層。系統自動整合 LINE 互動與跑單備註，業務接單前，AI 已經把客戶背調做好。
                             </div>
-                            <ul class="dual-col__list">
-                                <li class="dual-col__item">
-                                    <div class="dual-col__item-icon"><i class="fa-solid fa-id-card"></i></div>
-                                    <div class="dual-col__item-title">自動記住每個客戶</div>
-                                    <div class="dual-col__item-desc">LINE 點擊 + 現場跑單，系統自動合併成一張完整客戶卡。業務接手前就知道客戶要什麼。</div>
-                                </li>
-                                <li class="dual-col__item">
-                                    <div class="dual-col__item-icon"><i class="fa-solid fa-comment-dots"></i></div>
-                                    <div class="dual-col__item-title">AI 幫業務開口</div>
-                                    <div class="dual-col__item-desc">根據客戶歷史自動產出第一句話，業務不用猜怎麼破冰，客戶覺得「你還記得我」。</div>
-                                </li>
-                            </ul>
                         </div>
-
-                        <!-- 對內部：管更準 -->
-                        <div class="dual-col__side">
-                            <div class="dual-col__header dual-col__header--internal">
-                                <i class="fa-solid fa-chart-line"></i> 對內部 — 管更準
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-ranking-star"></i></div>
+                            <div class="feature-card__title">2. AI 意願分級：揪出隱藏的熱客</div>
+                            <div class="feature-card__desc">
+                                告別盲目 Call 客。生成式 AI 讀懂非結構化文字，精準推測產品偏好，自動將意願分級（A/B/C）。
                             </div>
-                            <ul class="dual-col__list">
-                                <li class="dual-col__item">
-                                    <div class="dual-col__item-icon"><i class="fa-solid fa-ranking-star"></i></div>
-                                    <div class="dual-col__item-title">名單分級一目了然</div>
-                                    <div class="dual-col__item-desc">AI 自動把名單分成 A／B／C 級。主管打開就知道該先派誰、哪些交給行銷推播。</div>
-                                </li>
-                                <li class="dual-col__item">
-                                    <div class="dual-col__item-icon"><i class="fa-solid fa-bell"></i></div>
-                                    <div class="dual-col__item-title">漏追自動警報</div>
-                                    <div class="dual-col__item-desc">派單 7 天沒動作，主管手機直接收到通知。不用自己盯進度表，系統幫你管到底。</div>
-                                </li>
-                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <div class="feature-card__title">3. 智慧派單與 GenAI 破冰：你決定誰先打</div>
+                            <div class="feature-card__desc">
+                                決定權在你手上。系統執行不出錯，更自動為業務生成專屬「破冰話術」，第一句話就切中要害。
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="feature-card__title">4. 防呆稽核：一週後自動警報</div>
+                            <div class="feature-card__desc">
+                                專屬<strong>「即刻通」APP</strong> 無縫串聯第一線。逾期未追蹤的名單，系統直接通報主管，不需你自己辛苦盯進度。
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1785,38 +1663,26 @@
             <!-- ===== Section 4：行業應用區 ===== -->
             <div class="lp-section">
                 <div class="lp-section__header">
-                    <i class="fa-solid fa-4"></i>&nbsp; Section 4：跟著案場節奏走
+                    <i class="fa-solid fa-4"></i>&nbsp; Section 4：行業應用區（貼合房地產時間軸）
                 </div>
                 <div class="lp-section__body">
-                    <h3 style="margin-top:0;">每一檔案場，系統都跟著你的節奏動</h3>
+                    <h3 style="margin-top:0;">為房地產銷售週期量身打造的作戰計畫</h3>
 
-                    <div class="scene-cards">
-                        <div class="scene-card">
-                            <div class="scene-card__header scene-card__header--before">
-                                <i class="fa-solid fa-seedling"></i>&nbsp; 潛銷期
-                            </div>
-                            <div class="scene-card__body">
-                                <div class="scene-card__title">廣告還在跑，名單已經在分級</div>
-                                <div class="scene-card__desc">潛銷期加的每一個 LINE 好友，系統同步貼標建檔。開賣當天不是從零開始找客人。</div>
-                            </div>
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__label">T-60 天（開案前）｜現在就在養名單</div>
+                            <div class="timeline__title">廣告與 LINE 加友，都在為下一檔儲備彈藥庫</div>
+                            <div class="timeline__desc">現在推的廣告、LINE 加友，都在為下一檔儲備彈藥庫。</div>
                         </div>
-                        <div class="scene-card">
-                            <div class="scene-card__header scene-card__header--launch">
-                                <i class="fa-solid fa-rocket"></i>&nbsp; 公開期
-                            </div>
-                            <div class="scene-card__body">
-                                <div class="scene-card__title">開賣第一天，舊客名單同步啟動</div>
-                                <div class="scene-card__desc">不只靠新廣告流量。系統自動比對歷史名單，把符合條件的舊客推進待聯繫清單。</div>
-                            </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">T-0（公開日）｜歷史名單同步啟動</div>
+                            <div class="timeline__title">開賣當天，系統自動喚醒半年前的潛在客</div>
+                            <div class="timeline__desc">不需苦等兩週廣告流量。</div>
                         </div>
-                        <div class="scene-card">
-                            <div class="scene-card__header scene-card__header--after">
-                                <i class="fa-solid fa-rotate"></i>&nbsp; 結案期
-                            </div>
-                            <div class="scene-card__body">
-                                <div class="scene-card__title">沒成交的名單，自動留給下一檔</div>
-                                <div class="scene-card__desc">這檔沒買的客戶不會消失。系統保留完整紀錄，下個案場直接撈出來用。</div>
-                            </div>
+                        <div class="timeline__item">
+                            <div class="timeline__label">T+90 天（清尾期）｜名單絕不浪費</div>
+                            <div class="timeline__title">沒轉換的名單自動進入下個建案的暖身池</div>
+                            <div class="timeline__desc">不是等著被封存的垃圾數據。</div>
                         </div>
                     </div>
                 </div>
